@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Instagram, Facebook, Linkedin, MapPin, Phone, Mail, Clock } from 'lucide-react'
+import { Camera, Globe, Rss, MapPin, Phone, Mail, Clock } from 'lucide-react'
 
 const products = [
   { name: 'Ventanas de Aluminio', href: '/ventanas' },
@@ -35,7 +35,7 @@ export function Footer() {
               Carpintería metálica y aluminio en Bilbao. Más de 25 años fabricando e instalando ventanas, puertas y cerramientos en Vizcaya y el norte de España.
             </p>
             <div className="flex gap-3">
-              {[Instagram, Facebook, Linkedin].map((Icon, i) => (
+              {[Camera, Globe, Rss].map((Icon, i) => (
                 <a key={i} href="#" aria-label="Red social" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-rojo transition-colors">
                   <Icon size={14} />
                 </a>

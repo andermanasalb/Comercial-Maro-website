@@ -88,13 +88,11 @@ export function Navbar() {
                   <ul className="w-52 p-2">
                     {products.map(p => (
                       <li key={p.href}>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href={p.href}
-                            className="block px-3 py-2 text-[13px] font-montserrat font-semibold text-gris-medio hover:text-rojo hover:bg-crema rounded-md transition-colors"
-                          >
-                            {p.name}
-                          </Link>
+                        <NavigationMenuLink
+                          render={<Link href={p.href} />}
+                          className="block px-3 py-2 text-[13px] font-montserrat font-semibold text-gris-medio hover:text-rojo hover:bg-crema rounded-md transition-colors"
+                        >
+                          {p.name}
                         </NavigationMenuLink>
                       </li>
                     ))}
