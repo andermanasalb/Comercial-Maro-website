@@ -6,10 +6,14 @@ import { Galeria } from '@/components/home/Galeria'
 import { FAQ } from '@/components/home/FAQ'
 import { BlogPreview } from '@/components/home/BlogPreview'
 import { CTAFinal } from '@/components/home/CTAFinal'
+import { EnablePageSnap } from '@/components/layout/EnablePageSnap'
+import { SectionScroller } from '@/components/layout/SectionScroller'
 
 export default function HomePage() {
   return (
     <>
+      <EnablePageSnap />
+      <SectionScroller />
       <Hero />
       <Servicios />
       <PorQueNosotros />

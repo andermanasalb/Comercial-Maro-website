@@ -15,7 +15,30 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+
+html {
+  scroll-behavior: smooth;
+  /* Offset anchor links below the sticky navbar (h-16 = 64px) for non-snap pages */
+  scroll-padding-top: 4rem;
+}
+
+/* ─── Homepage full-page scroll snap ─────────────────────────────────────
+   Activated by EnablePageSnap component on the homepage only.
+   IMPORTANT: The top-bar (h-8 = 32px) must remain in layout at all times
+   (opacity-fade only, never h-0) so that the total navbar stays 96px.
+   IMPORTANT: <main> must have zero margin and padding so sections snap correctly.
+   IMPORTANT: Do NOT remove the scroll-padding-top: 4rem rule above — this
+   html.snap-page rule overrides it via higher specificity (0-1-1 > 0-0-1).
+──────────────────────────────────────────────────────────────────────── */
+html.snap-page {
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 6rem; /* 96px = h-8 (32px) + h-16 (64px) navbar */
+}
+
+/* Footer is embedded inside CTAFinal on homepage — hide the layout.tsx one */
+html.snap-page footer {
+  display: none;
+}
 
 body {
   font-family: var(--font-inter);
@@ -23,6 +46,15 @@ body {
   line-height: 1.7;
   color: var(--color-carbon);
   background: #FFFFFF;
+  overscroll-behavior-y: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {

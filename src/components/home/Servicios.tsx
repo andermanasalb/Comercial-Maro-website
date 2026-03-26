@@ -1,3 +1,5 @@
+'use client'
+import { motion } from 'framer-motion'
 import { ProductCard } from '@/components/shared/ProductCard'
 import { SectionHeader } from '@/components/shared/SectionHeader'
 
@@ -10,14 +12,33 @@ const services = [
   { num: '06', title: 'Cristalería y Mamparas', description: 'Mamparas de baño, escaparates y barandillas de vidrio templado.', image: 'https://images.unsplash.com/photo-1596436889106-be35e843f974?w=400', href: '/contacto' },
 ]
 
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.08 } },
+}
+const card = {
+  hidden: { opacity: 0, y: 28 },
+  show: { opacity: 1, y: 0 },
+}
+
 export function Servicios() {
   return (
-    <section className="py-16 px-6 bg-crema">
-      <div className="max-w-[1280px] mx-auto">
+    <section id="productos" className="h-[calc(100dvh-6rem)] snap-start snap-always overflow-hidden bg-crema flex flex-col justify-center px-6">
+      <div className="max-w-[1280px] mx-auto w-full">
         <SectionHeader tag="Nuestros productos" title="Todo lo que necesita tu espacio" subtitle="Fabricamos e instalamos carpintería metálica a medida en Bilbao y todo el norte de España" />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {services.map(s => <ProductCard key={s.num} {...s} />)}
-        </div>
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.15 }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+        >
+          {services.map(s => (
+            <motion.div key={s.num} variants={card}>
+              <ProductCard {...s} />
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   )

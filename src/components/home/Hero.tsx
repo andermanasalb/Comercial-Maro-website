@@ -29,7 +29,7 @@ function AnimatedCounter({ end, suffix = '' }: { end: number; suffix?: string })
 
 export function Hero() {
   return (
-    <section className="relative h-screen min-h-[600px] flex flex-col items-center justify-center text-center px-6">
+    <section id="hero" className="relative h-[calc(100dvh-6rem)] snap-start snap-always flex flex-col items-center justify-center text-center px-6 overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920')" }}

@@ -6,12 +6,12 @@ import { SectionHeader } from '@/components/shared/SectionHeader'
 export function BlogPreview() {
   const [featured, ...rest] = blogPosts
   return (
-    <section className="py-16 px-6 bg-white">
-      <div className="max-w-[1280px] mx-auto">
+    <section id="blog" className="h-[calc(100dvh-6rem)] snap-start snap-always overflow-hidden bg-white flex flex-col justify-center px-6">
+      <div className="max-w-[1280px] mx-auto w-full">
         <SectionHeader tag="Blog & Consejos" title="Todo sobre carpintería metálica" subtitle="Guías, consejos y novedades para mejorar tu hogar o negocio en el País Vasco" />
         <div className="grid lg:grid-cols-[1.6fr_1fr] gap-6 mb-8">
           <Link href={`/blog/${featured.slug}`} className="group block rounded-xl overflow-hidden border border-gris-claro hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
-            <div className="relative h-52">
+            <div className="relative h-40">
               <Image src={featured.image} alt={featured.title} fill className="object-cover" />
               <span className="absolute top-3 left-3 bg-rojo text-white font-montserrat text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-wide">{featured.category}</span>
             </div>

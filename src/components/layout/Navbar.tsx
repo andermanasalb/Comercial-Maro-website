@@ -1,9 +1,10 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
-import { Menu, Phone, MapPin } from 'lucide-react'
+import { Menu, Phone, MapPin, ChevronLeft } from 'lucide-react'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import {
   NavigationMenu, NavigationMenuContent, NavigationMenuItem,
@@ -19,33 +20,50 @@ const products = [
 ]
 
 const navLinks = [
-  { name: 'Proyectos', href: '/proyectos' },
-  { name: 'Sectores', href: '/#sectores' },
-  { name: 'Sobre nosotros', href: '/sobre-nosotros' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Contacto', href: '/contacto' },
+  { name: '¿Por qué nosotros?', href: '/#nosotros' },
+  { name: 'Sectores',           href: '/#sectores' },
+  { name: 'Galería',            href: '/#galeria'  },
+  { name: 'FAQ',                href: '/#faq'      },
+  { name: 'Blog',               href: '/blog'      },
+  { name: 'Contacto',           href: '/contacto'  },
 ]
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [topBarVisible, setTopBarVisible] = useState(true)
+  const closingRef = useRef(false)
+  const pathname = usePathname()
+
+  // Reset on route change
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior })
+    setScrolled(false)
+    setTopBarVisible(true)
+  }, [pathname])
 
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 10)
       setTopBarVisible(window.scrollY < 40)
+      // Close open dropdowns on scroll to prevent positioning drift
+      if (!closingRef.current) {
+        closingRef.current = true
+        document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }))
+        setTimeout(() => { closingRef.current = false }, 400)
+      }
     }
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   return (
-    <header className="sticky top-0 z-50">
-      {/* Top bar */}
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm">
+      {/* Top bar — opacity-only so layout never shifts and anchor offsets stay stable */}
       <motion.div
-        animate={{ height: topBarVisible ? 32 : 0, opacity: topBarVisible ? 1 : 0 }}
-        transition={{ duration: 0.2 }}
-        className="bg-carbon overflow-hidden"
+        animate={{ opacity: topBarVisible ? 1 : 0 }}
+        transition={{ duration: 0.25 }}
+        className="bg-carbon h-8 pointer-events-none"
+        style={{ pointerEvents: topBarVisible ? 'auto' : 'none' }}
       >
         <div className="max-w-[1280px] mx-auto px-6 h-8 flex items-center justify-between">
           <span className="flex items-center gap-1.5 text-white/65 text-[11px]">
@@ -64,28 +82,49 @@ export function Navbar() {
       <motion.div
         animate={{ boxShadow: scrolled ? '0 2px 20px rgba(0,0,0,0.12)' : '0 0 0 rgba(0,0,0,0)' }}
         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-        className="bg-white/95 backdrop-blur-sm border-b border-gris-claro"
+        className="border-b border-gris-claro"
       >
-        <div className="max-w-[1280px] mx-auto px-6 h-16 flex items-center justify-between gap-8">
-          <Link href="/" className="flex-shrink-0 flex items-center">
+        <div className="max-w-[1280px] mx-auto px-3 h-16 flex items-center justify-between gap-3">
+          <Link href="/" className="flex-shrink-0 flex items-center h-full py-1">
             <Image
               src="/logo.png"
               alt="Comercial MAR'O"
-              width={120}
-              height={40}
-              className="h-10 w-auto object-contain"
+              width={160}
+              height={56}
+              unoptimized
+              className="h-full w-auto object-contain"
             />
           </Link>
+
+          {/* Back to home — shown on inner pages */}
+          {pathname !== '/' && (
+            <Link
+              href="/"
+              className="hidden lg:flex items-center gap-1 font-montserrat text-[12px] font-semibold text-gris-medio hover:text-rojo transition-colors flex-shrink-0"
+            >
+              <ChevronLeft size={15} />
+              Inicio
+            </Link>
+          )}
 
           {/* Desktop Nav */}
           <NavigationMenu className="hidden lg:flex">
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="font-montserrat text-[13px] font-semibold text-gris-medio hover:text-rojo">
+                <NavigationMenuTrigger className="font-montserrat text-[13px] font-semibold text-gris-medio hover:text-rojo bg-transparent hover:bg-transparent focus:bg-transparent data-popup-open:bg-transparent data-open:bg-transparent">
                   Productos
                 </NavigationMenuTrigger>
-                <NavigationMenuContent>
+                <NavigationMenuContent className="bg-white shadow-lg border border-gris-claro">
                   <ul className="w-52 p-2">
+                    <li>
+                      <NavigationMenuLink
+                        render={<Link href="/#productos" />}
+                        className="block px-3 py-2 text-[13px] font-montserrat font-bold text-rojo hover:bg-crema rounded-md transition-colors"
+                      >
+                        Ver todos los productos →
+                      </NavigationMenuLink>
+                    </li>
+                    <li className="mx-3 my-1 border-t border-gris-claro" />
                     {products.map(p => (
                       <li key={p.href}>
                         <NavigationMenuLink
@@ -101,7 +140,7 @@ export function Navbar() {
               </NavigationMenuItem>
               {navLinks.map(link => (
                 <NavigationMenuItem key={link.href}>
-                  <Link href={link.href} className="px-3 py-2 font-montserrat text-[13px] font-semibold text-gris-medio hover:text-rojo transition-colors">
+                  <Link href={link.href} className="px-2 py-2 font-montserrat text-[13px] font-semibold text-gris-medio hover:text-rojo transition-colors whitespace-nowrap">
                     {link.name}
                   </Link>
                 </NavigationMenuItem>
@@ -111,7 +150,7 @@ export function Navbar() {
 
           <Link
             href="/contacto"
-            className="hidden lg:inline-flex items-center font-montserrat text-[13px] font-semibold bg-rojo text-white px-5 py-2.5 rounded-md hover:bg-rojo-oscuro transition-colors min-h-[48px] flex-shrink-0"
+            className="hidden lg:inline-flex items-center font-montserrat text-[13px] font-semibold bg-rojo text-white px-4 py-2 rounded-md hover:bg-rojo-oscuro transition-colors min-h-[36px] flex-shrink-0 whitespace-nowrap"
           >
             Solicitar presupuesto
           </Link>

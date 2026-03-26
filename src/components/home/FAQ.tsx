@@ -12,8 +12,8 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section className="py-16 px-6 bg-carbon">
-      <div className="max-w-[1280px] mx-auto">
+    <section id="faq" className="h-[calc(100dvh-6rem)] snap-start snap-always overflow-hidden bg-carbon flex flex-col justify-center px-6">
+      <div className="max-w-[1280px] mx-auto w-full">
         <SectionHeader tag="FAQ" title="Preguntas frecuentes" dark />
         <div className="max-w-2xl mx-auto">
           <Accordion className="flex flex-col gap-2">

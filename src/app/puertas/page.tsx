@@ -78,10 +78,13 @@ export default function PuertasPage() {
             <h3 className="font-montserrat text-[15px] font-bold text-carbon mb-2">¿Necesitas una puerta a medida?</h3>
             <p className="text-[12px] text-gris-medio mb-5">Solicita tu presupuesto gratuito. Te respondemos en menos de 24h.</p>
             <PresupuestoButton size="lg" className="w-full justify-center" />
-            <div className="mt-4 pt-4 border-t border-gris-claro text-[11px] text-gris-medio font-montserrat space-y-1">
-              <p>✓ Presupuesto gratuito y sin compromiso</p>
-              <p>✓ Garantía 10 años</p>
-              <p>✓ Instalación propia en Vizcaya</p>
+            <div className="mt-4 pt-4 border-t border-gris-claro text-[11px] text-gris-medio font-montserrat space-y-1.5">
+              {['Presupuesto gratuito y sin compromiso', 'Garantía 10 años', 'Instalación propia en Vizcaya'].map(item => (
+                <p key={item} className="flex items-center gap-1.5">
+                  <CheckCircle2 size={12} className="text-rojo flex-shrink-0" aria-hidden="true" />
+                  {item}
+                </p>
+              ))}
             </div>
           </div>
         </div>

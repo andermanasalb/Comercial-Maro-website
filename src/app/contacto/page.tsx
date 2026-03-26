@@ -46,24 +46,24 @@ export default function ContactoPage() {
           <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5">
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
-                <label className={labelClass}>Nombre *</label>
-                <input {...register('nombre')} className={inputClass} placeholder="Tu nombre" />
+                <label htmlFor="nombre" className={labelClass}>Nombre *</label>
+                <input id="nombre" {...register('nombre')} className={inputClass} placeholder="Tu nombre" />
                 {errors.nombre && <p className="text-rojo text-[11px] mt-1">{errors.nombre.message}</p>}
               </div>
               <div>
-                <label className={labelClass}>Teléfono *</label>
-                <input {...register('telefono')} className={inputClass} placeholder="+34 600 000 000" />
+                <label htmlFor="telefono" className={labelClass}>Teléfono *</label>
+                <input id="telefono" {...register('telefono')} className={inputClass} placeholder="+34 600 000 000" />
                 {errors.telefono && <p className="text-rojo text-[11px] mt-1">{errors.telefono.message}</p>}
               </div>
             </div>
             <div>
-              <label className={labelClass}>Email *</label>
-              <input {...register('email')} type="email" className={inputClass} placeholder="tu@email.com" />
+              <label htmlFor="email" className={labelClass}>Email *</label>
+              <input id="email" {...register('email')} type="email" className={inputClass} placeholder="tu@email.com" />
               {errors.email && <p className="text-rojo text-[11px] mt-1">{errors.email.message}</p>}
             </div>
             <div>
-              <label className={labelClass}>Tipo de proyecto *</label>
-              <select {...register('tipo')} className={inputClass}>
+              <label htmlFor="tipo" className={labelClass}>Tipo de proyecto *</label>
+              <select id="tipo" {...register('tipo')} className={inputClass}>
                 <option value="">Selecciona una opción</option>
                 <option value="reforma">Vivienda — Reforma</option>
                 <option value="obra-nueva">Vivienda — Obra nueva</option>
@@ -74,8 +74,8 @@ export default function ContactoPage() {
               {errors.tipo && <p className="text-rojo text-[11px] mt-1">{errors.tipo.message}</p>}
             </div>
             <div>
-              <label className={labelClass}>Mensaje *</label>
-              <textarea {...register('mensaje')} rows={4} className={inputClass} placeholder="Describe tu proyecto..." />
+              <label htmlFor="mensaje" className={labelClass}>Mensaje *</label>
+              <textarea id="mensaje" {...register('mensaje')} rows={4} className={inputClass} placeholder="Describe tu proyecto..." />
               {errors.mensaje && <p className="text-rojo text-[11px] mt-1">{errors.mensaje.message}</p>}
             </div>
 

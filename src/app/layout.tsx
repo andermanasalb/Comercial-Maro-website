@@ -1,8 +1,12 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import { Montserrat, Inter } from 'next/font/google'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import './globals.css'
+
+const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat', display: 'swap' })
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' })
 
 export const metadata: Metadata = {
   title: {
@@ -42,7 +46,7 @@ const localBusinessSchema = JSON.stringify({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es">
+    <html lang="es" className={`${montserrat.variable} ${inter.variable}`}>
       <body>
         <Script
           id="local-business-jsonld"
