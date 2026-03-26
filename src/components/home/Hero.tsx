@@ -53,7 +53,7 @@ export function Hero() {
         </motion.p>
         <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 mb-12">
           <Link href="/contacto" className="inline-flex items-center justify-center font-montserrat text-sm font-semibold bg-rojo text-white px-6 py-3 rounded-md hover:bg-rojo-oscuro transition-colors min-h-[48px]">
-            Solicitar presupuesto gratis →
+            Háblanos de tu proyecto →
           </Link>
           <Link href="/proyectos" className="inline-flex items-center justify-center font-montserrat text-sm font-semibold border-2 border-white/70 text-white px-6 py-3 rounded-md hover:bg-white hover:text-rojo transition-colors min-h-[48px]">
             Ver nuestros proyectos

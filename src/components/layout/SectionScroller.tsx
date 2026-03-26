@@ -85,35 +85,60 @@ export function SectionScroller() {
   }, [])
 
   return (
-    <nav
-      aria-label="Navegación por secciones"
-      className="fixed right-5 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col items-center gap-2.5"
-    >
-      {SECTIONS.map(({ id, label }, i) => (
-        <div key={id} className="group relative flex items-center justify-end">
-          {/* Tooltip — appears to the left of the dot on hover */}
-          <span
-            aria-hidden="true"
-            className="absolute right-6 px-3 py-1.5 bg-carbon text-crema font-montserrat text-[12px] font-semibold rounded-md whitespace-nowrap shadow-lg border-l-2 border-rojo
-                       opacity-0 group-hover:opacity-100 pointer-events-none select-none
-                       transition-opacity duration-200 translate-x-1 group-hover:translate-x-0"
-          >
-            {label}
-          </span>
+    <>
+      {/* Desktop: puntos verticales a la derecha */}
+      <nav
+        aria-label="Navegación por secciones"
+        className="fixed right-5 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col items-center gap-2.5"
+      >
+        {SECTIONS.map(({ id, label }, i) => (
+          <div key={id} className="group relative flex items-center justify-end">
+            <span
+              aria-hidden="true"
+              className="absolute right-6 px-3 py-1.5 bg-carbon text-crema font-montserrat text-[12px] font-semibold rounded-md whitespace-nowrap shadow-lg border-l-2 border-rojo
+                         opacity-0 group-hover:opacity-100 pointer-events-none select-none
+                         transition-opacity duration-200 translate-x-1 group-hover:translate-x-0"
+            >
+              {label}
+            </span>
+            <button
+              onClick={() => scrollToSection(i)}
+              aria-label={`Ir a ${label}`}
+              className={[
+                'rounded-full border-2 cursor-pointer transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rojo',
+                i === activeIdx
+                  ? 'w-3 h-3 bg-rojo border-rojo shadow-[0_0_0_3px_rgba(212,43,43,0.25)]'
+                  : 'w-2 h-2 bg-white/80 border-carbon/30 shadow-sm hover:border-rojo hover:scale-125',
+              ].join(' ')}
+            />
+          </div>
+        ))}
+      </nav>
 
-          {/* Dot */}
-          <button
-            onClick={() => scrollToSection(i)}
-            aria-label={`Ir a ${label}`}
-            className={[
-              'rounded-full border-2 cursor-pointer transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rojo',
-              i === activeIdx
-                ? 'w-3 h-3 bg-rojo border-rojo shadow-[0_0_0_3px_rgba(212,43,43,0.25)]'
-                : 'w-2 h-2 bg-white/80 border-carbon/30 shadow-sm hover:border-rojo hover:scale-125',
-            ].join(' ')}
-          />
-        </div>
-      ))}
-    </nav>
+      {/* Mobile: puntos horizontales + sección activa centrados abajo */}
+      <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-40 flex lg:hidden flex-col items-center gap-1.5">
+        <span className="font-montserrat text-[10px] font-bold uppercase tracking-wider text-carbon/70 bg-white/80 backdrop-blur-sm px-2.5 py-0.5 rounded-full">
+          {SECTIONS[activeIdx].label}
+        </span>
+        <nav
+          aria-label="Navegación por secciones"
+          className="flex items-center gap-1.5 bg-white/70 backdrop-blur-sm px-3 py-2 rounded-full shadow-sm"
+        >
+          {SECTIONS.map(({ id, label }, i) => (
+            <button
+              key={id}
+              onClick={() => scrollToSection(i)}
+              aria-label={`Ir a ${label}`}
+              className={[
+                'rounded-full cursor-pointer transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rojo',
+                i === activeIdx
+                  ? 'w-2 h-2 bg-rojo shadow-[0_0_0_2px_rgba(212,43,43,0.25)]'
+                  : 'w-1.5 h-1.5 bg-carbon/25',
+              ].join(' ')}
+            />
+          ))}
+        </nav>
+      </div>
+    </>
   )
 }

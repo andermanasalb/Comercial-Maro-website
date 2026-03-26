@@ -20,7 +20,7 @@ export function PresupuestoButton({ variant = 'primary', size = 'lg', className 
         className
       )}
     >
-      Solicitar presupuesto gratis
+      Háblanos de tu proyecto
     </Link>
   )
 }

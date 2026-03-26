@@ -38,7 +38,8 @@ export default function ContactoPage() {
     <div className="min-h-screen bg-crema">
       <div className="bg-carbon py-16 px-6 text-center">
         <span className="font-montserrat text-[10px] font-bold tracking-[3px] uppercase text-arena block mb-3">Contacto</span>
-        <h1 className="font-montserrat text-3xl font-extrabold text-white">Solicita tu presupuesto gratuito</h1>
+        <h1 className="font-montserrat text-3xl font-extrabold text-white">Tu proyecto empieza con una conversación</h1>
+        <p className="font-montserrat text-white/65 text-sm mt-2">Cuéntanos qué necesitas. Te respondemos en menos de 24 horas.</p>
       </div>
       <div className="bg-white border-b border-gris-claro px-6 py-3">
         <nav className="max-w-[1280px] mx-auto font-montserrat text-[12px] text-gris-medio flex items-center gap-1.5">
@@ -100,14 +101,17 @@ export default function ContactoPage() {
           <div className="bg-white rounded-xl p-6 shadow-sm">
             <h3 className="font-montserrat text-[15px] font-bold text-carbon mb-4">Datos de contacto</h3>
             {[
-              { Icon: MapPin, text: 'Av. Lehendakari Aguirre, 161 · 48015 Bilbao' },
-              { Icon: Phone, text: '+34 944 100 462' },
-              { Icon: Mail, text: 'bilbao@comercialmaro.biz' },
-              { Icon: Clock, text: 'Lun-Vie 9:30–13:30 / 16:00–20:00' },
-            ].map(({ Icon, text }, i) => (
+              { Icon: MapPin, text: 'Av. Lehendakari Aguirre, 161 · 48015 Bilbao', href: 'https://www.google.com/maps/search/?api=1&query=Avenida+Lehendakari+Aguirre+161+48015+Bilbao' },
+              { Icon: Phone, text: '+34 944 100 462', href: 'tel:+34944100462' },
+              { Icon: Mail, text: 'bilbao@comercialmaro.biz', href: 'mailto:bilbao@comercialmaro.biz' },
+              { Icon: Clock, text: 'Lun-Vie 9:30–13:30 / 16:00–20:00', href: null },
+            ].map(({ Icon, text, href }, i) => (
               <div key={i} className="flex items-start gap-3 mb-3 text-[13px] text-gris-medio">
                 <Icon size={16} className="text-rojo mt-0.5 flex-shrink-0" />
-                <span>{text}</span>
+                {href
+                  ? <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined} className="hover:text-rojo transition-colors">{text}</a>
+                  : <span>{text}</span>
+                }
               </div>
             ))}
           </div>

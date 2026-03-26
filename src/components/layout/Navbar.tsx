@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -20,21 +20,41 @@ const products = [
 ]
 
 const navLinks = [
-  { name: '¿Por qué nosotros?', href: '/#nosotros' },
+  { name: '¿Por qué elegirnos?', href: '/#nosotros' },
   { name: 'Sectores',           href: '/#sectores' },
   { name: 'Galería',            href: '/#galeria'  },
   { name: 'FAQ',                href: '/#faq'      },
   { name: 'Blog',               href: '/blog'      },
-  { name: 'Contacto',           href: '/contacto'  },
+  { name: 'Contacto',           href: '/#cta'      },
 ]
+
+const productPages = ['/ventanas', '/puertas', '/cerramientos', '/pergolas', '/persianas']
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [topBarVisible, setTopBarVisible] = useState(true)
   const pathname = usePathname()
+  const prevPathnameRef = useRef(pathname)
+  const isProductPage = productPages.includes(pathname)
 
-  // Reset on route change
+  // Reset scroll on route change, but restore saved position when returning to homepage
   useEffect(() => {
+    const prev = prevPathnameRef.current
+    prevPathnameRef.current = pathname
+
+    if (pathname === '/' && prev !== '/') {
+      const savedY = parseInt(sessionStorage.getItem('home_scroll_y') ?? '0', 10)
+      if (savedY > 0) {
+        sessionStorage.removeItem('home_scroll_y')
+        requestAnimationFrame(() => {
+          window.scrollTo({ top: savedY, behavior: 'instant' as ScrollBehavior })
+        })
+        setScrolled(savedY > 10)
+        setTopBarVisible(savedY < 40)
+        return
+      }
+    }
+
     window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior })
     setScrolled(false)
     setTopBarVisible(true)
@@ -44,6 +64,7 @@ export function Navbar() {
     const onScroll = () => {
       setScrolled(window.scrollY > 10)
       setTopBarVisible(window.scrollY < 40)
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true }))
     }
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
@@ -63,13 +84,13 @@ export function Navbar() {
             href="https://www.google.com/maps/search/?api=1&query=Avenida+Lehendakari+Aguirre+161+48015+Bilbao"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-white/65 text-[11px] hover:text-white transition-colors"
+            className="flex items-center gap-1.5 text-white/65 text-xs hover:text-white transition-colors"
           >
             <MapPin size={11} /> Bilbao, Vizcaya · Lun-Vie 9:30–13:30 / 16:00–20:00
           </a>
           <a
             href="tel:+34944100462"
-            className="flex items-center gap-1.5 font-montserrat text-[11px] font-semibold text-arena hover:text-white transition-colors"
+            className="flex items-center gap-1.5 font-montserrat text-xs font-semibold text-arena hover:text-white transition-colors"
           >
             <Phone size={11} /> +34 944 100 462
           </a>
@@ -83,7 +104,14 @@ export function Navbar() {
         className="border-b border-gris-claro"
       >
         <div className="max-w-[1280px] mx-auto pl-0 pr-3 h-16 grid grid-cols-[1fr_auto_1fr] items-center">
-          <Link href="/" className="flex-shrink-0 flex items-center justify-self-start">
+          <Link
+            href="/"
+            onClick={() => {
+              sessionStorage.removeItem('home_scroll_y')
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }}
+            className="flex-shrink-0 flex items-center justify-self-start"
+          >
             <Image
               src="/logo.png"
               alt="Comercial MAR'O"
@@ -99,7 +127,7 @@ export function Navbar() {
           <NavigationMenu className="flex">
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="font-montserrat text-[13px] font-semibold text-gris-medio hover:text-rojo bg-transparent hover:bg-transparent focus:bg-transparent data-popup-open:bg-transparent data-open:bg-transparent">
+                <NavigationMenuTrigger className="font-montserrat text-sm font-semibold text-gris-medio hover:text-rojo bg-transparent hover:bg-transparent focus:bg-transparent data-popup-open:bg-transparent data-open:bg-transparent">
                   Productos
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="bg-white shadow-lg border border-gris-claro">
@@ -107,7 +135,7 @@ export function Navbar() {
                     <li>
                       <NavigationMenuLink
                         render={<Link href="/#productos" />}
-                        className="block px-3 py-2 text-[13px] font-montserrat font-bold text-rojo hover:bg-crema rounded-md transition-colors"
+                        className="block px-3 py-2 text-sm font-montserrat font-bold text-rojo hover:bg-crema rounded-md transition-colors"
                       >
                         Ver todos los productos →
                       </NavigationMenuLink>
@@ -117,7 +145,7 @@ export function Navbar() {
                       <li key={p.href}>
                         <NavigationMenuLink
                           render={<Link href={p.href} />}
-                          className="block px-3 py-2 text-[13px] font-montserrat font-semibold text-gris-medio hover:text-rojo hover:bg-crema rounded-md transition-colors"
+                          className="block px-3 py-2 text-sm font-montserrat font-semibold text-gris-medio hover:text-rojo hover:bg-crema rounded-md transition-colors"
                         >
                           {p.name}
                         </NavigationMenuLink>
@@ -128,7 +156,7 @@ export function Navbar() {
               </NavigationMenuItem>
               {navLinks.map(link => (
                 <NavigationMenuItem key={link.href}>
-                  <Link href={link.href} className="px-2 py-2 font-montserrat text-[13px] font-semibold text-gris-medio hover:text-rojo transition-colors whitespace-nowrap">
+                  <Link href={link.href} className="px-2 py-2 font-montserrat text-sm font-semibold text-gris-medio hover:text-rojo transition-colors whitespace-nowrap">
                     {link.name}
                   </Link>
                 </NavigationMenuItem>
@@ -138,12 +166,14 @@ export function Navbar() {
           </div>
 
           <div className="flex items-center gap-3 justify-self-end">
-          <Link
-            href="/contacto"
-            className="hidden lg:inline-flex items-center font-montserrat text-[13px] font-semibold bg-rojo text-white px-4 py-2 rounded-md hover:bg-rojo-oscuro transition-colors min-h-[36px] flex-shrink-0 whitespace-nowrap"
-          >
-            Solicitar presupuesto
-          </Link>
+          {!isProductPage && (
+            <Link
+              href="/contacto"
+              className="hidden lg:inline-flex items-center font-montserrat text-sm font-semibold bg-rojo text-white px-4 py-2 rounded-md hover:bg-rojo-oscuro transition-colors min-h-[36px] flex-shrink-0 whitespace-nowrap"
+            >
+              Háblanos de tu proyecto
+            </Link>
+          )}
 
           <Sheet>
             <SheetTrigger className="lg:hidden p-2" aria-label="Abrir menú">
@@ -165,7 +195,7 @@ export function Navbar() {
                 ))}
                 <div className="mt-4">
                   <Link href="/contacto" className="flex items-center justify-center font-montserrat text-sm font-semibold bg-rojo text-white px-4 py-3 rounded-md hover:bg-rojo-oscuro transition-colors min-h-[48px]">
-                    Solicitar presupuesto
+                    Háblanos de tu proyecto
                   </Link>
                 </div>
               </nav>

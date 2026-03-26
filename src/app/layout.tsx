@@ -4,6 +4,7 @@ import { Montserrat, Inter } from 'next/font/google'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { CookieBanner } from '@/components/shared/CookieBanner'
+import { ChatWidget } from '@/components/shared/ChatWidget'
 import './globals.css'
 
 const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat', display: 'swap' })
@@ -68,6 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <Footer />
         <CookieBanner />
+        <ChatWidget />
       </body>
     </html>
   )
