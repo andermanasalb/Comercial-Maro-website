@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 import { buildMetadata } from '@/lib/metadata'
 
 export const metadata: Metadata = buildMetadata({
@@ -29,6 +30,13 @@ export default function SobreNosotrosPage() {
       <div className="bg-carbon py-16 px-6 text-center">
         <span className="font-montserrat text-[10px] font-bold tracking-[3px] uppercase text-arena block mb-3">Quiénes somos</span>
         <h1 className="font-montserrat text-3xl font-extrabold text-white">25 años transformando espacios en Bilbao</h1>
+      </div>
+      <div className="bg-white border-b border-gris-claro px-6 py-3">
+        <nav className="max-w-[1280px] mx-auto font-montserrat text-[12px] text-gris-medio flex items-center gap-1.5">
+          <Link href="/" className="hover:text-rojo transition-colors">Inicio</Link>
+          <span className="text-gris-medio/40">/</span>
+          <span className="text-carbon font-semibold">Sobre nosotros</span>
+        </nav>
       </div>
 
       <div className="max-w-[1280px] mx-auto px-6 py-14">

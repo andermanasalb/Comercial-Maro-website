@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
-import { Menu, Phone, MapPin, ChevronLeft } from 'lucide-react'
+import { Menu, Phone, MapPin } from 'lucide-react'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import {
   NavigationMenu, NavigationMenuContent, NavigationMenuItem,
@@ -84,31 +84,21 @@ export function Navbar() {
         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
         className="border-b border-gris-claro"
       >
-        <div className="max-w-[1280px] mx-auto px-3 h-16 flex items-center justify-between gap-3">
-          <Link href="/" className="flex-shrink-0 flex items-center h-full py-1">
+        <div className="max-w-[1280px] mx-auto pl-0 pr-3 h-16 grid grid-cols-[1fr_auto_1fr] items-center">
+          <Link href="/" className="flex-shrink-0 flex items-center justify-self-start">
             <Image
               src="/logo.png"
               alt="Comercial MAR'O"
-              width={160}
-              height={56}
+              width={130}
+              height={44}
               unoptimized
-              className="h-full w-auto object-contain"
+              className="h-12 w-auto object-contain"
             />
           </Link>
 
-          {/* Back to home — shown on inner pages */}
-          {pathname !== '/' && (
-            <Link
-              href="/"
-              className="hidden lg:flex items-center gap-1 font-montserrat text-[12px] font-semibold text-gris-medio hover:text-rojo transition-colors flex-shrink-0"
-            >
-              <ChevronLeft size={15} />
-              Inicio
-            </Link>
-          )}
-
-          {/* Desktop Nav */}
-          <NavigationMenu className="hidden lg:flex">
+          {/* Desktop Nav — columna central, centrado absoluto respecto al ancho total */}
+          <div className="hidden lg:flex justify-center">
+          <NavigationMenu className="flex">
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="font-montserrat text-[13px] font-semibold text-gris-medio hover:text-rojo bg-transparent hover:bg-transparent focus:bg-transparent data-popup-open:bg-transparent data-open:bg-transparent">
@@ -147,7 +137,9 @@ export function Navbar() {
               ))}
             </NavigationMenuList>
           </NavigationMenu>
+          </div>
 
+          <div className="flex items-center gap-3 justify-self-end">
           <Link
             href="/contacto"
             className="hidden lg:inline-flex items-center font-montserrat text-[13px] font-semibold bg-rojo text-white px-4 py-2 rounded-md hover:bg-rojo-oscuro transition-colors min-h-[36px] flex-shrink-0 whitespace-nowrap"
@@ -181,6 +173,7 @@ export function Navbar() {
               </nav>
             </SheetContent>
           </Sheet>
+          </div>
         </div>
       </motion.div>
     </header>

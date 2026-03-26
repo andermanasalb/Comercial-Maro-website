@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { SectionHeader } from '@/components/shared/SectionHeader'
 
 const projects = [
@@ -27,6 +28,13 @@ export default function ProyectosPage() {
         <span className="font-montserrat text-[10px] font-bold tracking-[3px] uppercase text-arena block mb-3">Portfolio</span>
         <h1 className="font-montserrat text-3xl font-extrabold text-white">Proyectos realizados</h1>
         <p className="text-white/60 mt-2 text-[14px]">Obras en Bilbao, Vizcaya y el norte de España</p>
+      </div>
+      <div className="bg-white border-b border-gris-claro px-6 py-3">
+        <nav className="max-w-[1280px] mx-auto font-montserrat text-[12px] text-gris-medio flex items-center gap-1.5">
+          <Link href="/" className="hover:text-rojo transition-colors">Inicio</Link>
+          <span className="text-gris-medio/40">/</span>
+          <span className="text-carbon font-semibold">Proyectos</span>
+        </nav>
       </div>
 
       <div className="max-w-[1280px] mx-auto px-6 py-10">

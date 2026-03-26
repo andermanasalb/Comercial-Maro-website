@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
+import Link from 'next/link'
 import { Loader2, MapPin, Phone, Mail, Clock } from 'lucide-react'
 
 const schema = z.object({
@@ -38,6 +39,13 @@ export default function ContactoPage() {
       <div className="bg-carbon py-16 px-6 text-center">
         <span className="font-montserrat text-[10px] font-bold tracking-[3px] uppercase text-arena block mb-3">Contacto</span>
         <h1 className="font-montserrat text-3xl font-extrabold text-white">Solicita tu presupuesto gratuito</h1>
+      </div>
+      <div className="bg-white border-b border-gris-claro px-6 py-3">
+        <nav className="max-w-[1280px] mx-auto font-montserrat text-[12px] text-gris-medio flex items-center gap-1.5">
+          <Link href="/" className="hover:text-rojo transition-colors">Inicio</Link>
+          <span className="text-gris-medio/40">/</span>
+          <span className="text-carbon font-semibold">Contacto</span>
+        </nav>
       </div>
 
       <div className="max-w-[1280px] mx-auto px-6 py-14 grid lg:grid-cols-[1.4fr_1fr] gap-12">
