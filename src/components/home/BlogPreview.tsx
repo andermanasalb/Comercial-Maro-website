@@ -6,7 +6,7 @@ import { SectionHeader } from '@/components/shared/SectionHeader'
 export function BlogPreview() {
   const [featured, ...rest] = blogPosts
   return (
-    <section id="blog" className="h-[calc(100dvh-6rem)] snap-start snap-always overflow-hidden bg-white flex flex-col justify-center px-6">
+    <section id="blog" className="h-[calc(100dvh-4rem)] snap-start snap-always overflow-hidden bg-white flex flex-col justify-center px-6">
       <div className="max-w-[1280px] mx-auto w-full">
         <SectionHeader tag="Blog & Consejos" title="Todo sobre carpintería metálica" subtitle="Guías, consejos y novedades para mejorar tu hogar o negocio en el País Vasco" />
         <div className="grid lg:grid-cols-[1.6fr_1fr] gap-6 mb-8">

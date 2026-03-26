@@ -20,19 +20,21 @@ html {
   scroll-behavior: smooth;
   /* Offset anchor links below the sticky navbar (h-16 = 64px) for non-snap pages */
   scroll-padding-top: 4rem;
+  /* Prevent browser from adjusting scrollY when topbar height animates (avoids bounce loop) */
+  overflow-anchor: none;
 }
 
 /* ─── Homepage full-page scroll snap ─────────────────────────────────────
    Activated by EnablePageSnap component on the homepage only.
-   IMPORTANT: The top-bar (h-8 = 32px) must remain in layout at all times
-   (opacity-fade only, never h-0) so that the total navbar stays 96px.
+   The top-bar (h-8 = 32px) animates height 32→0 on scroll, so the
+   visible navbar collapses to h-16 (64px = 4rem).
    IMPORTANT: <main> must have zero margin and padding so sections snap correctly.
    IMPORTANT: Do NOT remove the scroll-padding-top: 4rem rule above — this
    html.snap-page rule overrides it via higher specificity (0-1-1 > 0-0-1).
 ──────────────────────────────────────────────────────────────────────── */
 html.snap-page {
   scroll-snap-type: y mandatory;
-  scroll-padding-top: 6rem; /* 96px = h-8 (32px) + h-16 (64px) navbar */
+  scroll-padding-top: var(--snap-padding, 6rem); /* 6rem when topbar visible, 4rem when collapsed */
 }
 
 /* Footer is embedded inside CTAFinal on homepage — hide the layout.tsx one */

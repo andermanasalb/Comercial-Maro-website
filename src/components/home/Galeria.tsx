@@ -13,7 +13,7 @@ const projects = [
 
 export function Galeria() {
   return (
-    <section id="galeria" className="h-[calc(100dvh-6rem)] snap-start snap-always overflow-hidden bg-crema flex flex-col justify-center px-6">
+    <section id="galeria" className="h-[calc(100dvh-4rem)] snap-start snap-always overflow-hidden bg-crema flex flex-col justify-center px-6">
       <div className="max-w-[1280px] mx-auto w-full">
         <SectionHeader tag="Galería" title="Proyectos realizados" subtitle="Obras en Bilbao, Vizcaya y el norte de España" />
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">

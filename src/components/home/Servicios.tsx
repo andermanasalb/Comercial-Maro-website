@@ -23,7 +23,7 @@ const card = {
 
 export function Servicios() {
   return (
-    <section id="productos" className="h-[calc(100dvh-6rem)] snap-start snap-always overflow-hidden bg-crema flex flex-col justify-center px-6">
+    <section id="productos" className="h-[calc(100dvh-4rem)] snap-start snap-always overflow-hidden bg-crema flex flex-col justify-center px-6">
       <div className="max-w-[1280px] mx-auto w-full">
         <SectionHeader tag="Nuestros productos" title="Todo lo que necesita tu espacio" subtitle="Fabricamos e instalamos carpintería metálica a medida en Bilbao y todo el norte de España" />
         <motion.div

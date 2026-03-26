@@ -12,7 +12,7 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section id="faq" className="h-[calc(100dvh-6rem)] snap-start snap-always overflow-hidden bg-carbon flex flex-col justify-center px-6">
+    <section id="faq" className="h-[calc(100dvh-4rem)] snap-start snap-always overflow-hidden bg-carbon flex flex-col justify-center px-6">
       <div className="max-w-[1280px] mx-auto w-full">
         <SectionHeader tag="FAQ" title="Preguntas frecuentes" dark />
         <div className="max-w-2xl mx-auto">

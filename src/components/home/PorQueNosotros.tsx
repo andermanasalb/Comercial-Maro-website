@@ -14,7 +14,7 @@ const items = [
 
 export function PorQueNosotros() {
   return (
-    <section id="nosotros" className="h-[calc(100dvh-6rem)] snap-start snap-always overflow-hidden">
+    <section id="nosotros" className="h-[calc(100dvh-4rem)] snap-start snap-always overflow-hidden">
       <div className="max-w-[1280px] mx-auto grid lg:grid-cols-2 h-full">
         <motion.div
           initial={{ opacity: 0, x: -32 }}

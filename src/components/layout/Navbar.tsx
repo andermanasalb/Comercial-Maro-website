@@ -32,7 +32,6 @@ const productPages = ['/ventanas', '/puertas', '/cerramientos', '/pergolas', '/p
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
-  const [topBarVisible, setTopBarVisible] = useState(true)
   const pathname = usePathname()
   const prevPathnameRef = useRef(pathname)
   const isProductPage = productPages.includes(pathname)
@@ -49,21 +48,29 @@ export function Navbar() {
         requestAnimationFrame(() => {
           window.scrollTo({ top: savedY, behavior: 'instant' as ScrollBehavior })
         })
-        setScrolled(savedY > 10)
-        setTopBarVisible(savedY < 40)
+        const s = savedY > 10
+        setScrolled(s)
+        document.documentElement.style.setProperty('--snap-padding', s ? '4rem' : '6rem')
         return
       }
     }
 
     window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior })
     setScrolled(false)
-    setTopBarVisible(true)
+    document.documentElement.style.setProperty('--snap-padding', '6rem')
   }, [pathname])
 
   useEffect(() => {
     const onScroll = () => {
-      setScrolled(window.scrollY > 10)
-      setTopBarVisible(window.scrollY < 40)
+      const y = window.scrollY
+      // Hysteresis: dead zone 5–10px prevents bouncing during inertia/snap animation
+      setScrolled(prev => {
+        if (y > 10) return true
+        if (y < 5)  return false
+        return prev
+      })
+      if (y > 10) document.documentElement.style.setProperty('--snap-padding', '4rem')
+      else if (y < 5) document.documentElement.style.setProperty('--snap-padding', '6rem')
       document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true }))
     }
     window.addEventListener('scroll', onScroll, { passive: true })
@@ -72,14 +79,18 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm">
-      {/* Top bar — opacity-only so layout never shifts and anchor offsets stay stable */}
+      {/* Top bar — height 32→0 so nav slides up, layout shrinks correctly */}
       <motion.div
-        animate={{ opacity: topBarVisible ? 1 : 0 }}
-        transition={{ duration: 0.25 }}
-        className="bg-carbon h-8 pointer-events-none"
-        style={{ pointerEvents: topBarVisible ? 'auto' : 'none' }}
+        animate={{ height: scrolled ? 0 : 32 }}
+        transition={{ duration: 0.2, ease: 'easeIn' }}
+        className="bg-carbon overflow-hidden"
+        style={{ pointerEvents: scrolled ? 'none' : 'auto' }}
       >
-        <div className="max-w-[1280px] mx-auto pl-0 pr-3 h-8 flex items-center justify-between">
+        <motion.div
+          animate={{ y: scrolled ? -32 : 0 }}
+          transition={{ duration: 0.2, ease: 'easeIn' }}
+          className="max-w-[1280px] mx-auto pl-0 pr-3 h-8 flex items-center justify-between"
+        >
           <a
             href="https://www.google.com/maps/search/?api=1&query=Avenida+Lehendakari+Aguirre+161+48015+Bilbao"
             target="_blank"
@@ -94,7 +105,7 @@ export function Navbar() {
           >
             <Phone size={11} /> +34 944 100 462
           </a>
-        </div>
+        </motion.div>
       </motion.div>
 
       {/* Main bar */}
@@ -122,7 +133,7 @@ export function Navbar() {
             />
           </Link>
 
-          {/* Desktop Nav — columna central, centrado absoluto respecto al ancho total */}
+          {/* Desktop Nav */}
           <div className="hidden lg:flex justify-center">
           <NavigationMenu className="flex">
             <NavigationMenuList>

@@ -34,7 +34,7 @@ export function CTAFinal() {
   return (
     <section
       id="cta"
-      className="h-[calc(100dvh-6rem)] snap-start snap-always overflow-hidden flex flex-col"
+      className="h-[calc(100dvh-4rem)] snap-start snap-always overflow-hidden flex flex-col"
     >
       {/* ── Top half: CTA ───────────────────────────────────────────── */}
       <div
