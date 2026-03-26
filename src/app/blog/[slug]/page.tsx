@@ -30,7 +30,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   return (
     <div className="min-h-screen">
       <div className="relative h-72">
-        <Image src={post.image} alt={post.title} fill className="object-cover" />
+        <Image src={post.image} alt={post.title} fill sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-carbon/70" />
         <div className="relative z-10 h-full flex flex-col justify-end px-6 pb-8 max-w-3xl mx-auto w-full">
           <nav className="text-white/60 text-[12px] font-montserrat mb-2">

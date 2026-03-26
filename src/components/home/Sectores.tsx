@@ -32,7 +32,7 @@ export function Sectores() {
         >
           {sectors.map(s => (
             <motion.div key={s.title} variants={card} className="group relative h-52 rounded-xl overflow-hidden cursor-pointer">
-              <Image src={s.image} alt={s.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+              <Image src={s.image} alt={s.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-300" />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-carbon/85 group-hover:to-rojo/70 transition-colors duration-300" />
               <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
                 <h3 className="font-montserrat text-[14px] font-extrabold mb-1">{s.icon} {s.title}</h3>

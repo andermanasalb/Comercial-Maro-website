@@ -27,7 +27,7 @@ export default function CerramientosPage() {
   return (
     <div className="min-h-screen">
       <div className="relative h-64 flex items-end">
-        <Image src="https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=1200" alt="Cerramientos de terraza Bilbao" fill className="object-cover" />
+        <Image src="https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=1200" alt="Cerramientos de terraza Bilbao" fill sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-carbon/70" />
         <div className="relative z-10 px-6 pb-8 max-w-[1280px] mx-auto w-full">
           <nav className="text-white/60 text-[12px] font-montserrat mb-2">
@@ -60,7 +60,7 @@ export default function CerramientosPage() {
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-10">
             {[1,2,3,4,5,6].map(i => (
               <div key={i} className="relative h-36 rounded-lg overflow-hidden">
-                <Image src={`https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=400&h=300&sig=${i}`} alt={`Cerramiento terraza ${i}`} fill className="object-cover hover:scale-105 transition-transform" />
+                <Image src={`https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=400&h=300&sig=${i}`} alt={`Cerramiento terraza ${i}`} fill sizes="(max-width: 640px) 50vw, 33vw" className="object-cover hover:scale-105 transition-transform" />
               </div>
             ))}
           </div>

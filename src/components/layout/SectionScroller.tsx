@@ -51,7 +51,8 @@ export function SectionScroller() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       // Guard: don't intercept events from form controls or buttons (e.g. FAQ accordion)
-      const target = e.target as HTMLElement
+      const target = e.target
+      if (!(target instanceof Element)) return
       if (['INPUT', 'TEXTAREA', 'SELECT', 'BUTTON', 'A'].includes(target.tagName)) return
       if (target.closest('[role="button"]')) return
 

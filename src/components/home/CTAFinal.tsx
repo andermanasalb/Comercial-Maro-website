@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { Phone, Mail, MapPin, Camera, Globe, Rss, Clock } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock } from 'lucide-react'
+import { FooterLegalLinks } from '@/components/shared/FooterLegalLinks'
 
 const footerProducts = [
   { name: 'Ventanas de Aluminio', href: '/ventanas' },
@@ -13,14 +14,19 @@ const footerLinks = [
   { name: 'Quiénes somos',   href: '/sobre-nosotros' },
   { name: 'Proyectos',       href: '/proyectos'       },
   { name: 'Blog',            href: '/blog'            },
-  { name: 'Contacto',        href: '/contacto'        },
+]
+
+const helpLinks = [
+  { name: 'Preguntas frecuentes', href: '/#faq'      },
+  { name: 'Chat en vivo',         href: '#'           },
+  { name: 'Contacto',             href: '/contacto'  },
 ]
 
 const contactInfo = [
-  { Icon: MapPin, text: '[Dirección], Bilbao, Bizkaia' },
-  { Icon: Phone,  text: '+34 [TELÉFONO]'               },
-  { Icon: Mail,   text: '[email]@comercialmaro.es'     },
-  { Icon: Clock,  text: 'Lun-Vie 8:30–18:00'          },
+  { Icon: MapPin, text: 'Av. Lehendakari Aguirre, 161 · 48015 Bilbao' },
+  { Icon: Phone,  text: '+34 944 100 462'                             },
+  { Icon: Mail,   text: 'bilbao@comercialmaro.biz'                    },
+  { Icon: Clock,  text: 'Lun-Vie 9:30–13:30 / 16:00–20:00'          },
 ]
 
 export function CTAFinal() {
@@ -56,7 +62,7 @@ export function CTAFinal() {
       {/* ── Bottom half: Footer ─────────────────────────────────────── */}
       <div className="flex-1 bg-[#111113] text-white flex items-center px-6">
         <div className="max-w-[1280px] mx-auto w-full">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-4">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-5 mb-4">
             {/* Brand */}
             <div>
               <p className="font-montserrat font-black text-base mb-2">
@@ -66,18 +72,6 @@ export function CTAFinal() {
                 Carpintería metálica en Bilbao. Más de 25 años fabricando e instalando ventanas,
                 puertas y cerramientos en Vizcaya.
               </p>
-              <div className="flex gap-2">
-                {[Camera, Globe, Rss].map((Icon, i) => (
-                  <a
-                    key={i}
-                    href="#"
-                    aria-label="Red social"
-                    className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center hover:bg-rojo transition-colors"
-                  >
-                    <Icon size={12} />
-                  </a>
-                ))}
-              </div>
             </div>
 
             {/* Products */}
@@ -112,6 +106,22 @@ export function CTAFinal() {
               </ul>
             </div>
 
+            {/* Help */}
+            <div>
+              <h4 className="font-montserrat text-[10px] font-bold tracking-[2px] uppercase text-arena mb-3">
+                Ayuda
+              </h4>
+              <ul className="space-y-1.5">
+                {helpLinks.map(l => (
+                  <li key={l.href + l.name}>
+                    <Link href={l.href} className="text-[11px] text-white/55 hover:text-white transition-colors">
+                      {l.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             {/* Contact */}
             <div>
               <h4 className="font-montserrat text-[10px] font-bold tracking-[2px] uppercase text-arena mb-3">
@@ -132,14 +142,7 @@ export function CTAFinal() {
             <p className="text-[10px] text-white/30">
               © 2026 Comercial MAR&apos;O · Todos los derechos reservados
             </p>
-            <div className="flex gap-4">
-              <Link href="#" className="text-[10px] text-white/30 hover:text-white/60 transition-colors">
-                Política de privacidad
-              </Link>
-              <Link href="#" className="text-[10px] text-white/30 hover:text-white/60 transition-colors">
-                Aviso legal
-              </Link>
-            </div>
+            <FooterLegalLinks className="flex gap-4" />
           </div>
         </div>
       </div>

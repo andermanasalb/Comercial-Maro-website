@@ -29,7 +29,7 @@ export default function BlogPage() {
         {blogPosts.map(post => (
           <Link key={post.slug} href={`/blog/${post.slug}`} className="group bg-white rounded-xl overflow-hidden border border-gris-claro hover:shadow-lg hover:-translate-y-1 transition-all duration-200 block">
             <div className="relative h-48">
-              <Image src={post.image} alt={post.title} fill className="object-cover" />
+              <Image src={post.image} alt={post.title} fill sizes="(max-width: 640px) 100vw, 50vw" className="object-cover" />
               <span className="absolute top-3 left-3 bg-rojo text-white font-montserrat text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-wide">{post.category}</span>
             </div>
             <div className="p-5">

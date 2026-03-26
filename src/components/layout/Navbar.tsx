@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -31,7 +31,6 @@ const navLinks = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [topBarVisible, setTopBarVisible] = useState(true)
-  const closingRef = useRef(false)
   const pathname = usePathname()
 
   // Reset on route change
@@ -45,12 +44,6 @@ export function Navbar() {
     const onScroll = () => {
       setScrolled(window.scrollY > 10)
       setTopBarVisible(window.scrollY < 40)
-      // Close open dropdowns on scroll to prevent positioning drift
-      if (!closingRef.current) {
-        closingRef.current = true
-        document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }))
-        setTimeout(() => { closingRef.current = false }, 400)
-      }
     }
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
@@ -65,15 +58,20 @@ export function Navbar() {
         className="bg-carbon h-8 pointer-events-none"
         style={{ pointerEvents: topBarVisible ? 'auto' : 'none' }}
       >
-        <div className="max-w-[1280px] mx-auto px-6 h-8 flex items-center justify-between">
-          <span className="flex items-center gap-1.5 text-white/65 text-[11px]">
-            <MapPin size={11} /> Bilbao, Vizcaya · Lun-Vie 8:30–18:00
-          </span>
+        <div className="max-w-[1280px] mx-auto pl-0 pr-3 h-8 flex items-center justify-between">
           <a
-            href="tel:+34000000000"
+            href="https://www.google.com/maps/search/?api=1&query=Avenida+Lehendakari+Aguirre+161+48015+Bilbao"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-white/65 text-[11px] hover:text-white transition-colors"
+          >
+            <MapPin size={11} /> Bilbao, Vizcaya · Lun-Vie 9:30–13:30 / 16:00–20:00
+          </a>
+          <a
+            href="tel:+34944100462"
             className="flex items-center gap-1.5 font-montserrat text-[11px] font-semibold text-arena hover:text-white transition-colors"
           >
-            <Phone size={11} /> +34 [TELÉFONO]
+            <Phone size={11} /> +34 944 100 462
           </a>
         </div>
       </motion.div>

@@ -12,7 +12,7 @@ export function BlogPreview() {
         <div className="grid lg:grid-cols-[1.6fr_1fr] gap-6 mb-8">
           <Link href={`/blog/${featured.slug}`} className="group block rounded-xl overflow-hidden border border-gris-claro hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
             <div className="relative h-40">
-              <Image src={featured.image} alt={featured.title} fill className="object-cover" />
+              <Image src={featured.image} alt={featured.title} fill sizes="(max-width: 1024px) 100vw, 60vw" className="object-cover" />
               <span className="absolute top-3 left-3 bg-rojo text-white font-montserrat text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-wide">{featured.category}</span>
             </div>
             <div className="p-5">
@@ -26,7 +26,7 @@ export function BlogPreview() {
             {rest.map(post => (
               <Link key={post.slug} href={`/blog/${post.slug}`} className="group grid grid-cols-[90px_1fr] rounded-lg overflow-hidden border border-gris-claro hover:border-arena hover:shadow-md transition-all duration-200">
                 <div className="relative min-h-[80px]">
-                  <Image src={post.image} alt={post.title} fill className="object-cover" />
+                  <Image src={post.image} alt={post.title} fill sizes="90px" className="object-cover" />
                 </div>
                 <div className="p-3">
                   <p className="text-[10px] text-[#aaa] font-montserrat mb-1">{post.date} · {post.readingTime}</p>

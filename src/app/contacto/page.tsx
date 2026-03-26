@@ -100,10 +100,10 @@ export default function ContactoPage() {
           <div className="bg-white rounded-xl p-6 shadow-sm">
             <h3 className="font-montserrat text-[15px] font-bold text-carbon mb-4">Datos de contacto</h3>
             {[
-              { Icon: MapPin, text: '[Dirección], Bilbao, Bizkaia' },
-              { Icon: Phone, text: '+34 [TELÉFONO]' },
-              { Icon: Mail, text: '[email]@comercialmaro.es' },
-              { Icon: Clock, text: 'Lun–Vie 8:30–18:00' },
+              { Icon: MapPin, text: 'Av. Lehendakari Aguirre, 161 · 48015 Bilbao' },
+              { Icon: Phone, text: '+34 944 100 462' },
+              { Icon: Mail, text: 'bilbao@comercialmaro.biz' },
+              { Icon: Clock, text: 'Lun-Vie 9:30–13:30 / 16:00–20:00' },
             ].map(({ Icon, text }, i) => (
               <div key={i} className="flex items-start gap-3 mb-3 text-[13px] text-gris-medio">
                 <Icon size={16} className="text-rojo mt-0.5 flex-shrink-0" />
@@ -111,9 +111,28 @@ export default function ContactoPage() {
               </div>
             ))}
           </div>
-          <div className="bg-gris-claro rounded-xl h-56 flex items-center justify-center text-gris-medio font-montserrat text-sm">
-            📍 Mapa — [Dirección], Bilbao
-          </div>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Avenida+Lehendakari+Aguirre+161+48015+Bilbao"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block rounded-xl overflow-hidden h-56 relative group"
+            aria-label="Ver en Google Maps"
+          >
+            <iframe
+              src="https://maps.google.com/maps?q=Avenida+Lehendakari+Aguirre+161+48015+Bilbao&hl=es&z=15&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Localización Comercial MAR'O"
+            />
+            <div className="absolute inset-0 bg-carbon/0 group-hover:bg-carbon/10 transition-colors flex items-end justify-end p-3 pointer-events-none">
+              <span className="bg-white text-carbon font-montserrat text-[11px] font-semibold px-2.5 py-1 rounded-md shadow opacity-0 group-hover:opacity-100 transition-opacity">
+                Abrir en Google Maps →
+              </span>
+            </div>
+          </a>
         </div>
       </div>
     </div>

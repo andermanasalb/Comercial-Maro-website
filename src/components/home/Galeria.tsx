@@ -23,6 +23,7 @@ export function Galeria() {
                 src={p.image}
                 alt={p.title}
                 fill
+                sizes="(max-width: 640px) 50vw, 33vw"
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-carbon/75 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-center p-3">

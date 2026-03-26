@@ -64,7 +64,7 @@ export default function SobreNosotrosPage() {
           {team.map(m => (
             <div key={m.name} className="text-center">
               <div className="relative w-24 h-24 rounded-full overflow-hidden mx-auto mb-4">
-                <Image src={m.image} alt={m.name} fill className="object-cover" />
+                <Image src={m.image} alt={m.name} fill sizes="96px" className="object-cover" />
               </div>
               <h3 className="font-montserrat text-[14px] font-bold text-carbon">{m.name}</h3>
               <p className="text-[12px] text-gris-medio">{m.role}</p>

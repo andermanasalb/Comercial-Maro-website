@@ -3,6 +3,7 @@ import Script from 'next/script'
 import { Montserrat, Inter } from 'next/font/google'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
+import { CookieBanner } from '@/components/shared/CookieBanner'
 import './globals.css'
 
 const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat', display: 'swap' })
@@ -24,23 +25,31 @@ const localBusinessSchema = JSON.stringify({
   name: "Comercial MAR'O",
   description: 'Fabricantes e instaladores de carpintería metálica en Bilbao y Vizcaya',
   url: 'https://comercialmaro.es',
-  telephone: '[TELÉFONO]',
-  email: '[EMAIL]',
+  telephone: '+34944100462',
+  email: 'bilbao@comercialmaro.biz',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '[DIRECCIÓN]',
+    streetAddress: 'Avenida Lehendakari Aguirre, 161',
     addressLocality: 'Bilbao',
     addressRegion: 'Vizcaya',
-    postalCode: '[CP]',
+    postalCode: '48015',
     addressCountry: 'ES',
   },
   geo: { '@type': 'GeoCoordinates', latitude: '43.2630', longitude: '-2.9350' },
-  openingHoursSpecification: {
-    '@type': 'OpeningHoursSpecification',
-    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-    opens: '08:30',
-    closes: '18:00',
-  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:30',
+      closes: '13:30',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '16:00',
+      closes: '20:00',
+    },
+  ],
   areaServed: ['Bilbao', 'Vizcaya', 'País Vasco', 'España'],
 })
 
@@ -58,6 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <CookieBanner />
       </body>
     </html>
   )

@@ -63,7 +63,7 @@ export default function ProyectosPage() {
         <div className="fixed inset-0 bg-carbon/80 z-50 flex items-center justify-center p-4" onClick={() => setSelected(null)}>
           <div className="bg-white rounded-xl max-w-lg w-full overflow-hidden" onClick={e => e.stopPropagation()}>
             <div className="relative h-56">
-              <Image src={selected.image} alt={selected.title} fill className="object-cover" />
+              <Image src={selected.image} alt={selected.title} fill sizes="(max-width: 1280px) 100vw, 1280px" className="object-cover" />
             </div>
             <div className="p-6">
               <h3 className="font-montserrat text-lg font-extrabold text-carbon mb-1">{selected.title}</h3>

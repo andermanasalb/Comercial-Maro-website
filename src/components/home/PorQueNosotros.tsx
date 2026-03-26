@@ -1,6 +1,8 @@
 'use client'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
 import { SectionHeader } from '@/components/shared/SectionHeader'
 
 const items = [
@@ -21,7 +23,7 @@ export function PorQueNosotros() {
           viewport={{ once: true, amount: 0.3 }}
           className="relative h-64 lg:h-full"
         >
-          <Image src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800" alt="Taller MAR'O Bilbao" fill className="object-cover" />
+          <Image src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800" alt="Taller MAR'O Bilbao" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(212,43,43,0.15), transparent)' }} />
         </motion.div>
         <motion.div
@@ -53,6 +55,14 @@ export function PorQueNosotros() {
               </motion.div>
             ))}
           </div>
+
+          <Link
+            href="/sobre-nosotros"
+            className="mt-7 self-start inline-flex items-center gap-2 font-montserrat text-[13px] font-semibold text-rojo hover:text-rojo-oscuro transition-colors group"
+          >
+            ¿Quieres saber más sobre nosotros?
+            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
         </motion.div>
       </div>
     </section>

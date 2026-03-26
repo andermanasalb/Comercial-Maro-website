@@ -19,7 +19,7 @@ export function ProductCard({ num, title, description, image, href }: ProductCar
         {num}
       </span>
       <div className="relative h-20 rounded-md overflow-hidden mb-3">
-        <Image src={image} alt={title} fill className="object-cover" />
+        <Image src={image} alt={title} fill sizes="(max-width: 640px) 100vw, 300px" className="object-cover" />
       </div>
       <h3 className="font-montserrat text-[13px] font-bold text-carbon mb-1">{title}</h3>
       <p className="text-[11px] text-gris-medio leading-relaxed mb-3">{description}</p>
