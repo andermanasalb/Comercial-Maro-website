@@ -9,8 +9,8 @@ const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY! })
 
 const OFF_TOPIC =
   'Para ese tipo de consultas, te recomendamos contactarnos directamente: ' +
-  'puedes usar nuestro [formulario de contacto](/contacto) o llamarnos al ' +
-  '**+34 944 100 462** — estaremos encantados de ayudarte.'
+  'puedes usar nuestro [formulario de contacto](/contacto) ' +
+  'o llamarnos al +34 944 100 462 — estaremos encantados de ayudarte.'
 
 export async function POST(req: NextRequest) {
   try {
@@ -36,7 +36,8 @@ export async function POST(req: NextRequest) {
     const systemInstruction =
       `Eres el asistente virtual de Comercial MAR'O, empresa especializada en ` +
       `carpintería metálica (ventanas, puertas, cerramientos, pérgolas y persianas) ` +
-      `con sede en Bilbao. Respondes en español, de forma amable y profesional.\n\n` +
+      `con sede en Bilbao. Respondes en español, de forma amable y profesional. ` +
+      `IMPORTANTE: No uses markdown, asteriscos, negritas ni listas con guiones. Escribe en texto plano con frases normales.\n\n` +
       `Responde ÚNICAMENTE en base al contenido de la web que se te proporciona a ` +
       `continuación. Si la pregunta no puede responderse con ese contenido, usa ` +
       `exactamente este mensaje:\n"${OFF_TOPIC}"\n\n` +
@@ -48,7 +49,7 @@ export async function POST(req: NextRequest) {
     }))
 
     const stream = await ai.models.generateContentStream({
-      model: 'gemini-2.0-flash',
+      model: 'gemini-2.5-flash-lite',
       config: { systemInstruction },
       contents,
     })
@@ -59,7 +60,7 @@ export async function POST(req: NextRequest) {
         try {
           for await (const chunk of stream) {
             const text = chunk.text
-            if (text) controller.enqueue(encoder.encode(text))
+            if (text) controller.enqueue(encoder.encode(text.replace(/\*/g, '')))
           }
         } finally {
           controller.close()

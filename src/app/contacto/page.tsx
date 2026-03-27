@@ -84,11 +84,11 @@ export default function ContactoPage() {
             </div>
             <div>
               <label htmlFor="mensaje" className={labelClass}>Mensaje *</label>
-              <textarea id="mensaje" {...register('mensaje')} rows={4} className={inputClass} placeholder="Describe tu proyecto..." />
+              <textarea id="mensaje" {...register('mensaje')} rows={5} className={`${inputClass} resize-none overflow-y-auto`} placeholder="Describe tu proyecto..." />
               {errors.mensaje && <p className="text-rojo text-[11px] mt-1">{errors.mensaje.message}</p>}
             </div>
 
-            {status === 'success' && <p className="text-green-600 font-montserrat text-[13px] font-semibold">¡Consulta recibida! Te respondemos en menos de 24h.</p>}
+            {status === 'success' && <p className="text-green-600 font-montserrat text-[13px] font-semibold">¡Consulta recibida! Te respondemos en menos de 24h/48h.</p>}
             {status === 'error' && <p className="text-rojo font-montserrat text-[13px] font-semibold">Error al enviar. Por favor, inténtalo de nuevo o llámanos.</p>}
 
             <button type="submit" disabled={status === 'loading'} className="inline-flex items-center justify-center gap-2 font-montserrat text-sm font-bold bg-rojo text-white px-6 py-3 rounded-md hover:bg-rojo-oscuro disabled:opacity-60 transition-colors min-h-[48px]">

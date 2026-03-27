@@ -1,6 +1,7 @@
 'use client'
+import React from 'react'
 import { useState, useEffect, useRef, useCallback } from 'react'
-import { X, MessageCircle, Send } from 'lucide-react'
+import { X, MessageCircle, Send, Trash2 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 interface Message {
@@ -14,6 +15,28 @@ const MAX_HISTORY = 50
 const WELCOME: Message = {
   from: 'bot',
   text: "¡Hola! Soy el asistente de Comercial MAR'O. ¿En qué puedo ayudarte hoy?",
+}
+
+function renderText(text: string): React.ReactNode[] {
+  const linkPattern = /\[([^\]]+)\]\(([^)]+)\)/g
+  const parts: React.ReactNode[] = []
+  let last = 0
+  let match: RegExpExecArray | null
+  while ((match = linkPattern.exec(text)) !== null) {
+    if (match.index > last) parts.push(text.slice(last, match.index))
+    const [, label, url] = match
+    parts.push(
+      <a key={match.index} href={url}
+        target={url.startsWith('http') ? '_blank' : '_self'}
+        rel="noopener noreferrer"
+        className="text-rojo underline font-medium">
+        {label}
+      </a>
+    )
+    last = match.index + match[0].length
+  }
+  if (last < text.length) parts.push(text.slice(last))
+  return parts
 }
 
 function loadHistory(): Message[] {
@@ -35,9 +58,34 @@ export function ChatWidget() {
   const [isStreaming, setIsStreaming] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
+  const savedScrollRef = useRef(0)
+  const isRestoringRef = useRef(false)
 
-  // Load history from localStorage on mount
+  const clearChat = useCallback(() => {
+    setMessages([WELCOME])
+    localStorage.removeItem(STORAGE_KEY)
+    sessionStorage.removeItem('maro-chat-scroll')
+    savedScrollRef.current = 0
+  }, [])
+
+  const handleClose = useCallback(() => {
+    if (scrollContainerRef.current) {
+      const pos = scrollContainerRef.current.scrollTop
+      savedScrollRef.current = pos
+      sessionStorage.setItem('maro-chat-scroll', String(pos))
+      isRestoringRef.current = true
+    }
+    setOpen(false)
+  }, [])
+
+  // Load history and saved scroll position on mount
   useEffect(() => {
+    const savedPos = sessionStorage.getItem('maro-chat-scroll')
+    if (savedPos !== null) {
+      savedScrollRef.current = parseInt(savedPos, 10)
+      isRestoringRef.current = true
+    }
     setMessages(loadHistory())
   }, [])
 
@@ -48,10 +96,19 @@ export function ChatWidget() {
     return () => window.removeEventListener('chat:open', handler)
   }, [])
 
-  // Scroll to latest message
+  // Scroll: restore position on reopen, go to bottom on new messages
   useEffect(() => {
+    if (!open) return
+    if (isRestoringRef.current) {
+      isRestoringRef.current = false
+      const pos = savedScrollRef.current
+      setTimeout(() => {
+        if (scrollContainerRef.current) scrollContainerRef.current.scrollTop = pos
+      }, 0)
+      return
+    }
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
-  }, [messages, isTyping])
+  }, [messages, isTyping, open])
 
   // Focus input when opened
   useEffect(() => {
@@ -173,7 +230,15 @@ export function ChatWidget() {
                 </p>
               </div>
               <button
-                onClick={() => setOpen(false)}
+                onClick={clearChat}
+                aria-label="Limpiar conversación"
+                title="Limpiar chat"
+                className="text-white/30 hover:text-white/70 transition-colors cursor-pointer p-1 rounded"
+              >
+                <Trash2 size={14} />
+              </button>
+              <button
+                onClick={handleClose}
                 aria-label="Cerrar chat"
                 className="text-white/50 hover:text-white transition-colors cursor-pointer p-1 rounded"
               >
@@ -182,7 +247,7 @@ export function ChatWidget() {
             </div>
 
             {/* Messages */}
-            <div className="flex-1 overflow-y-auto px-4 py-4 space-y-3 min-h-0">
+            <div ref={scrollContainerRef} className="flex-1 overflow-y-auto px-4 py-4 space-y-3 min-h-0">
               {messages.map((msg, i) => (
                 <div key={i} className={`flex ${msg.from === 'user' ? 'justify-end' : 'justify-start'}`}>
                   <div className={[
@@ -191,7 +256,7 @@ export function ChatWidget() {
                       ? 'bg-rojo text-white rounded-2xl rounded-tr-sm'
                       : 'bg-crema text-carbon rounded-2xl rounded-tl-sm',
                   ].join(' ')}>
-                    {msg.text}
+                    {renderText(msg.text)}
                   </div>
                 </div>
               ))}

@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   description: "Fabricantes e instaladores de ventanas, puertas y cerramientos de aluminio en Bilbao y Vizcaya. Más de 25 años. Presupuesto gratuito.",
   keywords: ['carpintería metálica Bilbao', 'ventanas aluminio Vizcaya', 'cerramientos Bilbao'],
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://comercialmaro.es'),
+  icons: { icon: '/logo.png', shortcut: '/logo.png' },
 }
 
 const localBusinessSchema = JSON.stringify({
