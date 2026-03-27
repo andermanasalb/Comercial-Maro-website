@@ -5,6 +5,7 @@ import { buildMetadata } from '@/lib/metadata'
 export const metadata: Metadata = buildMetadata({
   title: "Política de Privacidad | Comercial MAR'O",
   description: "Política de privacidad y protección de datos de Aluminio y PVC HEMAR, S.L. — Comercial MAR'O, carpintería metálica en Bilbao.",
+  keywords: ['privacidad', 'protección de datos', 'RGPD', 'política de privacidad', 'carpintería metálica'],
   path: '/privacidad',
 })
 

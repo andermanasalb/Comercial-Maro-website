@@ -5,6 +5,7 @@ import { buildMetadata } from '@/lib/metadata'
 export const metadata: Metadata = buildMetadata({
   title: "Aviso Legal | Comercial MAR'O",
   description: "Aviso legal e información corporativa de Aluminio y PVC HEMAR, S.L. — Comercial MAR'O, carpintería metálica en Bilbao.",
+  keywords: ['aviso legal', 'términos de uso', 'información corporativa', 'carpintería metálica', 'Bilbao'],
   path: '/aviso-legal',
 })
 
