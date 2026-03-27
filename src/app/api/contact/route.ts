@@ -21,8 +21,23 @@ const TIPO_LABELS: Record<string, string> = {
   'otro': 'Otro',
 }
 
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+}
+
 export async function POST(req: NextRequest) {
   try {
+    const TO_EMAIL = process.env.RESEND_TO_EMAIL
+    if (!TO_EMAIL) {
+      console.error('[Contacto] RESEND_TO_EMAIL is not set')
+      return NextResponse.json({ success: false }, { status: 500 })
+    }
+
     const body = await req.json()
     const data = contactSchema.parse(body)
 
@@ -30,19 +45,19 @@ export async function POST(req: NextRequest) {
       // Notification to the business
       resend.emails.send({
         from: "Comercial MAR'O Web <noreply@comercialmaro.biz>",
-        to: [process.env.RESEND_TO_EMAIL!],
+        to: [TO_EMAIL],
         subject: `Nueva consulta desde la web — ${data.nombre}`,
         html: `
           <div style="font-family:sans-serif;max-width:600px;margin:0 auto">
             <h2 style="color:#1a1a1a">Nueva consulta recibida</h2>
             <table style="border-collapse:collapse;width:100%">
-              <tr><td style="padding:6px 0;font-weight:bold;width:120px">Nombre:</td><td>${data.nombre}</td></tr>
-              <tr><td style="padding:6px 0;font-weight:bold">Email:</td><td><a href="mailto:${data.email}">${data.email}</a></td></tr>
-              <tr><td style="padding:6px 0;font-weight:bold">Teléfono:</td><td>${data.telefono}</td></tr>
-              <tr><td style="padding:6px 0;font-weight:bold">Tipo:</td><td>${TIPO_LABELS[data.tipo]}</td></tr>
+              <tr><td style="padding:6px 0;font-weight:bold;width:120px">Nombre:</td><td>${escapeHtml(data.nombre)}</td></tr>
+              <tr><td style="padding:6px 0;font-weight:bold">Email:</td><td><a href="mailto:${escapeHtml(data.email)}">${escapeHtml(data.email)}</a></td></tr>
+              <tr><td style="padding:6px 0;font-weight:bold">Teléfono:</td><td>${escapeHtml(data.telefono)}</td></tr>
+              <tr><td style="padding:6px 0;font-weight:bold">Tipo:</td><td>${escapeHtml(TIPO_LABELS[data.tipo])}</td></tr>
             </table>
             <h3 style="color:#1a1a1a;margin-top:20px">Mensaje:</h3>
-            <p style="background:#f5f5f5;padding:16px;border-radius:8px;white-space:pre-wrap">${data.mensaje}</p>
+            <p style="background:#f5f5f5;padding:16px;border-radius:8px;white-space:pre-wrap">${escapeHtml(data.mensaje)}</p>
             <hr style="margin-top:32px;border:none;border-top:1px solid #eee">
             <p style="color:#888;font-size:12px">Enviado desde el formulario de contacto de comercialmaro.biz</p>
           </div>
@@ -55,7 +70,7 @@ export async function POST(req: NextRequest) {
         subject: "Hemos recibido tu consulta — Comercial MAR'O",
         html: `
           <div style="font-family:sans-serif;max-width:600px;margin:0 auto">
-            <h2 style="color:#1a1a1a">¡Hola, ${data.nombre}!</h2>
+            <h2 style="color:#1a1a1a">¡Hola, ${escapeHtml(data.nombre)}!</h2>
             <p>Hemos recibido tu consulta correctamente y te responderemos a la mayor brevedad posible.</p>
             <p>Mientras tanto, si necesitas atención urgente:</p>
             <ul>
