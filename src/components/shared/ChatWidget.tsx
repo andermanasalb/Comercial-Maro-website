@@ -8,9 +8,23 @@ interface Message {
   text: string
 }
 
+const STORAGE_KEY = 'maro-chat-history'
+const MAX_HISTORY = 50
+
 const WELCOME: Message = {
   from: 'bot',
   text: "¡Hola! Soy el asistente de Comercial MAR'O. ¿En qué puedo ayudarte hoy?",
+}
+
+function loadHistory(): Message[] {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY)
+    if (!raw) return [WELCOME]
+    const parsed = JSON.parse(raw)
+    return Array.isArray(parsed) && parsed.length > 0 ? parsed : [WELCOME]
+  } catch {
+    return [WELCOME]
+  }
 }
 
 export function ChatWidget() {
@@ -18,8 +32,14 @@ export function ChatWidget() {
   const [messages, setMessages] = useState<Message[]>([WELCOME])
   const [input, setInput] = useState('')
   const [isTyping, setIsTyping] = useState(false)
+  const [isStreaming, setIsStreaming] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
+
+  // Load history from localStorage on mount
+  useEffect(() => {
+    setMessages(loadHistory())
+  }, [])
 
   // Listen for external open trigger (e.g. footer link)
   useEffect(() => {
@@ -38,21 +58,69 @@ export function ChatWidget() {
     if (open) setTimeout(() => inputRef.current?.focus(), 150)
   }, [open])
 
-  const send = useCallback(() => {
+  const send = useCallback(async () => {
     const text = input.trim()
-    if (!text) return
-    setMessages(m => [...m, { from: 'user', text }])
+    if (!text || isStreaming) return
+
+    const userMsg: Message = { from: 'user', text }
+    const updatedMessages = [...messages, userMsg]
+    setMessages(updatedMessages)
     setInput('')
     setIsTyping(true)
-    // Placeholder — LLM (Google AI Studio) will be wired here
-    setTimeout(() => {
+    setIsStreaming(true)
+
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          messages: updatedMessages.map(m => ({
+            role: m.from === 'user' ? 'user' : 'model',
+            content: m.text,
+          })),
+        }),
+      })
+
+      if (!res.ok || !res.body) throw new Error(`API error ${res.status}`)
+
+      setIsTyping(false)
+      setMessages(m => [...m, { from: 'bot', text: '' }])
+
+      const reader = res.body.getReader()
+      const decoder = new TextDecoder()
+      let accumulated = ''
+
+      while (true) {
+        const { done, value } = await reader.read()
+        if (done) break
+        accumulated += decoder.decode(value, { stream: true })
+        setMessages(m => {
+          const copy = [...m]
+          copy[copy.length - 1] = { from: 'bot', text: accumulated + '▌' }
+          return copy
+        })
+      }
+
+      // Remove cursor on completion
+      setMessages(m => {
+        const copy = [...m]
+        copy[copy.length - 1] = { from: 'bot', text: accumulated }
+        return copy
+      })
+
+      // Persist to localStorage (max 50 messages)
+      const finalHistory = [...updatedMessages, { from: 'bot' as const, text: accumulated }]
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(finalHistory.slice(-MAX_HISTORY)))
+    } catch {
       setIsTyping(false)
       setMessages(m => [...m, {
         from: 'bot',
-        text: 'Gracias por tu mensaje. Puedes llamarnos al +34 944 100 462 o escribirnos a bilbao@comercialmaro.biz y te atendemos enseguida.',
+        text: 'Lo sentimos, ha ocurrido un error. Por favor, inténtalo de nuevo o llámanos al +34 944 100 462.',
       }])
-    }, 1200)
-  }, [input])
+    } finally {
+      setIsStreaming(false)
+    }
+  }, [input, messages, isStreaming])
 
   return (
     <>
@@ -153,7 +221,7 @@ export function ChatWidget() {
               />
               <button
                 onClick={send}
-                disabled={!input.trim() || isTyping}
+                disabled={!input.trim() || isStreaming}
                 aria-label="Enviar"
                 className="w-9 h-9 rounded-xl bg-rojo text-white flex items-center justify-center hover:bg-rojo-oscuro transition-colors cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed flex-shrink-0"
               >
