@@ -74,10 +74,12 @@ export function ChatWidget() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          messages: updatedMessages.map(m => ({
-            role: m.from === 'user' ? 'user' : 'model',
-            content: m.text,
-          })),
+          messages: updatedMessages
+            .filter((m, i) => !(i === 0 && m.from === 'bot'))
+            .map(m => ({
+              role: m.from === 'user' ? 'user' : 'model',
+              content: m.text,
+            })),
         }),
       })
 
@@ -100,6 +102,8 @@ export function ChatWidget() {
           return copy
         })
       }
+
+      accumulated += decoder.decode()
 
       // Remove cursor on completion
       setMessages(m => {
