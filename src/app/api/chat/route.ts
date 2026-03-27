@@ -3,6 +3,8 @@ import { NextRequest } from 'next/server'
 import { GoogleGenAI } from '@google/genai'
 import { extractWebsiteContent } from '@/lib/extract-content'
 
+export const runtime = 'nodejs'
+
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY! })
 
 const OFF_TOPIC =
@@ -17,6 +19,10 @@ export async function POST(req: NextRequest) {
     }
 
     if (!Array.isArray(messages) || messages.length === 0) {
+      return new Response('Bad request', { status: 400 })
+    }
+
+    if (messages.length > 50) {
       return new Response('Bad request', { status: 400 })
     }
 
