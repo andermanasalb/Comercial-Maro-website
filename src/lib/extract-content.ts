@@ -20,6 +20,8 @@ const CONTENT_FILES = [
   'src/app/privacidad/page.tsx',
 ]
 
+let cachedContent: string | null = null
+
 function stripCode(raw: string): string {
   return raw
     .replace(/^import\s+.*$/gm, '')                // remove import lines
@@ -33,6 +35,7 @@ function stripCode(raw: string): string {
 
 export async function extractWebsiteContent(): Promise<string> {
   const root = process.cwd()
+  if (cachedContent !== null) return cachedContent
   const sections: string[] = []
 
   for (const filePath of CONTENT_FILES) {
@@ -51,7 +54,9 @@ export async function extractWebsiteContent(): Promise<string> {
 
   const combined = sections.join('\n\n')
   // ~60 000 chars ≈ 15 000 tokens — stays within Gemini Flash context window
-  return combined.length > 60000
+  const result = combined.length > 60000
     ? combined.slice(0, 60000) + '\n[contenido truncado]'
     : combined
+  cachedContent = result
+  return result
 }

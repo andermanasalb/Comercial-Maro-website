@@ -26,6 +26,11 @@ export async function POST(req: NextRequest) {
       return new Response('Bad request', { status: 400 })
     }
 
+    const MAX_MESSAGE_LENGTH = 2000
+    if (messages.some((m: { role: string; content: string }) => typeof m.content !== 'string' || m.content.length > MAX_MESSAGE_LENGTH)) {
+      return new Response('Bad request', { status: 400 })
+    }
+
     const websiteContent = await extractWebsiteContent()
 
     const systemInstruction =
