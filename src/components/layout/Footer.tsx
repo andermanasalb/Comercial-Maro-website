@@ -4,11 +4,14 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 import { FooterLegalLinks } from '@/components/shared/FooterLegalLinks'
 
 const products = [
-  { name: 'Ventanas de Aluminio', href: '/ventanas' },
-  { name: 'Puertas Metálicas', href: '/puertas' },
+  { name: 'Puertas y Ventanas PVC', href: '/ventanas-pvc' },
+  { name: 'Puertas y Ventanas Aluminio', href: '/ventanas-aluminio' },
   { name: 'Cerramientos', href: '/cerramientos' },
-  { name: 'Pérgolas Bioclimáticas', href: '/pergolas' },
-  { name: 'Persianas', href: '/persianas' },
+  { name: 'Barandillas y Celosías', href: '/barandillas' },
+  { name: 'Cortinas', href: '/cortinas' },
+  { name: 'Cerramientos Fenólicos', href: '/cerramientos-fenolicos' },
+  { name: 'Mamparas de Oficina', href: '/mamparas-oficina' },
+  { name: 'Mamparas de Ducha', href: '/mamparas-ducha' },
 ]
 
 const company = [

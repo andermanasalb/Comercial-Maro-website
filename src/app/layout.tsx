@@ -5,6 +5,7 @@ import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { CookieBanner } from '@/components/shared/CookieBanner'
 import { ChatWidget } from '@/components/shared/ChatWidget'
+import { ScrollRestoration } from '@/components/shared/ScrollRestoration'
 import './globals.css'
 
 const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat', display: 'swap' })
@@ -66,6 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: localBusinessSchema }}
         />
+        <ScrollRestoration />
         <Navbar />
         <main>{children}</main>
         <Footer />

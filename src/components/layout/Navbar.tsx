@@ -12,11 +12,14 @@ import {
 } from '@/components/ui/navigation-menu'
 
 const products = [
-  { name: 'Ventanas de Aluminio', href: '/ventanas' },
-  { name: 'Puertas Metálicas', href: '/puertas' },
+  { name: 'Puertas y Ventanas PVC', href: '/ventanas-pvc' },
+  { name: 'Puertas y Ventanas Aluminio', href: '/ventanas-aluminio' },
   { name: 'Cerramientos', href: '/cerramientos' },
-  { name: 'Pérgolas Bioclimáticas', href: '/pergolas' },
-  { name: 'Persianas y Protección', href: '/persianas' },
+  { name: 'Barandillas y Celosías', href: '/barandillas' },
+  { name: 'Cortinas', href: '/cortinas' },
+  { name: 'Cerramientos Fenólicos', href: '/cerramientos-fenolicos' },
+  { name: 'Mamparas de Oficina', href: '/mamparas-oficina' },
+  { name: 'Mamparas de Ducha', href: '/mamparas-ducha' },
 ]
 
 const navLinks = [
@@ -28,7 +31,7 @@ const navLinks = [
   { name: 'Contacto',           href: '/#cta'      },
 ]
 
-const productPages = ['/ventanas', '/puertas', '/cerramientos', '/pergolas', '/persianas']
+const productPages: string[] = ['/ventanas-pvc']
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -115,14 +118,10 @@ export function Navbar() {
         className="border-b border-gris-claro"
       >
         <div className="max-w-[1280px] mx-auto pl-0 pr-3 h-16 grid grid-cols-[1fr_auto_1fr] items-center">
-          <Link
-            href="/"
-            onClick={() => {
-              sessionStorage.removeItem('home_scroll_y')
-              window.scrollTo({ top: 0, behavior: 'smooth' })
-            }}
-            className="flex-shrink-0 flex items-center justify-self-start"
-          >
+            <Link
+              href="/"
+              className="flex-shrink-0 flex items-center justify-self-start"
+            >
             <Image
               src="/logo.png"
               alt="Comercial MAR'O"

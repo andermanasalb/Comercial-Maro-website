@@ -4,12 +4,14 @@ import { ProductCard } from '@/components/shared/ProductCard'
 import { SectionHeader } from '@/components/shared/SectionHeader'
 
 const services = [
-  { num: '01', title: 'Ventanas de Aluminio', description: 'Abatibles, correderas, oscilobatientes. Máximo aislamiento térmico y acústico.', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400', href: '/ventanas' },
-  { num: '02', title: 'Puertas Metálicas', description: 'Puertas de entrada, acceso y paso. Seguridad y diseño en un solo elemento.', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400', href: '/puertas' },
-  { num: '03', title: 'Cerramientos', description: 'Terrazas, galerías y patios. Amplía tu espacio habitable con luz natural.', image: 'https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=400', href: '/cerramientos' },
-  { num: '04', title: 'Pérgolas Bioclimáticas', description: 'Control total del ambiente exterior. Automáticas y personalizables.', image: 'https://images.unsplash.com/photo-1616137466211-f939a420be84?w=400', href: '/pergolas' },
-  { num: '05', title: 'Persianas y Protección', description: 'Persianas enrollables, mallorquinas y lamas. Confort y privacidad.', image: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400', href: '/persianas' },
-  { num: '06', title: 'Cristalería y Mamparas', description: 'Mamparas de baño, escaparates y barandillas de vidrio templado.', image: 'https://images.unsplash.com/photo-1596436889106-be35e843f974?w=400', href: '/contacto' },
+  { num: '01', title: 'Puertas y Ventanas PVC Ecoven Plus', description: 'Ecoven Plus S70, S76 y S82. Correderas, paralelas y Vekamotion. Máxima eficiencia energética.', image: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?w=400', href: '/ventanas-pvc' },
+  { num: '02', title: 'Puertas y Ventanas Aluminio', description: 'Sistemas de aluminio de altas prestaciones. Marcos finos, gran resistencia y diseño atemporal.', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400', href: '/ventanas-aluminio' },
+  { num: '03', title: 'Cerramientos', description: 'Terrazas, galerías y patios acristalados. Amplía tu espacio habitable con luz natural y confort.', image: 'https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=400', href: '/cerramientos' },
+  { num: '04', title: 'Barandillas, Celosías y Mallorquinas', description: 'Barandillas de aluminio y vidrio, celosías orientables y mallorquinas para fachadas y terrazas.', image: 'https://images.unsplash.com/photo-1616137466211-f939a420be84?w=400', href: '/barandillas' },
+  { num: '05', title: 'Cortinas', description: 'Cortinas de cristal y sistemas enrollables. Cierre versátil con máxima entrada de luz natural.', image: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400', href: '/cortinas' },
+  { num: '06', title: 'Cerramientos Fenólicos', description: 'Revestimientos y cerramientos con tablero fenólico. Alta durabilidad y diseño en exteriores.', image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400', href: '/cerramientos-fenolicos' },
+  { num: '07', title: 'Mamparas de Oficina', description: 'Divisiones modulares acristaladas para espacios de trabajo. Flexibilidad y elegancia en cada proyecto.', image: 'https://images.unsplash.com/photo-1596436889106-be35e843f974?w=400&h=600', href: '/mamparas-oficina' },
+  { num: '08', title: 'Mamparas de Ducha y Bañera', description: 'Mamparas de cristal templado a medida. Funcionalidad, seguridad y estética en cada baño.', image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400', href: '/mamparas-ducha' },
 ]
 
 const container = {
@@ -31,7 +33,7 @@ export function Servicios() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.15 }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-4"
         >
           {services.map(s => (
             <motion.div key={s.num} variants={card}>

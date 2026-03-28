@@ -4,11 +4,14 @@ import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 import { FooterLegalLinks } from '@/components/shared/FooterLegalLinks'
 
 const footerProducts = [
-  { name: 'Ventanas de Aluminio',   href: '/ventanas'     },
-  { name: 'Puertas Metálicas',      href: '/puertas'      },
-  { name: 'Cerramientos',           href: '/cerramientos' },
-  { name: 'Pérgolas Bioclimáticas', href: '/pergolas'     },
-  { name: 'Persianas',              href: '/persianas'    },
+  { name: 'Puertas y Ventanas PVC', href: '/ventanas-pvc' },
+  { name: 'Puertas y Ventanas Aluminio', href: '/ventanas-aluminio' },
+  { name: 'Cerramientos', href: '/cerramientos' },
+  { name: 'Barandillas y Celosías', href: '/barandillas' },
+  { name: 'Cortinas', href: '/cortinas' },
+  { name: 'Cerramientos Fenólicos', href: '/cerramientos-fenolicos' },
+  { name: 'Mamparas de Oficina', href: '/mamparas-oficina' },
+  { name: 'Mamparas de Ducha', href: '/mamparas-ducha' },
 ]
 
 const footerLinks = [
@@ -38,7 +41,7 @@ export function CTAFinal() {
     >
       {/* ── Top half: CTA ───────────────────────────────────────────── */}
       <div
-        className="flex-1 flex flex-col items-center justify-center px-6 text-center"
+        className="flex-[0.38] flex flex-col items-center justify-center px-6 text-center py-6"
         style={{ background: 'linear-gradient(135deg, #D42B2B 0%, #A51F1F 100%)' }}
       >
         <h2 className="font-montserrat text-xl md:text-2xl font-extrabold text-white mb-2">
@@ -67,7 +70,7 @@ export function CTAFinal() {
       </div>
 
       {/* ── Bottom half: Footer ─────────────────────────────────────── */}
-      <div className="flex-1 bg-[#111113] text-white flex items-center px-6">
+      <div className="flex-[0.62] bg-[#111113] text-white flex items-center px-6 py-8">
         <div className="max-w-[1280px] mx-auto w-full">
           <div className="grid grid-cols-2 lg:grid-cols-5 gap-5 mb-4">
             {/* Brand */}

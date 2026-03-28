@@ -16,6 +16,7 @@ export function EnablePageSnap() {
     window.addEventListener('scroll', saveScroll, { passive: true })
 
     return () => {
+      saveScroll() // Capture last position before leaving
       document.documentElement.classList.remove('snap-page')
       window.removeEventListener('scroll', saveScroll)
     }
