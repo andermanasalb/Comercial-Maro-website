@@ -31,7 +31,6 @@ const specs: [string, string][] = [
   ['Variantes', 'Oscilo-Paralela · Paralela SP'],
   ['Aislamiento', 'Próximo a abatible de gama alta'],
   ['Usos principales', 'Terrazas, salones, dormitorios con exigencia acústica'],
-  ['Acabados', 'Todos los colores RAL y Spectral'],
 ]
 
 export default function ParalelasPage() {
@@ -63,7 +62,7 @@ export default function ParalelasPage() {
           <nav className="text-white/60 text-[12px] font-montserrat mb-2">
             <Link href="/" className="hover:text-white transition-colors">Inicio</Link>
             {' / '}
-            <Link href="/ventanas-pvc" className="hover:text-white transition-colors">Puertas y Ventanas PVC</Link>
+            <Link href="/ventanas-pvc" className="hover:text-white transition-colors">Puertas y Ventanas PVC Ecoven Plus</Link>
             {' / '}
             <span className="text-white" aria-current="page">Paralelas</span>
           </nav>
@@ -167,18 +166,7 @@ export default function ParalelasPage() {
             ))}
           </div>
 
-          {/* ── Acabados ────────────────────────────────────────────────────── */}
-          <h2 className="font-montserrat text-xl font-extrabold text-carbon mb-5">Acabados disponibles</h2>
-          <div className="flex flex-wrap gap-3">
-            {['Blanco', 'Gris antracita', 'Negro', 'Efecto madera', 'Personalizado RAL', 'Acabado Spectral'].map(c => (
-              <span
-                key={c}
-                className="border border-gris-claro rounded-full px-4 py-1.5 text-[12px] font-montserrat font-semibold text-gris-medio"
-              >
-                {c}
-              </span>
-            ))}
-          </div>
+
         </div>
 
         {/* ── Sidebar ──────────────────────────────────────────────────────── */}
@@ -208,7 +196,7 @@ export default function ParalelasPage() {
             {[
               { label: 'Correderas Ecoven Plus', sub: 'Amplitud y luz', href: '/ventanas-pvc/correderas' },
               { label: 'Vekamotion 82', sub: 'Pared de vidrio', href: '/ventanas-pvc/vekamotion-82' },
-              { label: 'Volver al catálogo', sub: 'Puertas y Ventanas PVC', href: '/ventanas-pvc' },
+              { label: 'Volver al catálogo', sub: 'Puertas y Ventanas PVC Ecoven Plus', href: '/ventanas-pvc' },
             ].map(item => (
               <Link
                 key={item.href}

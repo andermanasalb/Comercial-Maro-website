@@ -91,7 +91,7 @@ export default function AcristalamientoPage() {
           <nav className="text-white/60 text-[12px] font-montserrat mb-2">
             <Link href="/" className="hover:text-white transition-colors">Inicio</Link>
             {' / '}
-            <Link href="/ventanas-pvc" className="hover:text-white transition-colors">Puertas y Ventanas PVC</Link>
+            <Link href="/ventanas-pvc" className="hover:text-white transition-colors">Puertas y Ventanas PVC Ecoven Plus</Link>
             {' / '}
             <span className="text-white" aria-current="page">Acristalamiento y Herrajes</span>
           </nav>
@@ -292,7 +292,7 @@ export default function AcristalamientoPage() {
                 { label: 'Persianas & Cajones', sub: 'Ecoven Plus · Passivhaus', href: '/ventanas-pvc/persianas' },
                 { label: 'Control Solar', sub: 'Contraventanas · mosquiteras', href: '/ventanas-pvc/control-solar' },
                 { label: 'Domótica', sub: 'Somfy TaHoma', href: '/ventanas-pvc/domotica' },
-                { label: 'Volver al catálogo', sub: 'Puertas y Ventanas PVC', href: '/ventanas-pvc' },
+                { label: 'Volver al catálogo', sub: 'Puertas y Ventanas PVC Ecoven Plus', href: '/ventanas-pvc' },
               ].map(item => (
                 <Link
                   key={item.href}

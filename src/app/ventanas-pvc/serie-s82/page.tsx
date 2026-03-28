@@ -94,7 +94,7 @@ export default function SerieS82Page() {
           <nav className="text-white/60 text-[12px] font-montserrat mb-2">
             <Link href="/" className="hover:text-white transition-colors">Inicio</Link>
             {' / '}
-            <Link href="/ventanas-pvc" className="hover:text-white transition-colors">Puertas y Ventanas PVC</Link>
+            <Link href="/ventanas-pvc" className="hover:text-white transition-colors">Puertas y Ventanas PVC Ecoven Plus</Link>
             {' / '}
             <span className="text-white" aria-current="page">Serie S82</span>
           </nav>
@@ -255,29 +255,7 @@ export default function SerieS82Page() {
             Descargar Ficha Técnica S82 (PDF)
           </a>
 
-          {/* ── Fotos de proyecto ────────────────────────────────────────────── */}
-          <div className="grid grid-cols-2 gap-3 mb-10">
-            <div className="img-zoom-wrap shadow-sm">
-              <Image
-                src="https://ecovenplus.com/wp-content/uploads/2024/10/1700580387256-2.jpeg"
-                alt="Instalación ventanas PVC S82 en vivienda Bizkaia"
-                width={600}
-                height={400}
-                className="w-full h-[200px] object-cover img-zoom img-reveal"
-                style={{ animationDelay: '0.1s' }}
-              />
-            </div>
-            <div className="img-zoom-wrap shadow-sm">
-              <Image
-                src="https://ecovenplus.com/wp-content/uploads/2024/10/1708646479580-1.jpeg"
-                alt="Proyecto ventanas PVC S82 Bilbao"
-                width={600}
-                height={400}
-                className="w-full h-[200px] object-cover img-zoom img-reveal"
-                style={{ animationDelay: '0.2s' }}
-              />
-            </div>
-          </div>
+
 
           {/* ── Acabados disponibles ─────────────────────────────────────────── */}
           <h2 className="font-montserrat text-xl font-extrabold text-carbon mb-2">Acabados disponibles</h2>
@@ -345,7 +323,7 @@ export default function SerieS82Page() {
             {[
               { label: 'Serie S70', sub: '70 mm · la más utilizada', href: '/ventanas-pvc/serie-s70' },
               { label: 'Serie S76', sub: '76 mm · más confort', href: '/ventanas-pvc/serie-s76' },
-              { label: 'Volver al catálogo', sub: 'Puertas y Ventanas PVC', href: '/ventanas-pvc' },
+              { label: 'Volver al catálogo', sub: 'Puertas y Ventanas PVC Ecoven Plus', href: '/ventanas-pvc' },
             ].map(item => (
               <Link
                 key={item.href}

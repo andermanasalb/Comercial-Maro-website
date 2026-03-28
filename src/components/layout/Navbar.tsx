@@ -37,13 +37,15 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
   const prevPathnameRef = useRef(pathname)
-  const isProductPage = productPages.includes(pathname)
+  // Hide CTA not just on the exact string matches, but also any child route of those product directories
+  const isProductPage = productPages.some(page => pathname === page || pathname.startsWith(page + '/'))
 
-  // Reset scroll on route change, but restore saved position when returning to homepage
+  // Reset scroll on route change, but restore saved position when returning to parent/home pages
   useEffect(() => {
     const prev = prevPathnameRef.current
     prevPathnameRef.current = pathname
 
+    // 1. Homepage snap layout explicit override
     if (pathname === '/' && prev !== '/') {
       const savedY = parseInt(sessionStorage.getItem('home_scroll_y') ?? '0', 10)
       if (savedY > 0) {
@@ -58,14 +60,47 @@ export function Navbar() {
       }
     }
 
-    window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior })
-    setScrolled(false)
-    document.documentElement.style.setProperty('--snap-padding', '6rem')
+    // 2. Child to Parent navigation (e.g. clicking breadcrumb from /ventanas-pvc/persianas back to /ventanas-pvc)
+    // We want this to function essentially like a 'Back' button for scroll position.
+    const isReturningToParent = prev !== pathname && prev.startsWith(pathname + '/')
+    if (isReturningToParent && !window.location.hash) {
+      const savedY = parseInt(sessionStorage.getItem('scroll_pos_' + pathname) ?? '0', 10)
+      if (savedY > 0) {
+        // Run multiple times to defeat Next.js asynchronous scroll-to-top race condition
+        const restoreScroll = () => {
+          window.scrollTo({ top: savedY, behavior: 'instant' as ScrollBehavior })
+          const s = savedY > 10
+          setScrolled(s)
+          document.documentElement.style.setProperty('--snap-padding', s ? '4rem' : '6rem')
+        };
+        
+        restoreScroll()
+        setTimeout(restoreScroll, 20)
+        setTimeout(restoreScroll, 100)
+        setTimeout(restoreScroll, 250)
+        return
+      }
+    }
+
+    // 3. For all other path changes without hashes, let Next.js handle the native scroll 
+    // (either 0 for forward Push, or restored state for backward Pop).
+    if (!window.location.hash) {
+      setTimeout(() => {
+        const y = window.scrollY
+        const s = y > 10
+        setScrolled(s)
+        document.documentElement.style.setProperty('--snap-padding', s ? '4rem' : '6rem')
+      }, 50)
+    }
   }, [pathname])
 
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY
+      if (y > 10) {
+        sessionStorage.setItem('scroll_pos_' + window.location.pathname, String(y))
+      }
+      
       // Hysteresis: dead zone 5–10px prevents bouncing during inertia/snap animation
       setScrolled(prev => {
         if (y > 10) return true

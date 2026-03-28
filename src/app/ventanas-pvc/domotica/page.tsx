@@ -85,7 +85,7 @@ export default function DomoticaPage() {
           <nav className="text-white/60 text-[12px] font-montserrat mb-2">
             <Link href="/" className="hover:text-white transition-colors">Inicio</Link>
             {' / '}
-            <Link href="/ventanas-pvc" className="hover:text-white transition-colors">Puertas y Ventanas PVC</Link>
+            <Link href="/ventanas-pvc" className="hover:text-white transition-colors">Puertas y Ventanas PVC Ecoven Plus</Link>
             {' / '}
             <span className="text-white" aria-current="page">Domótica</span>
           </nav>
@@ -275,7 +275,7 @@ export default function DomoticaPage() {
                 { label: 'Persianas & Cajones', sub: 'Ecoven Plus · Passivhaus', href: '/ventanas-pvc/persianas' },
                 { label: 'Control Solar', sub: 'Contraventanas · mosquiteras', href: '/ventanas-pvc/control-solar' },
                 { label: 'Acristalamiento', sub: 'Vidrio & herrajes RC2', href: '/ventanas-pvc/acristalamiento' },
-                { label: 'Volver al catálogo', sub: 'Puertas y Ventanas PVC', href: '/ventanas-pvc' },
+                { label: 'Volver al catálogo', sub: 'Puertas y Ventanas PVC Ecoven Plus', href: '/ventanas-pvc' },
               ].map(item => (
                 <Link
                   key={item.href}

@@ -82,7 +82,7 @@ export default function SerieS76Page() {
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <div className="relative h-[40vh] min-h-48 flex items-end">
         <Image
-          src="https://ecovenplus.com/wp-content/uploads/2024/10/Casa-Hilaria-2-retocado-scaled.jpg"
+          src="https://ecovenplus.com/wp-content/uploads/2024/10/Casa-Hilaria-2-retocado-scaled-444x600.jpg"
           alt="Ventanas PVC Serie S76 Ecoven Plus"
           fill
           sizes="100vw"
@@ -94,7 +94,7 @@ export default function SerieS76Page() {
           <nav className="text-white/60 text-[12px] font-montserrat mb-2">
             <Link href="/" className="hover:text-white transition-colors">Inicio</Link>
             {' / '}
-            <Link href="/ventanas-pvc" className="hover:text-white transition-colors">Puertas y Ventanas PVC</Link>
+            <Link href="/ventanas-pvc" className="hover:text-white transition-colors">Puertas y Ventanas PVC Ecoven Plus</Link>
             {' / '}
             <span className="text-white" aria-current="page">Serie S76</span>
           </nav>
@@ -127,7 +127,7 @@ export default function SerieS76Page() {
             </div>
             <div className="img-zoom-wrap shadow-md">
               <Image
-                src="https://ecovenplus.com/wp-content/uploads/2024/10/mg-1373-web-1200x780.jpg.webp"
+                src="https://ecovenplus.com/wp-content/uploads/2024/10/mg-1373-web-1200x780.jpg-444x600.webp"
                 alt="Proyecto ventanas PVC S76 en fachada Bilbao"
                 width={600}
                 height={450}
@@ -267,7 +267,7 @@ export default function SerieS76Page() {
             </div>
             <div className="img-zoom-wrap shadow-sm">
               <Image
-                src="https://ecovenplus.com/wp-content/uploads/2024/10/1707999298918.jpeg"
+                src="https://ecovenplus.com/wp-content/uploads/2024/10/1707999298918-444x600.jpeg"
                 alt="Instalación ventanas PVC S76 en vivienda"
                 width={600}
                 height={400}
@@ -339,7 +339,7 @@ export default function SerieS76Page() {
             {[
               { label: 'Serie S70', sub: '70 mm · la más utilizada', href: '/ventanas-pvc/serie-s70' },
               { label: 'Serie S82', sub: '82 mm · Passivhaus', href: '/ventanas-pvc/serie-s82' },
-              { label: 'Volver al catálogo', sub: 'Puertas y Ventanas PVC', href: '/ventanas-pvc' },
+              { label: 'Volver al catálogo', sub: 'Puertas y Ventanas PVC Ecoven Plus', href: '/ventanas-pvc' },
             ].map(item => (
               <Link
                 key={item.href}

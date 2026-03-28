@@ -60,7 +60,7 @@ export default function VentanasPvcPage() {
           {/* ── Las Tres Series ─────────────────────────────────────────────── */}
           <section className="mb-14">
             <div className="mb-7">
-              <span className="inline-block font-montserrat text-[11px] font-bold tracking-[3px] uppercase text-rojo mb-1">
+              <span className="inline-block font-montserrat text-[11px] font-bold tracking-[3px] uppercase shimmer-text mb-1">
                 Las tres series
               </span>
               <h2 className="font-montserrat text-2xl font-bold text-carbon">
@@ -77,11 +77,11 @@ export default function VentanasPvcPage() {
               {/* S70 */}
               <Link
                 href="/ventanas-pvc/serie-s70"
-                className="group relative block bg-white border border-gris-claro rounded-xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200"
+                className="group relative flex flex-col bg-white border border-gris-claro rounded-xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200 h-full"
               >
-                <div className="h-[3px] w-full bg-arena" />
-                <div className="p-5 relative">
-                  <span className="absolute top-3 right-4 font-montserrat text-5xl font-black text-carbon/[0.05] leading-none select-none pointer-events-none">
+                <div className="h-[3px] w-full bg-arena flex-shrink-0" />
+                <div className="p-5 relative flex flex-col flex-1">
+                  <span className="absolute top-1/2 -translate-y-1/2 right-4 font-montserrat text-[5rem] font-black text-carbon/[0.03] leading-none select-none pointer-events-none z-0 tracking-tighter mix-blend-multiply">
                     S70
                   </span>
                   <span className="inline-block bg-arena-claro text-arena text-[10px] font-montserrat font-bold tracking-wider uppercase px-2.5 py-1 rounded-full mb-3">
@@ -107,20 +107,22 @@ export default function VentanasPvcPage() {
                       <span key={tag} className="bg-arena/20 text-arena text-[10px] font-montserrat font-bold px-2.5 py-0.5 rounded-full">{tag}</span>
                     ))}
                   </div>
-                  <span className="font-montserrat text-[12px] font-bold text-rojo group-hover:underline transition-colors">
-                    Ver Serie S70 →
-                  </span>
+                  <div className="mt-auto pt-2">
+                    <span className="inline-flex items-center justify-center font-montserrat text-[11px] font-bold text-rojo bg-rojo/5 px-4 py-2 mt-auto rounded-lg group-hover:bg-rojo group-hover:text-white transition-colors w-max">
+                      Ver Serie S70 &rarr;
+                    </span>
+                  </div>
                 </div>
               </Link>
 
               {/* S76 — featured, slightly elevated */}
               <Link
                 href="/ventanas-pvc/serie-s76"
-                className="group relative block bg-white border border-rojo/25 rounded-xl overflow-hidden shadow-xl hover:-translate-y-1 transition-all duration-200"
+                className="group relative flex flex-col bg-white border border-rojo/25 rounded-xl overflow-hidden shadow-xl hover:-translate-y-1 transition-all duration-200 h-full"
               >
-                <div className="h-[3px] w-full bg-rojo" />
-                <div className="p-5 relative">
-                  <span className="absolute top-3 right-4 font-montserrat text-5xl font-black text-rojo/[0.06] leading-none select-none pointer-events-none">
+                <div className="h-[3px] w-full bg-rojo flex-shrink-0" />
+                <div className="p-5 relative flex flex-col flex-1">
+                  <span className="absolute top-1/2 -translate-y-1/2 right-4 font-montserrat text-[5rem] font-black text-rojo/[0.04] leading-none select-none pointer-events-none z-0 tracking-tighter mix-blend-multiply">
                     S76
                   </span>
                   <span className="inline-block bg-rojo text-white text-[10px] font-montserrat font-bold tracking-wider uppercase px-2.5 py-1 rounded-full mb-3">
@@ -146,20 +148,22 @@ export default function VentanasPvcPage() {
                       <span key={tag} className="bg-rojo/10 text-rojo text-[10px] font-montserrat font-bold px-2.5 py-0.5 rounded-full">{tag}</span>
                     ))}
                   </div>
-                  <span className="font-montserrat text-[12px] font-bold text-rojo group-hover:underline transition-colors">
-                    Ver Serie S76 →
-                  </span>
+                  <div className="mt-auto pt-2">
+                    <span className="inline-flex items-center justify-center font-montserrat text-[11px] font-bold text-rojo bg-rojo/5 px-4 py-2 mt-auto rounded-lg group-hover:bg-rojo group-hover:text-white transition-colors w-max">
+                      Ver Serie S76 &rarr;
+                    </span>
+                  </div>
                 </div>
               </Link>
 
               {/* S82 — premium dark */}
               <Link
                 href="/ventanas-pvc/serie-s82"
-                className="group relative block bg-carbon border border-carbon rounded-xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200"
+                className="group relative flex flex-col bg-carbon border border-carbon rounded-xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200 h-full"
               >
-                <div className="h-[3px] w-full bg-arena" />
-                <div className="p-5 relative">
-                  <span className="absolute top-3 right-4 font-montserrat text-5xl font-black text-white/[0.05] leading-none select-none pointer-events-none">
+                <div className="h-[3px] w-full bg-arena flex-shrink-0" />
+                <div className="p-5 relative flex flex-col flex-1">
+                  <span className="absolute top-1/2 -translate-y-1/2 right-4 font-montserrat text-[5rem] font-black text-white/[0.03] leading-none select-none pointer-events-none z-0 tracking-tighter opacity-80">
                     S82
                   </span>
                   <span className="inline-block bg-white/10 text-arena text-[10px] font-montserrat font-bold tracking-wider uppercase px-2.5 py-1 rounded-full mb-3">
@@ -185,9 +189,11 @@ export default function VentanasPvcPage() {
                       <span key={tag} className="bg-white/10 text-arena text-[10px] font-montserrat font-bold px-2.5 py-0.5 rounded-full">{tag}</span>
                     ))}
                   </div>
-                  <span className="font-montserrat text-[12px] font-bold text-arena group-hover:opacity-80 transition-opacity">
-                    Ver Serie S82 →
-                  </span>
+                  <div className="mt-auto pt-2">
+                    <span className="inline-flex items-center justify-center font-montserrat text-[11px] font-bold text-arena bg-white/10 px-4 py-2 mt-auto rounded-lg group-hover:bg-arena group-hover:text-carbon transition-colors w-max">
+                      Ver Serie S82 &rarr;
+                    </span>
+                  </div>
                 </div>
               </Link>
 
@@ -202,6 +208,17 @@ export default function VentanasPvcPage() {
               .bar-grow {
                 transform-origin: left center;
                 animation: growBar 0.9s cubic-bezier(0.25,1,0.5,1) both;
+              }
+              @keyframes shimmerText {
+                0% { background-position: -200% center; }
+                100% { background-position: 200% center; }
+              }
+              .shimmer-text {
+                background: linear-gradient(110deg, #D42B2B 40%, #ffffff 50%, #D42B2B 60%);
+                background-size: 200% auto;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                animation: shimmerText 5s linear infinite;
               }
             `}</style>
             <div className="mt-6 bg-crema rounded-xl border border-gris-claro p-5">
@@ -260,7 +277,7 @@ export default function VentanasPvcPage() {
           {/* ── Sistemas Deslizantes ─────────────────────────────────────────── */}
           <section className="mb-14">
             <div className="mb-7">
-              <span className="inline-block font-montserrat text-[11px] font-bold tracking-[3px] uppercase text-rojo mb-1">
+              <span className="inline-block font-montserrat text-[11px] font-bold tracking-[3px] uppercase shimmer-text mb-1">
                 Sistemas deslizantes
               </span>
               <h2 className="font-montserrat text-2xl font-bold text-carbon">
@@ -276,7 +293,7 @@ export default function VentanasPvcPage() {
 
               <Link
                 href="/ventanas-pvc/correderas"
-                className="group block bg-white border border-gris-claro rounded-xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200"
+                className="group flex flex-col bg-white border border-gris-claro rounded-xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200 h-full"
               >
                 <div className="w-10 h-10 bg-arena-claro rounded-lg flex items-center justify-center mb-4 group-hover:bg-arena/20 transition-colors">
                   <ArrowLeftRight size={18} className="text-arena" aria-hidden="true" />
@@ -293,14 +310,14 @@ export default function VentanasPvcPage() {
                     <span key={tag} className="bg-arena/20 text-arena text-[10px] font-montserrat font-bold px-2.5 py-0.5 rounded-full">{tag}</span>
                   ))}
                 </div>
-                <span className="font-montserrat text-[11px] font-bold text-rojo group-hover:underline">
-                  Descubrir →
+                <span className="inline-flex items-center justify-center font-montserrat text-[11px] font-bold text-rojo bg-rojo/5 px-4 py-2 mt-auto rounded-lg group-hover:bg-rojo group-hover:text-white transition-colors w-max">
+                  Descubrir &rarr;
                 </span>
               </Link>
 
               <Link
                 href="/ventanas-pvc/paralelas"
-                className="group block bg-white border border-gris-claro rounded-xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200"
+                className="group flex flex-col bg-white border border-gris-claro rounded-xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200 h-full"
               >
                 <div className="w-10 h-10 bg-arena-claro rounded-lg flex items-center justify-center mb-4 group-hover:bg-arena/20 transition-colors">
                   <Layers size={18} className="text-arena" aria-hidden="true" />
@@ -317,14 +334,14 @@ export default function VentanasPvcPage() {
                     <span key={tag} className="bg-arena/20 text-arena text-[10px] font-montserrat font-bold px-2.5 py-0.5 rounded-full">{tag}</span>
                   ))}
                 </div>
-                <span className="font-montserrat text-[11px] font-bold text-rojo group-hover:underline">
-                  Descubrir →
+                <span className="inline-flex items-center justify-center font-montserrat text-[11px] font-bold text-rojo bg-rojo/5 px-4 py-2 mt-auto rounded-lg group-hover:bg-rojo group-hover:text-white transition-colors w-max">
+                  Descubrir &rarr;
                 </span>
               </Link>
 
               <Link
                 href="/ventanas-pvc/vekamotion-82"
-                className="group block bg-white border border-gris-claro rounded-xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200"
+                className="group flex flex-col bg-white border border-gris-claro rounded-xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200 h-full"
               >
                 <div className="w-10 h-10 bg-arena-claro rounded-lg flex items-center justify-center mb-4 group-hover:bg-arena/20 transition-colors">
                   <Maximize2 size={18} className="text-arena" aria-hidden="true" />
@@ -341,8 +358,8 @@ export default function VentanasPvcPage() {
                     <span key={tag} className="bg-arena/20 text-arena text-[10px] font-montserrat font-bold px-2.5 py-0.5 rounded-full">{tag}</span>
                   ))}
                 </div>
-                <span className="font-montserrat text-[11px] font-bold text-rojo group-hover:underline">
-                  Descubrir →
+                <span className="inline-flex items-center justify-center font-montserrat text-[11px] font-bold text-rojo bg-rojo/5 px-4 py-2 mt-auto rounded-lg group-hover:bg-rojo group-hover:text-white transition-colors w-max">
+                  Descubrir &rarr;
                 </span>
               </Link>
 
@@ -352,7 +369,7 @@ export default function VentanasPvcPage() {
           {/* ── Puertas de Entrada ────────────────────────────────────────────── */}
           <section className="mb-14">
             <div className="mb-6">
-              <span className="inline-block font-montserrat text-[11px] font-bold tracking-[3px] uppercase text-rojo mb-1">
+              <span className="inline-block font-montserrat text-[11px] font-bold tracking-[3px] uppercase shimmer-text mb-1">
                 Acceso principal
               </span>
               <h2 className="font-montserrat text-2xl font-bold text-carbon">
@@ -361,7 +378,7 @@ export default function VentanasPvcPage() {
             </div>
             <Link
               href="/ventanas-pvc/puertas-entrada"
-              className="group block bg-white border border-gris-claro rounded-xl p-6 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200"
+              className="group flex flex-col bg-white border border-gris-claro rounded-xl p-6 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200"
             >
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                 <div className="flex-1">
@@ -379,6 +396,11 @@ export default function VentanasPvcPage() {
                       </span>
                     ))}
                   </div>
+                  <div className="mt-5">
+                    <span className="inline-flex items-center justify-center font-montserrat text-[11px] font-bold text-rojo bg-rojo/5 px-4 py-2 rounded-lg group-hover:bg-rojo group-hover:text-white transition-colors w-max">
+                      Descubrir &rarr;
+                    </span>
+                  </div>
                 </div>
                 <div className="sm:pl-6 sm:border-l sm:border-gris-claro flex-shrink-0">
                   <div className="space-y-2">
@@ -387,7 +409,7 @@ export default function VentanasPvcPage() {
                       ['Cierre', 'Hasta 7 puntos'],
                       ['Seguridad', 'Triple barrera'],
                     ].map(([k, v]) => (
-                      <div key={k} className="text-right">
+                      <div key={k} className="sm:text-right text-left">
                         <p className="text-[10px] font-montserrat text-gris-medio uppercase tracking-wide">{k}</p>
                         <p className="font-montserrat text-[13px] font-bold text-carbon">{v}</p>
                       </div>
@@ -395,16 +417,13 @@ export default function VentanasPvcPage() {
                   </div>
                 </div>
               </div>
-              <span className="font-montserrat text-[12px] font-bold text-rojo group-hover:underline transition-colors">
-                Descubrir →
-              </span>
             </Link>
           </section>
 
           {/* ── Diseño que Marca la Diferencia ──────────────────────────────── */}
           <section className="mb-14">
             <div className="mb-6">
-              <span className="inline-block font-montserrat text-[11px] font-bold tracking-[3px] uppercase text-rojo mb-1">
+              <span className="inline-block font-montserrat text-[11px] font-bold tracking-[3px] uppercase shimmer-text mb-1">
                 Detalles premium
               </span>
               <h2 className="font-montserrat text-2xl font-bold text-carbon">
@@ -415,7 +434,7 @@ export default function VentanasPvcPage() {
 
               <Link
                 href="/ventanas-pvc/diseno#spectral"
-                className="group block bg-white border border-gris-claro rounded-xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200"
+                className="group flex flex-col bg-white border border-gris-claro rounded-xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200 h-full"
               >
                 <p className="text-[10px] font-montserrat font-bold tracking-wider uppercase text-arena mb-2">
                   Acabado premium
@@ -425,14 +444,14 @@ export default function VentanasPvcPage() {
                   Superficie ultramate con tacto sedoso. Múltiples colores y texturas disponibles.
                   Resistente al rayado e intemperie. Sensación de ventana de diseño desde el primer vistazo.
                 </p>
-                <span className="font-montserrat text-[11px] font-bold text-rojo group-hover:underline transition-colors">
-                  Ver acabados →
+                <span className="inline-flex items-center justify-center font-montserrat text-[11px] font-bold text-rojo bg-rojo/5 px-4 py-2 mt-auto rounded-lg group-hover:bg-rojo group-hover:text-white transition-colors w-max">
+                  Ver acabados &rarr;
                 </span>
               </Link>
 
               <Link
                 href="/ventanas-pvc/diseno#soldadura"
-                className="group block bg-white border border-gris-claro rounded-xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200"
+                className="group flex flex-col bg-white border border-gris-claro rounded-xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200 h-full"
               >
                 <p className="text-[10px] font-montserrat font-bold tracking-wider uppercase text-arena mb-2">
                   Detalles constructivos
@@ -442,8 +461,8 @@ export default function VentanasPvcPage() {
                   Esquinas casi invisibles y líneas continuas en el marco. Acabado limpio sin la
                   típica marca del PVC. Muy apreciado en fachadas con peso estético importante.
                 </p>
-                <span className="font-montserrat text-[11px] font-bold text-rojo group-hover:underline transition-colors">
-                  Ver detalle →
+                <span className="inline-flex items-center justify-center font-montserrat text-[11px] font-bold text-rojo bg-rojo/5 px-4 py-2 mt-auto rounded-lg group-hover:bg-rojo group-hover:text-white transition-colors w-max">
+                  Ver detalle &rarr;
                 </span>
               </Link>
 
@@ -453,7 +472,7 @@ export default function VentanasPvcPage() {
           {/* ── Ecosistema Ecoven Plus ───────────────────────────────────────── */}
           <section>
             <div className="mb-6">
-              <span className="inline-block font-montserrat text-[11px] font-bold tracking-[3px] uppercase text-rojo mb-1">
+              <span className="inline-block font-montserrat text-[11px] font-bold tracking-[3px] uppercase shimmer-text mb-1">
                 Más allá de la ventana
               </span>
               <h2 className="font-montserrat text-2xl font-bold text-carbon">
@@ -467,7 +486,7 @@ export default function VentanasPvcPage() {
 
               <Link
                 href="/ventanas-pvc/persianas"
-                className="group block bg-white border border-gris-claro rounded-xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200"
+                className="group flex flex-col bg-white border border-gris-claro rounded-xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200 h-full"
               >
                 <p className="text-[10px] font-montserrat font-bold tracking-wider uppercase text-arena mb-2">
                   Protección &amp; confort
@@ -477,14 +496,14 @@ export default function VentanasPvcPage() {
                   3 tipos: Ecoven Plus, Momo y Vekavariant Passivhaus. Lamas de aluminio con espuma
                   de poliuretano, motorizables con control desde app.
                 </p>
-                <span className="font-montserrat text-[11px] font-bold text-rojo group-hover:underline transition-colors">
-                  Ver más →
+                <span className="inline-flex items-center justify-center font-montserrat text-[11px] font-bold text-rojo bg-rojo/5 px-4 py-2 mt-auto rounded-lg group-hover:bg-rojo group-hover:text-white transition-colors w-max">
+                  Ver más &rarr;
                 </span>
               </Link>
 
               <Link
                 href="/ventanas-pvc/control-solar"
-                className="group block bg-white border border-gris-claro rounded-xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200"
+                className="group flex flex-col bg-white border border-gris-claro rounded-xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200 h-full"
               >
                 <p className="text-[10px] font-montserrat font-bold tracking-wider uppercase text-arena mb-2">
                   Confort solar
@@ -494,14 +513,14 @@ export default function VentanasPvcPage() {
                   Contraventanas interiores y exteriores, mosquiteras enrollable y plisada, Estores
                   Glass. Lamas orientables 50 mm y 77 mm.
                 </p>
-                <span className="font-montserrat text-[11px] font-bold text-rojo group-hover:underline transition-colors">
-                  Ver más →
+                <span className="inline-flex items-center justify-center font-montserrat text-[11px] font-bold text-rojo bg-rojo/5 px-4 py-2 mt-auto rounded-lg group-hover:bg-rojo group-hover:text-white transition-colors w-max">
+                  Ver más &rarr;
                 </span>
               </Link>
 
               <Link
                 href="/ventanas-pvc/acristalamiento"
-                className="group block bg-white border border-gris-claro rounded-xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200"
+                className="group flex flex-col bg-white border border-gris-claro rounded-xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200 h-full"
               >
                 <p className="text-[10px] font-montserrat font-bold tracking-wider uppercase text-arena mb-2">
                   El corazón de la ventana
@@ -511,14 +530,14 @@ export default function VentanasPvcPage() {
                   Guardian y Saint Gobain exclusivamente. Bajo emisivo, control solar, acústico y
                   de seguridad. Herraje activPilot RC2.
                 </p>
-                <span className="font-montserrat text-[11px] font-bold text-rojo group-hover:underline transition-colors">
-                  Ver más →
+                <span className="inline-flex items-center justify-center font-montserrat text-[11px] font-bold text-rojo bg-rojo/5 px-4 py-2 mt-auto rounded-lg group-hover:bg-rojo group-hover:text-white transition-colors w-max">
+                  Ver más &rarr;
                 </span>
               </Link>
 
               <Link
                 href="/ventanas-pvc/domotica"
-                className="group block bg-white border border-gris-claro rounded-xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200"
+                className="group flex flex-col bg-white border border-gris-claro rounded-xl p-5 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200 h-full"
               >
                 <p className="text-[10px] font-montserrat font-bold tracking-wider uppercase text-arena mb-2">
                   Hogar conectado
@@ -528,8 +547,8 @@ export default function VentanasPvcPage() {
                   Somfy TaHoma para controlar persianas desde el móvil. Programas, escenarios y
                   simulación de presencia cuando estás fuera.
                 </p>
-                <span className="font-montserrat text-[11px] font-bold text-rojo group-hover:underline transition-colors">
-                  Ver más →
+                <span className="inline-flex items-center justify-center font-montserrat text-[11px] font-bold text-rojo bg-rojo/5 px-4 py-2 mt-auto rounded-lg group-hover:bg-rojo group-hover:text-white transition-colors w-max">
+                  Ver más &rarr;
                 </span>
               </Link>
 

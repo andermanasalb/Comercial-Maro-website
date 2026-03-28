@@ -34,16 +34,7 @@ const soldaduraFeatures = [
   'Muy apreciado en fachadas con peso estético importante',
 ]
 
-const foliados = [
-  { name: 'Blanco 9016', hex: '#F5F5F2', border: true },
-  { name: 'Gris antracita 7016', hex: '#3B3E42', border: false },
-  { name: 'Negro 9005', hex: '#1A1A1A', border: false },
-  { name: 'Champán', hex: '#CDB88A', border: false },
-  { name: 'Marrón', hex: '#5C3A2A', border: false },
-  { name: 'Roble dorado', hex: '#BC8830', border: false },
-  { name: 'Roble claro', hex: '#C4924A', border: false },
-  { name: 'Palisandro', hex: '#722A1E', border: false },
-]
+
 
 const spectral = [
   { name: 'Blanco cálido', hex: '#EEEAE4', border: true },
@@ -84,7 +75,7 @@ export default function DisenoPage() {
           <nav className="text-white/60 text-[12px] font-montserrat mb-2">
             <Link href="/" className="hover:text-white transition-colors">Inicio</Link>
             {' / '}
-            <Link href="/ventanas-pvc" className="hover:text-white transition-colors">Puertas y Ventanas PVC</Link>
+            <Link href="/ventanas-pvc" className="hover:text-white transition-colors">Puertas y Ventanas PVC Ecoven Plus</Link>
             {' / '}
             <span className="text-white" aria-current="page">Diseño</span>
           </nav>
@@ -150,25 +141,7 @@ export default function DisenoPage() {
 
             {/* Color palettes */}
             <div className="space-y-8">
-              <div>
-                <p className="font-montserrat text-[12px] font-bold text-carbon mb-4 uppercase tracking-wider">
-                  Colores Foliados (Estándar)
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  {foliados.map(({ name, hex, border }) => (
-                    <div key={name} className="flex flex-col items-center gap-1.5">
-                      <div
-                        className={`w-12 h-12 rounded-xl ${border ? 'border border-gris-claro' : ''}`}
-                        style={{ backgroundColor: hex }}
-                        title={name}
-                      />
-                      <span className="text-[10px] font-montserrat text-gris-medio text-center max-w-[52px] leading-tight">
-                        {name}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+
 
               <div>
                 <p className="font-montserrat text-[12px] font-bold text-carbon mb-1 uppercase tracking-wider">
@@ -274,7 +247,7 @@ export default function DisenoPage() {
                 { label: 'Serie S76', sub: '76 mm · triple junta', href: '/ventanas-pvc/serie-s76' },
                 { label: 'Serie S82', sub: '82 mm · Passivhaus', href: '/ventanas-pvc/serie-s82' },
                 { label: 'Puertas entrada', sub: 'S70 / S82 · 7 puntos', href: '/ventanas-pvc/puertas-entrada' },
-                { label: 'Volver al catálogo', sub: 'Puertas y Ventanas PVC', href: '/ventanas-pvc' },
+                { label: 'Volver al catálogo', sub: 'Puertas y Ventanas PVC Ecoven Plus', href: '/ventanas-pvc' },
               ].map(item => (
                 <Link
                   key={item.href}

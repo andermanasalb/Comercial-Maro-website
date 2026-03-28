@@ -39,27 +39,7 @@ const specs: [string, string][] = [
   ['Accesibilidad', 'Normativa PMR'],
 ]
 
-const foliados = [
-  { name: 'Blanco 9016', hex: '#F5F5F2', border: true },
-  { name: 'Gris antracita 7016', hex: '#3B3E42', border: false },
-  { name: 'Negro 9005', hex: '#1A1A1A', border: false },
-  { name: 'Champán', hex: '#CDB88A', border: false },
-  { name: 'Marrón', hex: '#5C3A2A', border: false },
-  { name: 'Roble dorado', hex: '#BC8830', border: false },
-  { name: 'Roble claro', hex: '#C4924A', border: false },
-  { name: 'Palisandro', hex: '#722A1E', border: false },
-]
 
-const spectral = [
-  { name: 'Blanco cálido', hex: '#EEEAE4', border: true },
-  { name: 'Antracita cálido', hex: '#46433E', border: false },
-  { name: 'Negro profundo', hex: '#221F1C', border: false },
-  { name: 'Roble salvaje', hex: '#B08845', border: false },
-  { name: 'Perla', hex: '#DDD8CE', border: true },
-  { name: 'Arena', hex: '#C0A474', border: false },
-  { name: 'Gris cálido', hex: '#706E6A', border: false },
-  { name: 'Azul noche', hex: '#384258', border: false },
-]
 
 export default function Vekamotion82Page() {
   return (
@@ -90,7 +70,7 @@ export default function Vekamotion82Page() {
           <nav className="text-white/60 text-[12px] font-montserrat mb-2">
             <Link href="/" className="hover:text-white transition-colors">Inicio</Link>
             {' / '}
-            <Link href="/ventanas-pvc" className="hover:text-white transition-colors">Puertas y Ventanas PVC</Link>
+            <Link href="/ventanas-pvc" className="hover:text-white transition-colors">Puertas y Ventanas PVC Ecoven Plus</Link>
             {' / '}
             <span className="text-white" aria-current="page">Vekamotion 82</span>
           </nav>
@@ -207,49 +187,7 @@ export default function Vekamotion82Page() {
             ))}
           </div>
 
-          {/* ── Acabados ────────────────────────────────────────────────────── */}
-          <h2 className="font-montserrat text-xl font-extrabold text-carbon mb-5">Acabados disponibles</h2>
-          <div className="space-y-8">
-            <div>
-              <p className="font-montserrat text-[12px] font-bold text-carbon mb-4 uppercase tracking-wider">
-                Colores Foliados (Estándar)
-              </p>
-              <div className="flex flex-wrap gap-4">
-                {foliados.map(({ name, hex, border }) => (
-                  <div key={name} className="flex flex-col items-center gap-1.5">
-                    <div
-                      className={`w-12 h-12 rounded-xl ${border ? 'border border-gris-claro' : ''}`}
-                      style={{ backgroundColor: hex }}
-                      title={name}
-                    />
-                    <span className="text-[10px] font-montserrat text-gris-medio text-center max-w-[52px] leading-tight">
-                      {name}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div>
-              <p className="font-montserrat text-[12px] font-bold text-carbon mb-1 uppercase tracking-wider">
-                Colores Spectral
-              </p>
-              <p className="text-[11px] text-gris-medio mb-4 font-montserrat">Premium ultra-matte</p>
-              <div className="flex flex-wrap gap-4">
-                {spectral.map(({ name, hex, border }) => (
-                  <div key={name} className="flex flex-col items-center gap-1.5">
-                    <div
-                      className={`w-12 h-12 rounded-xl ${border ? 'border border-gris-claro' : ''}`}
-                      style={{ backgroundColor: hex }}
-                      title={name}
-                    />
-                    <span className="text-[10px] font-montserrat text-gris-medio text-center max-w-[52px] leading-tight">
-                      {name}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+
         </div>
 
         {/* ── Sidebar ──────────────────────────────────────────────────────── */}
@@ -279,7 +217,7 @@ export default function Vekamotion82Page() {
             {[
               { label: 'Correderas Ecoven Plus', sub: 'Amplitud y luz', href: '/ventanas-pvc/correderas' },
               { label: 'Paralelas Ecoven Plus', sub: 'Hermeticidad superior', href: '/ventanas-pvc/paralelas' },
-              { label: 'Volver al catálogo', sub: 'Puertas y Ventanas PVC', href: '/ventanas-pvc' },
+              { label: 'Volver al catálogo', sub: 'Puertas y Ventanas PVC Ecoven Plus', href: '/ventanas-pvc' },
             ].map(item => (
               <Link
                 key={item.href}

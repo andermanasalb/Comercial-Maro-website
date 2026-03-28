@@ -37,7 +37,7 @@ const specs: [string, string][] = [
   ['Acabados', 'Foliados y Spectral'],
 ]
 
-const finishes = ['Blanco', 'Gris antracita', 'Negro', 'Roble dorado', 'Champán', 'Spectral']
+
 
 export default function PuertasEntradaPage() {
   return (
@@ -68,7 +68,7 @@ export default function PuertasEntradaPage() {
           <nav className="text-white/60 text-[12px] font-montserrat mb-2">
             <Link href="/" className="hover:text-white transition-colors">Inicio</Link>
             {' / '}
-            <Link href="/ventanas-pvc" className="hover:text-white transition-colors">Puertas y Ventanas PVC</Link>
+            <Link href="/ventanas-pvc" className="hover:text-white transition-colors">Puertas y Ventanas PVC Ecoven Plus</Link>
             {' / '}
             <span className="text-white" aria-current="page">Puertas de Entrada</span>
           </nav>
@@ -204,20 +204,7 @@ export default function PuertasEntradaPage() {
             </div>
           </div>
 
-          {/* ── Acabados ───────────────────────────────────────────────────── */}
-          <h2 className="font-montserrat text-xl font-extrabold text-carbon mb-5">
-            Acabados disponibles
-          </h2>
-          <div className="flex flex-wrap gap-3">
-            {finishes.map(c => (
-              <span
-                key={c}
-                className="border border-gris-claro rounded-full px-4 py-1.5 text-[12px] font-montserrat font-semibold text-gris-medio"
-              >
-                {c}
-              </span>
-            ))}
-          </div>
+
         </div>
 
         {/* ── Sidebar ─────────────────────────────────────────────────────── */}
@@ -255,7 +242,7 @@ export default function PuertasEntradaPage() {
                 { label: 'Serie S82', sub: '82 mm · Passivhaus', href: '/ventanas-pvc/serie-s82' },
                 { label: 'Vidrio & Herrajes', sub: 'activPilot RC2', href: '/ventanas-pvc/acristalamiento' },
                 { label: 'Diseño Spectral', sub: 'Acabados premium', href: '/ventanas-pvc/diseno' },
-                { label: 'Volver al catálogo', sub: 'Puertas y Ventanas PVC', href: '/ventanas-pvc' },
+                { label: 'Volver al catálogo', sub: 'Puertas y Ventanas PVC Ecoven Plus', href: '/ventanas-pvc' },
               ].map(item => (
                 <Link
                   key={item.href}

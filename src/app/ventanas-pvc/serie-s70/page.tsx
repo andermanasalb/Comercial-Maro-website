@@ -90,7 +90,7 @@ export default function SerieS70Page() {
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <div className="relative h-[40vh] min-h-48 flex items-end">
         <Image
-          src="https://ecovenplus.com/wp-content/uploads/2024/10/papik01-1-scaled.jpg.webp"
+          src="https://ecovenplus.com/wp-content/uploads/2024/10/IMG_1731-1-scaled-444x600.jpg"
           alt="Ventanas PVC Serie S70 Ecoven Plus"
           fill
           sizes="100vw"
@@ -102,7 +102,7 @@ export default function SerieS70Page() {
           <nav className="text-white/60 text-[12px] font-montserrat mb-2">
             <Link href="/" className="hover:text-white transition-colors">Inicio</Link>
             {' / '}
-            <Link href="/ventanas-pvc" className="hover:text-white transition-colors">Puertas y Ventanas PVC</Link>
+            <Link href="/ventanas-pvc" className="hover:text-white transition-colors">Puertas y Ventanas PVC Ecoven Plus</Link>
             {' / '}
             <span className="text-white" aria-current="page">Serie S70</span>
           </nav>
@@ -134,7 +134,7 @@ export default function SerieS70Page() {
             </div>
             <div className="img-zoom-wrap shadow-md">
               <Image
-                src="https://ecovenplus.com/wp-content/uploads/2024/10/IMG_1731-1-scaled-444x600.jpg"
+                src="https://ecovenplus.com/wp-content/uploads/2024/10/MG_6525-BAJA-RESOLUCIaN-1024x683-1-444x600.jpg"
                 alt="Instalación ventanas PVC S70 en vivienda en Bilbao"
                 width={600}
                 height={450}
@@ -261,29 +261,7 @@ export default function SerieS70Page() {
             Descargar Ficha Técnica S70 (PDF)
           </a>
 
-          {/* ── Fotos de proyecto ────────────────────────────────────────────── */}
-          <div className="grid grid-cols-2 gap-3 mb-10">
-            <div className="img-zoom-wrap shadow-sm">
-              <Image
-                src="https://ecovenplus.com/wp-content/uploads/2024/10/MG_6525-BAJA-RESOLUCIaN-1024x683-1-444x600.jpg"
-                alt="Proyecto ventanas PVC S70 en Vizcaya"
-                width={600}
-                height={400}
-                className="w-full h-[200px] object-cover img-zoom img-reveal"
-                style={{ animationDelay: '0.1s' }}
-              />
-            </div>
-            <div className="img-zoom-wrap shadow-sm">
-              <Image
-                src="https://ecovenplus.com/wp-content/uploads/2024/10/Casa-Hilaria-2-retocado-scaled.jpg"
-                alt="Casa Hilaria ventanas PVC Ecoven Plus"
-                width={600}
-                height={400}
-                className="w-full h-[200px] object-cover img-zoom img-reveal"
-                style={{ animationDelay: '0.2s' }}
-              />
-            </div>
-          </div>
+
 
           {/* ── Acabados disponibles ─────────────────────────────────────────── */}
           <h2 className="font-montserrat text-xl font-extrabold text-carbon mb-2">Acabados disponibles</h2>
@@ -347,7 +325,7 @@ export default function SerieS70Page() {
             {[
               { label: 'Serie S76', sub: '76 mm · más confort', href: '/ventanas-pvc/serie-s76' },
               { label: 'Serie S82', sub: '82 mm · Passivhaus', href: '/ventanas-pvc/serie-s82' },
-              { label: 'Volver al catálogo', sub: 'Puertas y Ventanas PVC', href: '/ventanas-pvc' },
+              { label: 'Volver al catálogo', sub: 'Puertas y Ventanas PVC Ecoven Plus', href: '/ventanas-pvc' },
             ].map(item => (
               <Link
                 key={item.href}
