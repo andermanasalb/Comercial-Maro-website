@@ -6,36 +6,36 @@ import { buildMetadata } from '@/lib/metadata'
 import { PresupuestoButton } from '@/components/shared/PresupuestoButton'
 
 export const metadata: Metadata = buildMetadata({
-  title: "Mampara SLIM en Bilbao | Comercial MAR'O",
+  title: "Mampara Minimalista SLIM | Comercial MAR'O",
   description:
-    'Mampara SLIM. Vidrio continuo con perfil bajo. Máxima superficie acristalada sin juntas visibles. Instalación en Bilbao y Vizcaya.',
-  keywords: ['mampara SLIM Bilbao', 'SLIM', 'tabique vidrio continuo Vizcaya'],
+    'Nuestra serie SLIM redefine el minimalismo. Vidrio continuo con perfilería de mínima sección para una estética arquitectónica de máxima transparencia.',
+  keywords: ['mampara SLIM', 'mamparas minimalistas', 'vidrio continuo', 'tabique perfil bajo'],
   path: '/mamparas-oficina/slim',
 })
 
 const features = [
-  'Perfil bajo visto de óptica limpia y precisa',
-  'Módulo vidriero total con dimensiones entre ejes variables',
-  'Variantes SLIM 1V (sencillo) y SLIM 2V (doble vidrio)',
-  'Vidrios Stadip unidos por junta H de policarbonato o silicona a testa',
-  'Sistema de ajunquillamiento perimetral en ambas caras',
-  'Montaje y desmontaje independiente a la estructura',
+  'Perfilería vista de mínima sección para una óptica limpia',
+  'Módulos vidriados continuos con dimensiones personalizadas',
+  'Disponible en versiones de vidrio sencillo (1V) y doble (2V)',
+  'Encuentros verticales transparentes en policarbonato o silicona',
+  'Sistema de anclaje perimetral mediante ajunquillamiento',
+  'Mantenimiento independiente de cada panel de vidrio',
 ]
 
 const specs: [string, string][] = [
-  ['Sistema', 'SLIM'],
-  ['Configuraciones', '1V (Sencillo) / 2V (Doble)'],
+  ['Serie', 'SLIM'],
+  ['Configuraciones', '1V (Sencillo) y 2V (Doble)'],
   ['Vidrio SLIM 1V', 'Stadip hasta 6+6 mm'],
-  ['Vidrio SLIM 2V', 'Doble Stadip de 5+5 mm'],
-  ['Juntas verticales', 'Perfil H policarbonato o adhesivo a testa'],
-  ['Mantenimiento', 'Desmontable por ajunquillamiento'],
+  ['Vidrio SLIM 2V', 'Doble Stadip 5+5 mm'],
+  ['Unión vertical', 'Perfil en H o adhesivos estructurales'],
+  ['Sistema', 'Desmontable por ajunquillamiento'],
 ]
 
 const quickNav = [
-  { label: 'Cristal Visión I+II', sub: 'Máxima luminosidad', href: '/mamparas-oficina/cristal-vision' },
   { label: 'UR-802', sub: 'Alta prestación', href: '/mamparas-oficina/ur-802' },
   { label: 'UR-803', sub: 'El más demandado', href: '/mamparas-oficina/ur-803' },
   { label: 'UR-902', sub: 'Perfilería oculta', href: '/mamparas-oficina/ur-902' },
+  { label: 'Cristal Visión I+II', sub: 'Transparencia total', href: '/mamparas-oficina/cristal-vision' },
   { label: 'Tabique Armario', sub: 'Solución integrada', href: '/mamparas-oficina/tabique-armario' },
   { label: 'Volver al catálogo', sub: 'Mamparas de Oficina', href: '/mamparas-oficina' },
 ]
@@ -75,7 +75,7 @@ export default function SlimPage() {
       <div className="relative h-[40vh] min-h-48 flex items-end">
         <Image
           src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80"
-          alt="Mampara SLIM vidrio continuo perfil bajo oficina"
+          alt="Mampara SLIM vidrio continuo perfil bajo oficina minimalista"
           fill
           sizes="100vw"
           className="object-cover"
@@ -106,25 +106,25 @@ export default function SlimPage() {
           <div className="grid md:grid-cols-2 gap-8 items-start mb-10">
             <div>
               <p className="text-gris-medio text-base leading-relaxed mb-6">
-                Sistema de compartimentación de <strong className="text-carbon font-semibold">perfil bajo visto</strong> para un módulo vidriero integral, diseñado para lograr una atractiva óptica arquitectónica, limpia y precisa con dimensiones entre ejes variables.
+                En <strong className="text-carbon font-semibold">Comercial MAR&apos;O</strong>, implementamos el sistema <strong className="text-carbon font-semibold">SLIM</strong> como nuestra propuesta de cabecera para proyectos que exigen una compartimentación de <strong className="text-carbon font-semibold">perfil bajo visto</strong>. Logramos una óptica arquitectónica depurada y precisa, capaz de proyectar paramentos vidriados que parecen flotar entre suelo y techo con una limpieza visual absoluta.
               </p>
               <ul className="grid gap-4 mb-8">
                 <li className="flex items-start gap-3">
                   <CheckCircle2 size={20} className="text-rojo flex-shrink-0 mt-0.5" />
                   <p className="text-sm text-gris-medio leading-relaxed">
-                    <strong className="text-carbon font-semibold">Versión SLIM 1V:</strong> Tabique equipado con vidrio Stadip de hasta 6+6 mm, unido verticalmente mediante un perfil "H" transparente de policarbonato o directamente a testa utilizando adhesivo de silicona de doble cara.
+                    <strong className="text-carbon font-semibold">Serie SLIM 1V:</strong> Nuestra versión de vidrio sencillo con Stadip de hasta 6+6 mm. Utilizamos juntas verticales en perfil "H" transparente o uniones a testa con adhesivo de silicona de doble cara para eliminar cualquier interrupción en la mirada.
                   </p>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 size={20} className="text-rojo flex-shrink-0 mt-0.5" />
                   <p className="text-sm text-gris-medio leading-relaxed">
-                    <strong className="text-carbon font-semibold">Versión SLIM 2V:</strong> Sistema de altas prestaciones que alberga doble vidrio Stadip 5+5 mm, empleando el mismo tipo de uniones limpias que la versión 1V.
+                    <strong className="text-carbon font-semibold">Serie SLIM 2V:</strong> Solución de doble vidrio Stadip 5+5 mm para una mayor prestación acústica, manteniendo el mismo lenguaje minimalista y de reducida impronta visual que caracteriza a la línea SLIM.
                   </p>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 size={20} className="text-rojo flex-shrink-0 mt-0.5" />
                   <p className="text-sm text-gris-medio leading-relaxed">
-                    <strong className="text-carbon font-semibold">Instalación independiente:</strong> Extremada facilidad de desmontaje y reinstalación de los paños de vidrio sin afectar la estructura base, gracias a su sistema de ajunquillamiento perimetral en ambas caras.
+                    <strong className="text-carbon font-semibold">Flexibilidad técnica:</strong> El sistema de ajunquillamiento perimetral en ambas caras nos permite instalar o sustituir los paños de forma independiente, garantizando un mantenimiento ágil sin afectar la integridad del tabique.
                   </p>
                 </li>
               </ul>
@@ -253,7 +253,7 @@ export default function SlimPage() {
 
         {/* ── Sidebar ──────────────────────────────────────────────────────── */}
         <div className="lg:sticky lg:top-20 h-fit space-y-4">
-          <div className="bg-crema rounded-xl p-6 border border-gris-claro">
+          <div className="bg-crema rounded-xl p-6 border border-gris-claro shadow-sm">
             <h3 className="font-montserrat text-base font-bold text-carbon mb-2">
               ¿Es SLIM para tu proyecto?
             </h3>
@@ -262,7 +262,7 @@ export default function SlimPage() {
             </p>
             <PresupuestoButton size="lg" className="w-full justify-center" />
             <div className="mt-4 pt-4 border-t border-gris-claro text-sm text-gris-medio font-montserrat space-y-1.5">
-              {['Proyecto a medida', 'Instalación propia en Vizcaya', 'Garantía 10 años'].map(item => (
+              {['Asesoramiento técnico', 'Instalación propia', 'Garantía 10 años'].map(item => (
                 <p key={item} className="flex items-center gap-1.5">
                   <CheckCircle2 size={12} className="text-rojo flex-shrink-0" aria-hidden="true" />
                   {item}

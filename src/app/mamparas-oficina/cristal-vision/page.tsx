@@ -6,36 +6,36 @@ import { buildMetadata } from '@/lib/metadata'
 import { PresupuestoButton } from '@/components/shared/PresupuestoButton'
 
 export const metadata: Metadata = buildMetadata({
-  title: "Mampara Cristal Visión I+II en Bilbao | Comercial MAR'O",
+  title: "Mampara Cristal Visión | Comercial MAR'O",
   description:
-    'Mampara Cristal Visión I+II. Tabique 100% acristalado con vidrio 5+5. Dos modelos. Instalación en Bilbao y Vizcaya.',
-  keywords: ['mampara cristal Bilbao', 'cristal visión', 'tabique acristalado Vizcaya'],
+    'Máxima transparencia para tu oficina con Cristal Visión. Vidrio continuo "a hueso" sin perfiles verticales para una diafanidad total y luz natural.',
+  keywords: ['mampara cristal vision', 'transparencia total', 'vidrio a hueso', 'luz natural oficina'],
   path: '/mamparas-oficina/cristal-vision',
 })
 
 const features = [
-  'Tabique 100% acristalado de suelo a techo',
-  'Múltiples opciones de vidrio Stadip (hasta 6+6 o doble 5+5)',
-  'Versiones CV1 (vidrio sencillo) y CV2 (doble vidrio)',
-  'Sistema de ajunquillamiento perimetral desmontable',
-  'Máxima entrada de luz natural y amplitud visual',
-  'Compatible con sistemas UR para zonas mixtas',
+  'Ausencia total de marcos verticales para una visión continua',
+  'Encuentros de vidrio "a hueso" con juntas de alta transparencia',
+  'Disponible en versiones de vidrio sencillo y doble acristalamiento',
+  'Perfilería perimetral mínima en aluminio lacado o anodizado',
+  'Instalación y mantenimiento independiente de cada panel',
+  'Aislamiento acústico certificado según configuración',
 ]
 
 const specs: [string, string][] = [
-  ['Sistema', 'Cristal Visión I+II'],
-  ['Configuraciones', 'CV1 (Sencillo) / CV2 (Doble)'],
-  ['Tipo de vidrio CV1', 'Stadip hasta 6+6 mm'],
-  ['Tipo de vidrio CV2', 'Stadip 3+3 mm o 5+5 mm'],
-  ['Juntas verticales', 'Policarbonato, cinta biadhesiva o perfil "fuga"'],
-  ['Transparencia', 'Total — suelo a techo'],
+  ['Serie', 'Cristal Visión (CV)'],
+  ['Configuraciones', 'I (Sencillo) y II (Doble)'],
+  ['Vidrio CV-I', 'Stadip hasta 6+6 mm'],
+  ['Vidrio CV-II', 'Doble Stadip con cámara'],
+  ['Unión vertical', 'Junta "H" policarbonato / Cinta estructural'],
+  ['Transparencia', 'Total (sin marcos verticales)'],
 ]
 
 const quickNav = [
-  { label: 'SLIM', sub: 'Minimalista', href: '/mamparas-oficina/slim' },
   { label: 'UR-802', sub: 'Alta prestación', href: '/mamparas-oficina/ur-802' },
   { label: 'UR-803', sub: 'El más demandado', href: '/mamparas-oficina/ur-803' },
   { label: 'UR-902', sub: 'Perfilería oculta', href: '/mamparas-oficina/ur-902' },
+  { label: 'SLIM', sub: 'Mínimo perfil', href: '/mamparas-oficina/slim' },
   { label: 'Tabique Armario', sub: 'Solución integrada', href: '/mamparas-oficina/tabique-armario' },
   { label: 'Volver al catálogo', sub: 'Mamparas de Oficina', href: '/mamparas-oficina' },
 ]
@@ -75,7 +75,7 @@ export default function CristalVisionPage() {
       <div className="relative h-[40vh] min-h-48 flex items-end">
         <Image
           src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80"
-          alt="Mampara Cristal Visión I+II tabique acristalado oficina"
+          alt="Mampara Cristal Visión tabique acristalado oficina transparencia"
           fill
           sizes="100vw"
           className="object-cover"
@@ -88,7 +88,7 @@ export default function CristalVisionPage() {
             {' / '}
             <Link href="/mamparas-oficina" className="hover:text-white transition-colors">Mamparas de Oficina</Link>
             {' / '}
-            <span className="text-white" aria-current="page">Cristal Visión I+II</span>
+            <span className="text-white" aria-current="page">Cristal Visión</span>
           </nav>
           <div className="flex items-center gap-2 mb-2">
             <span className="bg-arena/20 border border-arena/40 text-arena text-[10px] font-montserrat font-bold tracking-[3px] uppercase px-3 py-1 rounded-full">
@@ -106,30 +106,30 @@ export default function CristalVisionPage() {
           <div className="grid md:grid-cols-2 gap-8 items-start mb-10">
             <div>
               <p className="text-gris-medio text-base leading-relaxed mb-6">
-                Sistema de <strong className="text-carbon font-semibold">tabique totalmente acristalado</strong> diseñado para maximizar la entrada de luz natural y la amplitud visual, manteniendo unas calidades de aislamiento y acabados superiores acordes a toda nuestra gama de tabiques.
+                En <strong className="text-carbon font-semibold">Comercial MAR&apos;O</strong>, apostamos por la máxima diafanidad con el sistema <strong className="text-carbon font-semibold">Cristal Visión</strong>. Diseñamos este tabique acristalado para proyectos que buscan inundar sus espacios de <strong className="text-carbon font-semibold">luz natural</strong>, eliminando cualquier marco vertical para crear una sensación de continuidad infinita de suelo a techo.
               </p>
               <ul className="grid gap-4 mb-8">
                 <li className="flex items-start gap-3">
                   <CheckCircle2 size={20} className="text-rojo flex-shrink-0 mt-0.5" />
                   <p className="text-sm text-gris-medio leading-relaxed">
-                    <strong className="text-carbon font-semibold">Versión CV1 (Vidrio Sencillo):</strong> Equipado con vidrio Stadip de hasta 6+6 mm. Puede unirse verticalmente mediante una junta de policarbonato, o lograr un acabado más limpio con cinta adhesiva de doble cara directamente al canto del vidrio.
+                    <strong className="text-carbon font-semibold">Cristal Visión I (Vidrio Sencillo):</strong> Nuestra propuesta más ligera. Empleamos vidrio Stadip de hasta 6+6 mm con encuentros verticales a través de juntas transparentes o cinta estructural, logrando un paramento de vidrio puro sin interrupciones.
                   </p>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 size={20} className="text-rojo flex-shrink-0 mt-0.5" />
                   <p className="text-sm text-gris-medio leading-relaxed">
-                    <strong className="text-carbon font-semibold">Versión CV2 (Doble Vidrio):</strong> Permite doble Stadip 3+3 (unido por perfil de aluminio "fuga" acoplado a policarbonato), u opción de doble vidrio 5+5 suprimiendo el perfil "fuga" para lograr una unión continua mediante cinta adhesiva o policarbonato puro.
+                    <strong className="text-carbon font-semibold">Cristal Visión II (Doble Vidrio):</strong> Elevamos la prestación acústica sin renunciar a la estética. Permite doble acristalamiento Stadip manteniendo la unión continua que define a esta gama, eliminando perfiles de aluminio vistos en los saltos de vidrio.
                   </p>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 size={20} className="text-rojo flex-shrink-0 mt-0.5" />
                   <p className="text-sm text-gris-medio leading-relaxed">
-                    <strong className="text-carbon font-semibold">Máxima modularidad:</strong> Facilidad total para desmontar y reinstalar los vidrios independientemente de la estructura, gracias a su ingenioso sistema de ajunquillamiento perimetral por ambas caras.
+                    <strong className="text-carbon font-semibold">Mantenimiento Inteligente:</strong> El sistema de ajunquillamiento perimetral en ambas caras nos permite instalar o sustituir los paños de forma independiente, garantizando una operativa rápida sin afectar la integridad del conjunto.
                   </p>
                 </li>
               </ul>
             </div>
-            
+
             {/* Right Column: Image + Stats */}
             <div className="flex flex-col gap-6">
               <div className="img-zoom-wrap shadow-md flex items-center justify-center bg-white">
@@ -142,13 +142,13 @@ export default function CristalVisionPage() {
                   className="w-full h-auto max-h-[450px] object-contain img-zoom img-reveal rounded"
                 />
               </div>
-              
+
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { val: 'Acristalado', label: 'Tipo' },
-                  { val: '5+5 u 6+6', label: 'Vidrio', highlight: true },
-                  { val: 'I y II', label: 'Modelos' },
-                  { val: 'Total', label: 'Transparencia' },
+                  { val: 'Luz natural', label: 'Principal' },
+                  { val: 'CV-I y CV-II', label: 'Modelos', highlight: true },
+                  { val: 'A hueso', label: 'Unión' },
+                  { val: 'Perfil mín.', label: 'Estructura' },
                 ].map(({ val, label, highlight }) => (
                   <div key={label} className={`rounded-xl p-4 text-center border ${highlight ? 'bg-crema border-rojo' : 'bg-crema border-gris-claro'}`}>
                     <p className="font-montserrat text-lg sm:text-xl font-extrabold text-carbon truncate">{val}</p>
@@ -175,7 +175,7 @@ export default function CristalVisionPage() {
             <div className="img-zoom-wrap shadow-sm flex items-center justify-center">
               <Image
                 src="/images/mamparas-oficina/cristal-vision-2.jpg"
-                alt="Detalle mampara Cristal Visión I+II"
+                alt="Detalle perfil Cristal Visión mampara acristalada"
                 width={800}
                 height={800}
                 unoptimized
@@ -185,7 +185,7 @@ export default function CristalVisionPage() {
             </div>
           </div>
 
-          {/* ── Comparativa con SLIM ─────────────────────────────────────────── */}
+          {/* ── Comparativa con SLIM ─────────────────────────────────────── */}
           <div className="mb-10">
             <p className="text-[11px] uppercase tracking-wider font-montserrat text-gris-medio mb-5">
               Cristal Visión frente a SLIM
@@ -193,24 +193,24 @@ export default function CristalVisionPage() {
 
             {[
               {
-                label: 'Superficie acristalada',
+                label: 'Transparencia total',
                 rows: [
-                  { series: 'Cristal V.', pct: '90%', val: 'Alta', current: true, delay: '0s' },
-                  { series: 'SLIM', pct: '95%', val: 'Total', current: false, delay: '0.1s' },
+                  { series: 'SLIM', pct: '90%', val: 'Excelente', current: false, delay: '0s' },
+                  { series: 'Cristal V.', pct: '98%', val: 'Absoluta', current: true, delay: '0.1s' },
                 ],
               },
               {
-                label: 'Discreción de perfil',
+                label: 'Carga de perfil',
                 rows: [
-                  { series: 'Cristal V.', pct: '70%', val: 'Alta', current: true, delay: '0s' },
-                  { series: 'SLIM', pct: '95%', val: 'Máxima', current: false, delay: '0.1s' },
+                  { series: 'SLIM', pct: '50%', val: 'Perfil sutil', current: false, delay: '0s' },
+                  { series: 'Cristal V.', pct: '15%', val: 'Marcos mínimos', current: true, delay: '0.1s' },
                 ],
               },
               {
-                label: 'Modularidad',
+                label: 'Prestación acústica',
                 rows: [
-                  { series: 'Cristal V.', pct: '85%', val: 'Alta — 2 modelos', current: true, delay: '0s' },
-                  { series: 'SLIM', pct: '70%', val: 'Media', current: false, delay: '0.1s' },
+                  { series: 'SLIM', pct: '80%', val: 'Alta', current: false, delay: '0s' },
+                  { series: 'Cristal V.', pct: '85%', val: 'Alta — 2 modelos', current: true, delay: '0.1s' },
                 ],
               },
             ].map(({ label, rows }) => (
@@ -253,16 +253,16 @@ export default function CristalVisionPage() {
 
         {/* ── Sidebar ──────────────────────────────────────────────────────── */}
         <div className="lg:sticky lg:top-20 h-fit space-y-4">
-          <div className="bg-crema rounded-xl p-6 border border-gris-claro">
+          <div className="bg-crema rounded-xl p-6 border border-gris-claro shadow-sm">
             <h3 className="font-montserrat text-base font-bold text-carbon mb-2">
-              ¿Es Cristal Visión para tu proyecto?
+              ¿Potencias la luz en tu diseño?
             </h3>
             <p className="text-sm text-gris-medio mb-5">
-              Si la luminosidad y la amplitud visual son prioritarias, Cristal Visión I+II transforma tu espacio de trabajo.
+              Si la diafanidad y la transparencia absoluta son prioritarias, Cristal Visión es la elección para oficinas modernas y abiertas.
             </p>
             <PresupuestoButton size="lg" className="w-full justify-center" />
             <div className="mt-4 pt-4 border-t border-gris-claro text-sm text-gris-medio font-montserrat space-y-1.5">
-              {['Proyecto a medida', 'Instalación propia en Vizcaya', 'Garantía 10 años'].map(item => (
+              {['Asesoramiento técnico', 'Instalación propia', 'Garantía 10 años'].map(item => (
                 <p key={item} className="flex items-center gap-1.5">
                   <CheckCircle2 size={12} className="text-rojo flex-shrink-0" aria-hidden="true" />
                   {item}

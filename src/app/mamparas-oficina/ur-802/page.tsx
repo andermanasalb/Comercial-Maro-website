@@ -6,29 +6,30 @@ import { buildMetadata } from '@/lib/metadata'
 import { PresupuestoButton } from '@/components/shared/PresupuestoButton'
 
 export const metadata: Metadata = buildMetadata({
-  title: "Mampara UR-802 en Bilbao | Comercial MAR'O",
+  title: "Mampara Robusta UR-802 | Comercial MAR'O",
   description:
-    'Mampara UR-802. Perfilería vista con estructura de acero, resistencia al fuego certificada. Instalación en Bilbao y Vizcaya.',
-  keywords: ['mampara UR-802 Bilbao', 'UR-802', 'mamparas oficina acero Vizcaya'],
+    'Nuestro sistema UR-802 destaca por su máxima estabilidad y resistencia estructural. La solución de referencia para proyectos que exigen robustez y durabilidad.',
+  keywords: ['mampara UR-802', 'mamparas robustas', 'mamparas estructurales', 'divisorias acero'],
   path: '/mamparas-oficina/ur-802',
 })
 
 const features = [
-  'Perfilería vista con acabado de alta calidad',
-  'Resistencia al fuego certificada',
-  'Alto aislamiento térmico y acústico',
-  'Combinación de colores en perfil y relleno',
-  'Gran fortaleza estructural gracias al refuerzo de acero',
-  'Amplia aceptación en proyectos de obra nueva y reforma',
+  'Perfilería estructural de alta estabilidad',
+  'Protección frente al fuego certificada',
+  'Excepcional aislamiento térmico y acústico',
+  'Posibilidad de contrastes cromáticos perfil-panel',
+  'Estructura interna reforzada en acero galvanizado',
+  'Totalmente integrable con nuestro sistema de Tabique Armario',
+  'Solución de referencia en grandes proyectos corporativos',
 ]
 
 const specs: [string, string][] = [
-  ['Sistema', 'UR-802'],
-  ['Perfilería', 'Vista'],
+  ['Serie', 'UR-802'],
+  ['Perfilería', 'Estructural vista'],
+  ['Montaje', 'Fijación por perfil Omega'],
   ['Resistencia al fuego', 'Certificada'],
-  ['Aislamiento', 'Alto térmico-acústico'],
   ['Estructura', 'Acero galvanizado'],
-  ['Acabados', 'Estándar y combinables'],
+  ['Acabados', 'Gama amplia de colores y texturas'],
   ['Compatibilidad', 'Tabique Armario'],
 ]
 
@@ -93,7 +94,7 @@ export default function UR802Page() {
       <div className="relative h-[40vh] min-h-48 flex items-end">
         <Image
           src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80"
-          alt="Mampara UR-802 oficina"
+          alt="Mampara UR-802 oficina robusta"
           fill
           sizes="100vw"
           className="object-cover"
@@ -110,7 +111,7 @@ export default function UR802Page() {
           </nav>
           <div className="flex items-center gap-2 mb-2">
             <span className="bg-arena/20 border border-arena/40 text-arena text-[10px] font-montserrat font-bold tracking-[3px] uppercase px-3 py-1 rounded-full">
-              Alta prestación
+              Máxima Solidez
             </span>
           </div>
           <h1 className="font-montserrat text-3xl font-extrabold text-white">UR-802</h1>
@@ -124,11 +125,10 @@ export default function UR802Page() {
           <div className="grid md:grid-cols-2 gap-8 items-start mb-10">
             <div>
               <p className="text-gris-medio text-base leading-relaxed mb-4">
-                Considerado el sistema más clásico y con mayor aceptación del mercado, el UR-802 es la elección habitual 
-                en las prescripciones de arquitectos e interioristas. Su <strong className="text-carbon font-semibold">estructura interior de acero galvanizado</strong>, combinada con partes vistas pintadas en polvo epoxi-poliéster a 200º, garantiza no solo un acabado impecable, sino una enorme versatilidad.
+                En <strong className="text-carbon font-semibold">Comercial MAR&apos;O</strong>, recomendamos el sistema <strong className="text-carbon font-semibold">UR-802</strong> cuando la prioridad absoluta es la solidez estructural. Este modelo es nuestro "peso pesado" en perfilería vista, diseñado para proyectos que exigen un comportamiento técnico impecable y una durabilidad garantizada a largo plazo.
               </p>
               <p className="text-gris-medio text-base leading-relaxed">
-                Todos sus componentes se ensamblan de forma ágil mediante un <strong className="text-carbon font-semibold">perfil de fijación tapajuntas a presión</strong>. Este método de acople no solo facilita enormemente el montaje y desmontaje, sino que consigue fundir integralmente el color de la mampara, logrando una estética limpia y uniforme de techo a suelo.
+                Su núcleo de <strong className="text-carbon font-semibold">acero galvanizado de alta resistencia</strong> se combina con un sistema de unión mediante <strong className="text-carbon font-semibold">perfil de fijación Omega</strong> atornillado directamente a la estructura interna. Esta configuración no solo proporciona una fortaleza mecánica superior, sino que permite jugar con contrastes cromáticos entre la perfilería y los paneles de relleno, adaptándonos por completo a tu identidad corporativa. Además, se integra de forma nativa con nuestro sistema de <Link href="/mamparas-oficina/tabique-armario" className="text-rojo hover:underline">Tabique Armario</Link>.
               </p>
             </div>
             <div className="flex flex-col gap-6">
@@ -157,10 +157,10 @@ export default function UR802Page() {
           {/* ── Stat grid ───────────────────────────────────────────────────── */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
             {[
-              { val: 'Vista', label: 'Perfilería' },
+              { val: 'Estructural', label: 'Perfilería' },
               { val: 'Certificada', label: 'Res. fuego', highlight: true },
-              { val: 'Acero', label: 'Estructura' },
-              { val: 'Combinables', label: 'Colores' },
+              { val: 'Premium', label: 'Acabados' },
+              { val: 'Eficaz', label: 'Montaje' },
             ].map(({ val, label, highlight }) => (
               <div key={label} className={`rounded-xl p-4 text-center border ${highlight ? 'bg-crema border-rojo' : 'bg-crema border-gris-claro'}`}>
                 <p className="font-montserrat text-xl font-extrabold text-carbon">{val}</p>
@@ -375,7 +375,7 @@ export default function UR802Page() {
 
         {/* ── Sidebar ──────────────────────────────────────────────────────── */}
         <div className="lg:sticky lg:top-20 h-fit space-y-4">
-          <div className="bg-crema rounded-xl p-6 border border-gris-claro">
+          <div className="bg-crema rounded-xl p-6 border border-gris-claro shadow-sm">
             <h3 className="font-montserrat text-base font-bold text-carbon mb-2">
               ¿Es el UR-802 para tu proyecto?
             </h3>
@@ -384,7 +384,7 @@ export default function UR802Page() {
             </p>
             <PresupuestoButton size="lg" className="w-full justify-center" />
             <div className="mt-4 pt-4 border-t border-gris-claro text-sm text-gris-medio font-montserrat space-y-1.5">
-              {['Proyecto a medida', 'Instalación propia en Vizcaya', 'Garantía 10 años'].map(item => (
+              {['Asesoramiento técnico', 'Instalación propia', 'Garantía 10 años'].map(item => (
                 <p key={item} className="flex items-center gap-1.5">
                   <CheckCircle2 size={12} className="text-rojo flex-shrink-0" aria-hidden="true" />
                   {item}
@@ -400,9 +400,9 @@ export default function UR802Page() {
             {[
               { label: 'UR-803', sub: 'El más demandado', href: '/mamparas-oficina/ur-803' },
               { label: 'UR-902', sub: 'Perfilería oculta', href: '/mamparas-oficina/ur-902' },
-              { label: 'Cristal Visión I+II', sub: 'Máxima luminosidad', href: '/mamparas-oficina/cristal-vision' },
-              { label: 'SLIM', sub: 'Minimalista', href: '/mamparas-oficina/slim' },
-              { label: 'Tabique Armario', sub: 'Solución integrada', href: '/mamparas-oficina/tabique-armario' },
+              { label: 'Cristal Visión I+II', sub: 'Transparencia total', href: '/mamparas-oficina/cristal-vision' },
+              { label: 'SLIM', sub: 'Mínimo perfil', href: '/mamparas-oficina/slim' },
+              { label: 'Tabique Armario', sub: 'Mueble divisorio', href: '/mamparas-oficina/tabique-armario' },
               { label: 'Volver al catálogo', sub: 'Mamparas de Oficina', href: '/mamparas-oficina' },
             ].map(item => (
               <Link

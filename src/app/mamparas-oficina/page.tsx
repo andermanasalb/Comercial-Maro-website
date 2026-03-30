@@ -6,14 +6,14 @@ import { buildMetadata } from '@/lib/metadata'
 import { PresupuestoButton } from '@/components/shared/PresupuestoButton'
 
 export const metadata: Metadata = buildMetadata({
-  title: "Mamparas de Oficina en Bilbao | Comercial MAR'O",
+  title: "Mamparas de Oficina de Alta Gama | Comercial MAR'O",
   description:
-    'Mamparas de oficina sistemas UR-802, UR-803, UR-902, Cristal Visión, SLIM y Tabique Armario. Instalación en Bilbao y Vizcaya.',
+    'Sistemas de compartimentación modular: Perfilería UR, Sistemas Acristalados y Tabique Armario. Soluciones técnicas para entornos de trabajo.',
   keywords: [
-    'mamparas oficina Bilbao',
-    'Bilbao',
-    'divisorias oficina Vizcaya',
-    'mamparas UR Bilbao',
+    'mamparas oficina',
+    'divisorias modulares',
+    'mamparas UR',
+    'vidrio continuo oficina',
   ],
   path: '/mamparas-oficina',
 })
@@ -53,20 +53,20 @@ export default function MamparasOficinaPage() {
         <div>
           {/* ── Intro ──────────────────────────────────────────────────────── */}
           <p className="text-gris-medio text-base leading-relaxed mb-12">
-            Tres familias —<strong className="text-carbon font-semibold">Perfilería UR</strong>, <strong className="text-carbon font-semibold">Sistemas Acristalados</strong> y <strong className="text-carbon font-semibold">Tabique Armario</strong>— para cada necesidad de división de espacios: desde el tabique clásico hasta el vidrio continuo sin marcos.
+            En <strong className="text-carbon font-semibold">Comercial MAR&apos;O</strong>, entendemos la oficina como un entorno vivo. Por eso, hemos desarrollado tres líneas especializadas —<strong className="text-carbon font-semibold">Perfilería UR</strong>, <strong className="text-carbon font-semibold">Sistemas Acristalados</strong> y <strong className="text-carbon font-semibold">Tabique Armario</strong>— diseñadas para modular y transformar tus espacios con elegancia y solvencia técnica. Desde la robustez estructural de nuestros sistemas clásicos hasta la ligereza del vidrio continuo, aportamos soluciones que elevan la arquitectura de las oficinas actuales.
           </p>
 
           {/* ── Sistemas UR ─────────────────────────────────────────────── */}
           <section className="mb-14">
             <div className="mb-7">
               <span className="inline-block font-montserrat text-[11px] font-bold tracking-[3px] uppercase shimmer-text mb-1">
-                Perfilería de acero
+                Ingeniería en acero
               </span>
               <h2 className="font-montserrat text-2xl font-bold text-carbon">
-                Elige tu sistema de perfilería
+                Nuestra gama de perfilería técnica
               </h2>
               <p className="text-[13px] text-gris-medio mt-1 max-w-lg">
-                Tres sistemas con distintos acabados constructivos y niveles de discreción estética.
+                Tres enfoques distintos para equilibrar estética, rapidez de montaje y discreción visual.
               </p>
             </div>
 
@@ -83,16 +83,16 @@ export default function MamparasOficinaPage() {
                     UR-802
                   </span>
                   <span className="inline-block bg-arena-claro text-arena text-[10px] font-montserrat font-bold tracking-wider uppercase px-2.5 py-1 rounded-full mb-3">
-                    Alta prestación
+                    Máxima Solidez
                   </span>
                   <h3 className="font-montserrat text-lg font-extrabold text-carbon mb-0.5">UR-802</h3>
-                  <p className="text-[12px] font-montserrat text-gris-medio mb-4">Robustez y combinación de colores</p>
+                  <p className="text-[12px] font-montserrat text-gris-medio mb-4">Fortaleza técnica y versatilidad</p>
                   <div className="border-t border-gris-claro pt-4 mb-4 space-y-2">
                     {[
-                      ['Perfilería', 'Vista'],
-                      ['Fuego', 'Certificada'],
-                      ['Estructura', 'Acero'],
-                      ['Colores', 'Combinables'],
+                      ['Perfilería', 'Estructural'],
+                      ['Protección', 'Ignífuga'],
+                      ['Núcleo', 'Acero'],
+                      ['Acabados', 'Personalizables'],
                     ].map(([label, value]) => (
                       <div key={label} className="flex justify-between items-baseline gap-2">
                         <span className="text-[11px] text-gris-medio">{label}</span>
@@ -101,13 +101,13 @@ export default function MamparasOficinaPage() {
                     ))}
                   </div>
                   <div className="flex flex-wrap gap-1.5 mb-4">
-                    {['Perfilería vista', 'Resistencia fuego', 'Combinación colores'].map(tag => (
+                    {['Perfil visto', 'Resistencia fuego', 'Gran formato'].map(tag => (
                       <span key={tag} className="bg-arena/20 text-arena text-[10px] font-montserrat font-bold px-2.5 py-0.5 rounded-full">{tag}</span>
                     ))}
                   </div>
                   <div className="mt-auto pt-2">
                     <span className="inline-flex items-center justify-center font-montserrat text-[11px] font-bold text-rojo bg-rojo/5 px-4 py-2 mt-auto rounded-lg group-hover:bg-rojo group-hover:text-white transition-colors w-max">
-                      Ver UR-802 &rarr;
+                      Descubrir UR-802 &rarr;
                     </span>
                   </div>
                 </div>
@@ -124,16 +124,16 @@ export default function MamparasOficinaPage() {
                     UR-803
                   </span>
                   <span className="inline-block bg-rojo text-white text-[10px] font-montserrat font-bold tracking-wider uppercase px-2.5 py-1 rounded-full mb-3">
-                    El más demandado
+                    Éxito de instalación
                   </span>
                   <h3 className="font-montserrat text-lg font-extrabold text-carbon mb-0.5">UR-803</h3>
-                  <p className="text-[12px] font-montserrat text-gris-medio mb-4">El clásico que siempre funciona</p>
+                  <p className="text-[12px] font-montserrat text-gris-medio mb-4">El estándar de agilidad y confianza</p>
                   <div className="border-t border-gris-claro pt-4 mb-4 space-y-2">
                     {[
-                      ['Perfilería', 'Vista'],
-                      ['Montaje', 'Tapajuntas'],
-                      ['Mercado', 'Referencia'],
-                      ['Instalación', 'Ágil'],
+                      ['Unión', 'Tapajuntas'],
+                      ['Cierre', 'Presión'],
+                      ['Uso', 'Corporativo'],
+                      ['Montaje', 'Eficaz'],
                     ].map(([label, value]) => (
                       <div key={label} className="flex justify-between items-baseline gap-2">
                         <span className="text-[11px] text-gris-medio">{label}</span>
@@ -142,13 +142,13 @@ export default function MamparasOficinaPage() {
                     ))}
                   </div>
                   <div className="flex flex-wrap gap-1.5 mb-4">
-                    {['Tapajuntas', 'Más prescrito', 'Ágil montaje'].map(tag => (
+                    {['Más versátil', 'Anclaje rápido', 'Equilibrio total'].map(tag => (
                       <span key={tag} className="bg-rojo/10 text-rojo text-[10px] font-montserrat font-bold px-2.5 py-0.5 rounded-full">{tag}</span>
                     ))}
                   </div>
                   <div className="mt-auto pt-2">
                     <span className="inline-flex items-center justify-center font-montserrat text-[11px] font-bold text-rojo bg-rojo/5 px-4 py-2 mt-auto rounded-lg group-hover:bg-rojo group-hover:text-white transition-colors w-max">
-                      Ver UR-803 &rarr;
+                      Detalles UR-803 &rarr;
                     </span>
                   </div>
                 </div>
@@ -165,16 +165,16 @@ export default function MamparasOficinaPage() {
                     UR-902
                   </span>
                   <span className="inline-block bg-white/10 text-arena text-[10px] font-montserrat font-bold tracking-wider uppercase px-2.5 py-1 rounded-full mb-3">
-                    Perfilería oculta
+                    Estética Elevada
                   </span>
                   <h3 className="font-montserrat text-lg font-extrabold text-white mb-0.5">UR-902</h3>
-                  <p className="text-[12px] font-montserrat text-arena mb-4">El marco que desaparece</p>
+                  <p className="text-[12px] font-montserrat text-arena mb-4">Donde la perfilería se vuelve invisible</p>
                   <div className="border-t border-white/10 pt-4 mb-4 space-y-2">
                     {[
-                      ['Perfilería', 'Oculta'],
-                      ['Acabado', 'Premium'],
-                      ['Construcción', 'Diferenciada'],
-                      ['Estética', 'Minimalista'],
+                      ['Perfil', 'Oculto'],
+                      ['Nivel', 'Premium'],
+                      ['Diseño', 'Lineal'],
+                      ['Concepto', 'Vanguardia'],
                     ].map(([label, value]) => (
                       <div key={label} className="flex justify-between items-baseline gap-2">
                         <span className="text-[11px] text-white/50">{label}</span>
@@ -183,13 +183,13 @@ export default function MamparasOficinaPage() {
                     ))}
                   </div>
                   <div className="flex flex-wrap gap-1.5 mb-4">
-                    {['Perfil oculto', 'Acabado premium', 'Minimalista'].map(tag => (
+                    {['Marco oculto', 'Gama superior', 'Continuidad visual'].map(tag => (
                       <span key={tag} className="bg-white/10 text-arena text-[10px] font-montserrat font-bold px-2.5 py-0.5 rounded-full">{tag}</span>
                     ))}
                   </div>
                   <div className="mt-auto pt-2">
                     <span className="inline-flex items-center justify-center font-montserrat text-[11px] font-bold text-arena bg-white/10 px-4 py-2 mt-auto rounded-lg group-hover:bg-arena group-hover:text-carbon transition-colors w-max">
-                      Ver UR-902 &rarr;
+                      Explorar UR-902 &rarr;
                     </span>
                   </div>
                 </div>
@@ -221,31 +221,31 @@ export default function MamparasOficinaPage() {
             `}</style>
             <div className="mt-6 bg-crema rounded-xl border border-gris-claro p-5">
               <p className="font-montserrat text-[11px] font-bold tracking-wider uppercase text-gris-medio mb-5">
-                Comparativa técnica
+                Rendimiento técnico comparado
               </p>
               {[
                 {
                   title: 'Aislamiento térmico-acústico',
                   rows: [
-                    { serie: 'UR-802', pct: '80%', val: 'Alta', delay: '0ms' },
-                    { serie: 'UR-803', pct: '65%', val: 'Media-alta', delay: '100ms' },
-                    { serie: 'UR-902', pct: '80%', val: 'Alta', delay: '200ms' },
+                    { serie: 'UR-802', pct: '80%', val: 'Superior', delay: '0ms' },
+                    { serie: 'UR-803', pct: '65%', val: 'Equilibrado', delay: '100ms' },
+                    { serie: 'UR-902', pct: '80%', val: 'Superior', delay: '200ms' },
                   ],
                 },
                 {
-                  title: 'Facilidad de montaje',
+                  title: 'Velocidad de ejecución',
                   rows: [
-                    { serie: 'UR-802', pct: '70%', val: 'Media', delay: '60ms' },
-                    { serie: 'UR-803', pct: '90%', val: 'Alta', delay: '160ms' },
-                    { serie: 'UR-902', pct: '75%', val: 'Media-alta', delay: '260ms' },
+                    { serie: 'UR-802', pct: '70%', val: 'Estándar', delay: '60ms' },
+                    { serie: 'UR-803', pct: '90%', val: 'Máxima', delay: '160ms' },
+                    { serie: 'UR-902', pct: '75%', val: 'Técnica', delay: '260ms' },
                   ],
                 },
                 {
-                  title: 'Discreción estética',
+                  title: 'Limpieza visual',
                   rows: [
-                    { serie: 'UR-802', pct: '50%', val: 'Media', delay: '120ms' },
-                    { serie: 'UR-803', pct: '45%', val: 'Media', delay: '220ms' },
-                    { serie: 'UR-902', pct: '95%', val: 'Máxima', delay: '320ms' },
+                    { serie: 'UR-802', pct: '50%', val: 'Perfil visto', delay: '120ms' },
+                    { serie: 'UR-803', pct: '45%', val: 'Tradicional', delay: '220ms' },
+                    { serie: 'UR-902', pct: '95%', val: 'Invisible', delay: '320ms' },
                   ],
                 },
               ].map((metric, mi) => (
@@ -276,13 +276,13 @@ export default function MamparasOficinaPage() {
           <section className="mb-14">
             <div className="mb-7">
               <span className="inline-block font-montserrat text-[11px] font-bold tracking-[3px] uppercase shimmer-text mb-1">
-                Vidrio de suelo a techo
+                Luminosidad sin límites
               </span>
               <h2 className="font-montserrat text-2xl font-bold text-carbon">
-                Luz y apertura sin perfiles visibles
+                Transparencia y diafanidad activa
               </h2>
               <p className="text-[13px] text-gris-medio mt-1 max-w-lg">
-                Dos sistemas para espacios donde la transparencia y la luminosidad son prioritarias.
+                Dos conceptos para capturar la luz y potenciar la amplitud visual de tu entorno de trabajo.
               </p>
             </div>
 
@@ -295,20 +295,17 @@ export default function MamparasOficinaPage() {
                 <div className="w-10 h-10 bg-arena-claro rounded-lg flex items-center justify-center mb-4 group-hover:bg-arena/20 transition-colors">
                   <Grid2X2 size={18} className="text-arena" aria-hidden="true" />
                 </div>
-                <p className="text-[10px] font-montserrat font-bold tracking-wider uppercase text-arena mb-0.5">
-                 
-                </p>
                 <h3 className="font-montserrat text-base font-bold text-carbon mb-1">Cristal Visión I+II</h3>
                 <p className="text-[12px] font-montserrat text-rojo font-medium mb-3">
-                  Dos opciones de vidrio de suelo a techo
+                  Vidrio total de suelo a techo sin marcos verticales
                 </p>
                 <div className="flex flex-wrap gap-1.5 mb-4">
-                  {['Vidrio 5+5', '2 modelos', 'Transparencia total'].map(tag => (
+                  {['Luz natural', 'Elegancia', 'Personalizable'].map(tag => (
                     <span key={tag} className="bg-arena/20 text-arena text-[10px] font-montserrat font-bold px-2.5 py-0.5 rounded-full">{tag}</span>
                   ))}
                 </div>
                 <span className="inline-flex items-center justify-center font-montserrat text-[11px] font-bold text-rojo bg-rojo/5 px-4 py-2 mt-auto rounded-lg group-hover:bg-rojo group-hover:text-white transition-colors w-max">
-                  Descubrir &rarr;
+                  Ver opciones &rarr;
                 </span>
               </Link>
 
@@ -319,20 +316,17 @@ export default function MamparasOficinaPage() {
                 <div className="w-10 h-10 bg-arena-claro rounded-lg flex items-center justify-center mb-4 group-hover:bg-arena/20 transition-colors">
                   <Minus size={18} className="text-arena" aria-hidden="true" />
                 </div>
-                <p className="text-[10px] font-montserrat font-bold tracking-wider uppercase text-arena mb-0.5">
-                 
-                </p>
                 <h3 className="font-montserrat text-base font-bold text-carbon mb-1">SLIM</h3>
                 <p className="text-[12px] font-montserrat text-rojo font-medium mb-3">
-                  Vidrio continuo, perfil invisible
+                  La mínima expresión del perfil visto
                 </p>
                 <div className="flex flex-wrap gap-1.5 mb-4">
-                  {['Perfil bajo', 'Vidrio continuo', 'Sin juntas'].map(tag => (
+                  {['Minimalismo', 'Vidrio continuo', 'Diseño Slim'].map(tag => (
                     <span key={tag} className="bg-arena/20 text-arena text-[10px] font-montserrat font-bold px-2.5 py-0.5 rounded-full">{tag}</span>
                   ))}
                 </div>
                 <span className="inline-flex items-center justify-center font-montserrat text-[11px] font-bold text-rojo bg-rojo/5 px-4 py-2 mt-auto rounded-lg group-hover:bg-rojo group-hover:text-white transition-colors w-max">
-                  Descubrir &rarr;
+                  Ver SLIM &rarr;
                 </span>
               </Link>
 
@@ -343,10 +337,10 @@ export default function MamparasOficinaPage() {
           <section className="mb-14">
             <div className="mb-6">
               <span className="inline-block font-montserrat text-[11px] font-bold tracking-[3px] uppercase shimmer-text mb-1">
-                Solución integrada
+                Aprovechamiento total
               </span>
               <h2 className="font-montserrat text-2xl font-bold text-carbon">
-                El tabique que también guarda
+                Donde la división es utilidad
               </h2>
             </div>
             <Link
@@ -355,14 +349,11 @@ export default function MamparasOficinaPage() {
             >
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                 <div className="flex-1">
-                  <p className="text-[10px] font-montserrat font-bold tracking-wider uppercase text-arena mb-2">
-                   
-                  </p>
                   <h3 className="font-montserrat text-lg font-extrabold text-carbon mb-3">
-                    Tabique Armario
+                    Tabique Armario Comercial MAR&apos;O
                   </h3>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {['Compatible UR-802/803/902', 'Integración estética', 'Almacenaje incorporado'].map(tag => (
+                    {['Solución 2 en 1', 'Acabado a medida', 'Acceso bilateral'].map(tag => (
                       <span key={tag} className="flex items-center gap-1.5 bg-crema border border-gris-claro text-carbon text-[11px] font-montserrat font-semibold px-3 py-1 rounded-full">
                         <CheckCircle2 size={10} className="text-rojo flex-shrink-0" aria-hidden="true" />
                         {tag}
@@ -371,16 +362,16 @@ export default function MamparasOficinaPage() {
                   </div>
                   <div className="mt-5">
                     <span className="inline-flex items-center justify-center font-montserrat text-[11px] font-bold text-rojo bg-rojo/5 px-4 py-2 rounded-lg group-hover:bg-rojo group-hover:text-white transition-colors w-max">
-                      Descubrir &rarr;
+                      Explorar solución &rarr;
                     </span>
                   </div>
                 </div>
                 <div className="sm:pl-6 sm:border-l sm:border-gris-claro flex-shrink-0">
                   <div className="space-y-2">
                     {[
-                      ['Compatibilidad', 'UR-802/803/902'],
-                      ['Tipo', 'Integrado'],
-                      ['Función', 'Almacenaje'],
+                      ['Ecosistema', 'Compatible UR'],
+                      ['Concepto', 'Modulable'],
+                      ['Uso', 'Almacenaje'],
                     ].map(([k, v]) => (
                       <div key={k} className="sm:text-right text-left">
                         <p className="text-[10px] font-montserrat text-gris-medio uppercase tracking-wide">{k}</p>
@@ -398,17 +389,17 @@ export default function MamparasOficinaPage() {
         <aside className="lg:sticky lg:top-20 h-fit space-y-4">
           <div className="bg-crema rounded-xl p-6 border border-gris-claro">
             <h3 className="font-montserrat text-base font-bold text-carbon mb-1">
-              ¿Qué sistema se adapta a tu espacio?
+              ¿Hablamos de tu próximo espacio?
             </h3>
             <p className="text-sm text-gris-medio mb-5">
-              Te ayudamos a elegir entre perfilería vista, oculta y sistemas acristalados según tu proyecto.
+              En Comercial MAR&apos;O te asesoramos para encontrar el equilibrio perfecto entre diseño y funcionalidad.
             </p>
             <PresupuestoButton size="lg" className="w-full justify-center" />
             <div className="mt-4 pt-4 border-t border-gris-claro text-sm text-gris-medio font-montserrat space-y-1.5">
               {[
-                'Proyecto a medida',
-                'Instalación propia en Vizcaya',
-                'Garantía 10 años',
+                'Asesoramiento técnico',
+                'Instalación propia',
+                'Compromiso de calidad',
               ].map(item => (
                 <p key={item} className="flex items-center gap-1.5">
                   <CheckCircle2 size={12} className="text-rojo flex-shrink-0" aria-hidden="true" />
@@ -421,16 +412,16 @@ export default function MamparasOficinaPage() {
           {/* Quick nav */}
           <div className="bg-white rounded-xl p-5 border border-gris-claro">
             <p className="font-montserrat text-[10px] font-bold tracking-[2px] uppercase text-gris-medio mb-3">
-              Explorar productos
+              Catálogo de mamparas
             </p>
             <div className="space-y-0">
               {[
-                { label: 'UR-802', sub: 'Alta prestación', href: '/mamparas-oficina/ur-802' },
-                { label: 'UR-803', sub: 'El más demandado', href: '/mamparas-oficina/ur-803' },
+                { label: 'UR-802', sub: 'Máxima solidez', href: '/mamparas-oficina/ur-802' },
+                { label: 'UR-803', sub: 'Éxito de ventas', href: '/mamparas-oficina/ur-803' },
                 { label: 'UR-902', sub: 'Perfilería oculta', href: '/mamparas-oficina/ur-902' },
-                { label: 'Cristal Visión I+II', sub: 'Máxima luminosidad', href: '/mamparas-oficina/cristal-vision' },
-                { label: 'SLIM', sub: 'Minimalista', href: '/mamparas-oficina/slim' },
-                { label: 'Tabique Armario', sub: 'Solución integrada', href: '/mamparas-oficina/tabique-armario' },
+                { label: 'Cristal Visión I+II', sub: 'Transparencia total', href: '/mamparas-oficina/cristal-vision' },
+                { label: 'SLIM', sub: 'Estética minimalista', href: '/mamparas-oficina/slim' },
+                { label: 'Tabique Armario', sub: 'Mueble divisorio', href: '/mamparas-oficina/tabique-armario' },
               ].map(item => (
                 <Link
                   key={item.href}

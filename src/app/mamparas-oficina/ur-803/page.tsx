@@ -6,29 +6,30 @@ import { buildMetadata } from '@/lib/metadata'
 import { PresupuestoButton } from '@/components/shared/PresupuestoButton'
 
 export const metadata: Metadata = buildMetadata({
-  title: "Mampara UR-803 en Bilbao | Comercial MAR'O",
+  title: "Mampara Versátil UR-803 | Comercial MAR'O",
   description:
-    'Mampara UR-803. El sistema más prescrito del mercado. Montaje por tapajuntas a presión, ágil y fiable. Instalación en Bilbao y Vizcaya.',
-  keywords: ['mampara UR-803 Bilbao', 'UR-803', 'mamparas oficina tapajuntas Vizcaya'],
+    'La mampara UR-803 es nuestro sistema más equilibrado y demandado. Instalación ágil mediante tapajuntas a presión para una oficina funcional.',
+  keywords: ['mampara UR-803', 'mamparas versátiles', 'tapajuntas a presión', 'divisorias ágiles'],
   path: '/mamparas-oficina/ur-803',
 })
 
 const features = [
-  'Sistema más clásico y adoptado del mercado',
-  'Montaje sencillo por tapajuntas a presión',
-  'Alta presencia en prescripciones de arquitecto y aparejador',
-  'Reducción de tiempo de montaje en obra',
-  'Compatible con Tabique Armario',
-  'Perfilería vista con acabados estándar y premium',
+  'El sistema líder y referente en prescripciones técnicas',
+  'Instalación ágil mediante tapajuntas de anclaje a presión',
+  'Facilidad de desmontaje para futuras ampliaciones',
+  'Perfilería vista con acabado epoxi de alta resistencia',
+  'Perfecta integración cromática en toda la estructura',
+  'Totalmente integrable con nuestro sistema de Tabique Armario',
+  'Modularidad total para entornos de trabajo dinámicos',
 ]
 
 const specs: [string, string][] = [
-  ['Sistema', 'UR-803'],
-  ['Perfilería', 'Vista'],
-  ['Montaje', 'Tapajuntas a presión'],
-  ['Mercado', 'Referencia del sector'],
-  ['Compatibilidad', 'Tabique Armario'],
-  ['Acabados', 'Estándar y premium'],
+  ['Serie', 'UR-803'],
+  ['Perfilería', 'Estructural vista'],
+  ['Sistema de unión', 'Tapajuntas a presión'],
+  ['Prescripción', 'Líder del mercado'],
+  ['Compatibilidad', 'Sistema Tabique Armario'],
+  ['Acabados', 'Gama completa de colores y maderas'],
 ]
 
 const coloresEstandar = [
@@ -92,7 +93,7 @@ export default function UR803Page() {
       <div className="relative h-[40vh] min-h-48 flex items-end">
         <Image
           src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80"
-          alt="Mampara UR-803 oficina"
+          alt="Mampara UR-803 oficina versátil"
           fill
           sizes="100vw"
           className="object-cover"
@@ -123,10 +124,10 @@ export default function UR803Page() {
           <div className="grid md:grid-cols-2 gap-8 items-start mb-10">
             <div>
               <p className="text-gris-medio text-base leading-relaxed mb-4">
-                El UR-803 representa la solución divisoria más extendida y demandada, siendo una presencia indispensable en multitud de prescripciones arquitectónicas e interiorismo. Su firme <strong className="text-carbon font-semibold">esqueleto de acero galvanizado</strong> se complementa con partes vistas horneadas en polvo epoxi-poliéster a 200º, logrando una asombrosa versatilidad junto a un acabado intachable.
+                El sistema <strong className="text-carbon font-semibold">UR-803</strong> es, con diferencia, la solución más solicitada en <strong className="text-carbon font-semibold">Comercial MAR&apos;O</strong>. Se ha convertido en el estándar del sector gracias a una combinación imbatible de fiabilidad técnica y agilidad en los tiempos de ejecución.
               </p>
               <p className="text-gris-medio text-base leading-relaxed">
-                La clave de su éxito reside en el <strong className="text-carbon font-semibold">mecanismo de fijación por tapajuntas a presión</strong>. Este sistema inteligente de anclaje acelera tanto el montaje y desmontaje que reduce notablemente los tiempos de obra, a la vez que sella la perfilería logrando una estética limpia que integra uniformemente todo el color de la mampara.
+                Nuestra apuesta con este modelo se basa en su <strong className="text-carbon font-semibold">exclusivo sistema de tapajuntas a presión</strong>. Este mecanismo permite un anclaje rápido y limpio de toda la modulación, facilitando enormemente las tareas de montaje y desmontaje. Es la mampara ideal para oficinas que requieren una estética uniforme, profesional y con la flexibilidad necesaria para futuras redistribuciones. Además, se integra de forma nativa con nuestro sistema de <Link href="/mamparas-oficina/tabique-armario" className="text-rojo hover:underline">Tabique Armario</Link>.
               </p>
             </div>
             <div className="flex flex-col gap-6">
@@ -155,10 +156,10 @@ export default function UR803Page() {
           {/* ── Stat grid ───────────────────────────────────────────────────── */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
             {[
-              { val: 'Vista', label: 'Perfilería' },
-              { val: 'Tapajuntas', label: 'Montaje', highlight: true },
-              { val: 'Referencia', label: 'Mercado' },
-              { val: 'Ágil', label: 'Instalación' },
+              { val: 'Versátil', label: 'Estructura' },
+              { val: 'Tapajuntas', label: 'Sistema', highlight: true },
+              { val: 'Premium', label: 'Acabados' },
+              { val: 'Máxima', label: 'Agilidad' },
             ].map(({ val, label, highlight }) => (
               <div key={label} className={`rounded-xl p-4 text-center border ${highlight ? 'bg-crema border-rojo' : 'bg-crema border-gris-claro'}`}>
                 <p className="font-montserrat text-xl font-extrabold text-carbon">{val}</p>
@@ -382,7 +383,7 @@ export default function UR803Page() {
             </p>
             <PresupuestoButton size="lg" className="w-full justify-center" />
             <div className="mt-4 pt-4 border-t border-gris-claro text-sm text-gris-medio font-montserrat space-y-1.5">
-              {['Proyecto a medida', 'Instalación propia en Vizcaya', 'Garantía 10 años'].map(item => (
+              {['Asesoramiento técnico', 'Instalación propia', 'Garantía 10 años'].map(item => (
                 <p key={item} className="flex items-center gap-1.5">
                   <CheckCircle2 size={12} className="text-rojo flex-shrink-0" aria-hidden="true" />
                   {item}
@@ -398,9 +399,9 @@ export default function UR803Page() {
             {[
               { label: 'UR-802', sub: 'Alta prestación', href: '/mamparas-oficina/ur-802' },
               { label: 'UR-902', sub: 'Perfilería oculta', href: '/mamparas-oficina/ur-902' },
-              { label: 'Cristal Visión I+II', sub: 'Máxima luminosidad', href: '/mamparas-oficina/cristal-vision' },
-              { label: 'SLIM', sub: 'Minimalista', href: '/mamparas-oficina/slim' },
-              { label: 'Tabique Armario', sub: 'Solución integrada', href: '/mamparas-oficina/tabique-armario' },
+              { label: 'Cristal Visión I+II', sub: 'Transparencia total', href: '/mamparas-oficina/cristal-vision' },
+              { label: 'SLIM', sub: 'Mínimo perfil', href: '/mamparas-oficina/slim' },
+              { label: 'Tabique Armario', sub: 'Mueble divisorio', href: '/mamparas-oficina/tabique-armario' },
               { label: 'Volver al catálogo', sub: 'Mamparas de Oficina', href: '/mamparas-oficina' },
             ].map(item => (
               <Link

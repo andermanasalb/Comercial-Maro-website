@@ -6,29 +6,29 @@ import { buildMetadata } from '@/lib/metadata'
 import { PresupuestoButton } from '@/components/shared/PresupuestoButton'
 
 export const metadata: Metadata = buildMetadata({
-  title: "Tabique Armario en Bilbao | Comercial MAR'O",
+  title: "Tabique Armario | Comercial MAR'O",
   description:
-    'Tabique Armario. División de espacios con almacenaje integrado. Compatible con UR-802, UR-803 y UR-902. Instalación en Bilbao y Vizcaya.',
-  keywords: ['tabique armario Bilbao', 'mamparas oficina almacenaje Vizcaya'],
+    'Nuestra solución de Tabique Armario combina división de oficina con almacenaje eficiente. Muebles divisorios modulares 100% integrables con la serie UR.',
+  keywords: ['tabique armario', 'mueble divisorio', 'almacenaje oficina', 'muros tecnicos'],
   path: '/mamparas-oficina/tabique-armario',
 })
 
 const features = [
-  'Integración técnica y estética con sistemas UR',
-  'Compatible con UR-802, UR-803 y UR-902',
-  'Incorpora almacenaje sin mobiliario extra',
-  'Montaje coordinado con el resto de mamparas',
-  'Optimiza el espacio disponible por módulo',
-  'Acabados coherentes con toda la serie UR',
+  'Integración técnica y estética nativa con toda la serie UR',
+  'Funcionalidad dual: división de espacios + archivo de oficina',
+  'Compatible con nuestras mamparas UR-802, UR-803 y UR-902',
+  'Diseño modular que optimiza el espacio disponible al máximo',
+  'Acceso al contenido desde ambas caras si el diseño lo requiere',
+  'Acabados coherentes y uniformes en todo el proyecto de oficina',
 ]
 
 const specs: [string, string][] = [
-  ['Sistema', 'Tabique Armario'],
-  ['Compatibilidad', 'UR-802, UR-803, UR-902'],
-  ['Función', 'División + almacenaje'],
-  ['Montaje', 'Coordinado con serie UR'],
-  ['Acabado', 'Coherente con serie UR'],
-  ['Aplicación', 'Oficinas y espacios de trabajo'],
+  ['Serie', 'Tabique Armario'],
+  ['Ecosistema', '100% compatible con Serie UR'],
+  ['Función', 'Compartimentación Técnica + Almacenaje'],
+  ['Configuración', 'Modular y personalizable'],
+  ['Acabados', 'Coordinados con toda la gama MAR\'O'],
+  ['Acceso', 'Opcionalmente bilateral'],
 ]
 
 const compatibleSystems = [
@@ -56,8 +56,8 @@ const quickNav = [
   { label: 'UR-802', sub: 'Alta prestación', href: '/mamparas-oficina/ur-802' },
   { label: 'UR-803', sub: 'El más demandado', href: '/mamparas-oficina/ur-803' },
   { label: 'UR-902', sub: 'Perfilería oculta', href: '/mamparas-oficina/ur-902' },
-  { label: 'Cristal Visión I+II', sub: 'Máxima luminosidad', href: '/mamparas-oficina/cristal-vision' },
-  { label: 'SLIM', sub: 'Minimalista', href: '/mamparas-oficina/slim' },
+  { label: 'Cristal Visión I+II', sub: 'Transparencia total', href: '/mamparas-oficina/cristal-vision' },
+  { label: 'SLIM', sub: 'Mínimo perfil', href: '/mamparas-oficina/slim' },
   { label: 'Volver al catálogo', sub: 'Mamparas de Oficina', href: '/mamparas-oficina' },
 ]
 
@@ -96,7 +96,7 @@ export default function TabiqueArmarioPage() {
       <div className="relative h-[40vh] min-h-48 flex items-end">
         <Image
           src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80"
-          alt="Tabique Armario instalación oficina"
+          alt="Tabique Armario instalación oficina con muebles divisorios"
           fill
           sizes="100vw"
           className="object-cover"
@@ -127,17 +127,17 @@ export default function TabiqueArmarioPage() {
           <div className="grid md:grid-cols-2 gap-8 items-start mb-10">
             <div>
               <p className="text-gris-medio text-base leading-relaxed mb-4">
-                Solución que se integra <strong className="text-carbon font-semibold">técnica y estéticamente</strong> con los sistemas UR-802, UR-803 y UR-902. Combina la <strong className="text-carbon font-semibold">función divisoria con capacidad de almacenaje</strong>, eliminando la necesidad de mobiliario adicional.
+                En <strong className="text-carbon font-semibold">Comercial MAR&apos;O</strong>, transformamos el concepto de división en una herramienta de utilidad. Nuestra solución de <strong className="text-carbon font-semibold">Tabique Armario</strong> fusiona la compartimentación de espacios con el aprovechamiento inteligente del volumen, creando muros técnicos que funcionan como sistemas de almacenaje de alto rendimiento.
               </p>
               <p className="text-gris-medio text-base leading-relaxed mb-6">
-                Diseñado para ofrecer una <strong className="text-carbon font-semibold">flexibilidad excepcional</strong>, te permite reconfigurar el espacio según tus necesidades. Puedes <strong className="text-carbon font-semibold">redistribuir libremente sus módulos</strong>, estantes, cajones y archivos, intercambiar puertas ciegas por acristaladas, e incluso habilitar el <strong className="text-carbon font-semibold">acceso a los compartimentos desde ambas caras</strong> del tabique, adaptándose a la evolución constante del entorno de trabajo.
+                Hemos desarrollado este sistema para que se integre de forma nativa —tanto técnica como estéticamente— con toda nuestra <strong className="text-carbon font-semibold">serie UR</strong>. Esto permite que una oficina pueda combinar mamparas acristaladas y tabiques ciegos con módulos de armario, manteniendo una coherencia total en acabados y perfiles. El diseño modular permite, además, el acceso bilateral a los compartimentos, optimizando la operativa y el orden en el entorno de trabajo.
               </p>
             </div>
             <div className="flex flex-col gap-5">
               <div className="img-zoom-wrap shadow-md">
                 <Image
                   src="/images/mamparas-oficina/tabique-armario-1.jpg"
-                  alt="Tabique Armario instalación oficina con almacenaje"
+                  alt="Tabique Armario instalación oficina con almacenaje modular"
                   width={800}
                   height={800}
                   unoptimized
@@ -160,10 +160,10 @@ export default function TabiqueArmarioPage() {
           {/* ── Stat grid ───────────────────────────────────────────────────── */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
             {[
-              { val: 'Integrado', label: 'Tipo' },
-              { val: 'UR-802/803/902', label: 'Compat.', highlight: true },
-              { val: 'Almacenaje', label: 'Función' },
-              { val: 'Coordinado', label: 'Montaje' },
+              { val: 'Modular', label: 'Estructura' },
+              { val: 'UR-Series', label: 'Ecosistema', highlight: true },
+              { val: 'Muro técnico', label: 'Concepto' },
+              { val: 'Personalizado', label: 'Acabado' },
             ].map(({ val, label, highlight }) => (
               <div key={label} className={`rounded-xl p-4 text-center border ${highlight ? 'bg-crema border-rojo' : 'bg-crema border-gris-claro'}`}>
                 <p className="font-montserrat text-xl font-extrabold text-carbon">{val}</p>
@@ -188,7 +188,7 @@ export default function TabiqueArmarioPage() {
             <div className="img-zoom-wrap shadow-sm">
               <Image
                 src="/images/mamparas-oficina/tabique-armario-2.jpg"
-                alt="Detalle Tabique Armario integración UR"
+                alt="Detalle Tabique Armario integración UR oficina"
                 width={800}
                 height={800}
                 unoptimized
@@ -243,7 +243,7 @@ export default function TabiqueArmarioPage() {
 
         {/* ── Sidebar ──────────────────────────────────────────────────────── */}
         <div className="lg:sticky lg:top-20 h-fit space-y-4">
-          <div className="bg-crema rounded-xl p-6 border border-gris-claro">
+          <div className="bg-crema rounded-xl p-6 border border-gris-claro shadow-sm">
             <h3 className="font-montserrat text-base font-bold text-carbon mb-2">
               ¿Es Tabique Armario para tu proyecto?
             </h3>
@@ -252,7 +252,7 @@ export default function TabiqueArmarioPage() {
             </p>
             <PresupuestoButton size="lg" className="w-full justify-center" />
             <div className="mt-4 pt-4 border-t border-gris-claro text-sm text-gris-medio font-montserrat space-y-1.5">
-              {['Proyecto a medida', 'Instalación propia en Vizcaya', 'Garantía 10 años'].map(item => (
+              {['Asesoramiento técnico', 'Instalación propia', 'Garantía 10 años'].map(item => (
                 <p key={item} className="flex items-center gap-1.5">
                   <CheckCircle2 size={12} className="text-rojo flex-shrink-0" aria-hidden="true" />
                   {item}

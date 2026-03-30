@@ -6,31 +6,30 @@ import { buildMetadata } from '@/lib/metadata'
 import { PresupuestoButton } from '@/components/shared/PresupuestoButton'
 
 export const metadata: Metadata = buildMetadata({
-  title: "Mampara UR-902 en Bilbao | Comercial MAR'O",
+  title: "Mampara Perfil Oculto UR-902 | Comercial MAR'O",
   description:
-    'Mampara UR-902. Perfilería completamente oculta. Acabado premium y diseño minimalista para espacios de alta exigencia estética. Bilbao y Vizcaya.',
-  keywords: ['mampara UR-902 Bilbao', 'UR-902', 'mamparas oficina perfil oculto Vizcaya'],
+    'Nuestro sistema UR-902 ofrece una estética minimalista con perfilería estructural totalmente oculta. Elegancia y vanguardia para oficinas de alto nivel.',
+  keywords: ['mampara UR-902', 'mamparas perfil oculto', 'mamparas premium', 'divisorias vanguardistas'],
   path: '/mamparas-oficina/ur-902',
 })
 
 const features = [
-  'Perfilería completamente oculta al exterior',
-  'Anclaje de tableros mediante grapas en zeta',
-  'Entrecalles milimétricas (5 ó 10 mm) aseguradas con lambetas',
-  'Compatibilidad universal con vidrios y maderas (rectas o pos-formadas)',
-  'Acabados y calidades estructurales equivalentes a UR-802/803',
-  'Apariencia más limpia, lineal y contemporánea',
-  'Ideal para espacios con máxima exigencia estética',
-  'Compatible con Tabique Armario',
+  'Perfilería estructural completamente invisible al exterior',
+  'Anclaje de tableros mediante suspensión en grapas "Z"',
+  'Entrecalles milimétricas aseguradas con lambetas metálicas',
+  'Versatilidad total con vidrios continuos y paneles de madera',
+  'Calidad constructiva equivalente a las series UR-802/803',
+  'Totalmente integrable con nuestro sistema de Tabique Armario',
+  'Estética limpia y vanguardista para interiores de alto nivel',
 ]
 
 const specs: [string, string][] = [
-  ['Sistema', 'UR-902'],
-  ['Perfilería', 'Oculta'],
-  ['Acabado', 'Premium'],
-  ['Construcción', 'Diferenciada'],
-  ['Estética', 'Minimalista'],
-  ['Compatibilidad', 'Tabique Armario'],
+  ['Serie', 'UR-902'],
+  ['Perfilería', 'Totalmente oculta / Invisible'],
+  ['Suspensión', 'Mediante grapas de alta precisión'],
+  ['Concepto', 'Diseño de paramento continuo'],
+  ['Lambetas', 'De 5 ó 10 mm reforzadas'],
+  ['Compatibilidad', 'Sistema Tabique Armario'],
 ]
 
 const coloresEstandar = [
@@ -94,7 +93,7 @@ export default function UR902Page() {
       <div className="relative h-[40vh] min-h-48 flex items-end">
         <Image
           src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80"
-          alt="Mampara UR-902 perfil oculto"
+          alt="Mampara UR-902 perfil oculto oficina"
           fill
           sizes="100vw"
           className="object-cover"
@@ -125,13 +124,13 @@ export default function UR902Page() {
           <div className="grid md:grid-cols-[1.2fr_1fr] gap-10 items-center mb-12">
             <div>
               <p className="text-gris-medio text-base leading-relaxed mb-4">
-                El sistema UR-902 (Perfilería oculta) mantiene las altas calidades y garantías de los sistemas UR-802 y UR-803, pero revolucionando completamente su diseño constructivo. Al hacer <strong className="text-carbon font-semibold">desaparecer el marco estructural</strong> a la vista, genera espacios con una estética infinitamente más limpia, continua y vanguardista.
+                En <strong className="text-carbon font-semibold">Comercial MAR&apos;O</strong>, entendemos que hay proyectos donde la estética es tan crítica como la funcionalidad. Por eso, proponemos el sistema <strong className="text-carbon font-semibold">UR-902</strong> para espacios que buscan una <strong className="text-carbon font-semibold">arquitectura de perfilería totalmente oculta</strong>, logrando que los marcos estructurales desaparezcan a favor de una continuidad visual absoluta.
               </p>
               <p className="text-gris-medio text-base leading-relaxed mb-4">
-                Técnicamente, los tableros (siempre con núcleo de madera) quedan <strong className="text-carbon font-semibold">suspendidos mediante precisas grapas en zeta</strong> sobre las columnas y riostras. Esto permite crear impecables entrecalles horizontales y verticales de 5 ó 10 mm, aseguradas mediante lambetas del mismo ancho que fijan un paralelismo milimétrico perfecto.
+                La excelencia de este modelo reside en su técnica de anclaje. Utilizamos un <strong className="text-carbon font-semibold">sistema de grapas en zeta</strong> de alta precisión que suspende los tableros sobre la estructura interna de columnas y riostras. Esto nos permite definir entrecalles milimétricas (de 5 ó 10 mm) reforzadas con lambetas, asegurando un paralelismo perfecto y una estética de paramento continuo de gran pureza. Además, se integra de forma nativa con nuestro sistema de <Link href="/mamparas-oficina/tabique-armario" className="text-rojo hover:underline">Tabique Armario</Link>.
               </p>
               <p className="text-gris-medio text-base leading-relaxed">
-                Este sistema de <strong className="text-carbon font-semibold">estética avanzada</strong> se combina sin límites con configuraciones a medida, aceptando vidrios continuos y tableros canteados o pos-formados en multitud de calidades y acabados corporativos.
+                Nuestra solución <strong className="text-carbon font-semibold">UR-902</strong> proyecta un carácter vanguardista en cualquier entorno, integrando con maestría paneles de madera de alta gama y vidrios continuos sin perfiles vistos que interrumpan la mirada.
               </p>
             </div>
             <div className="flex flex-col gap-6">
@@ -160,10 +159,10 @@ export default function UR902Page() {
           {/* ── Stat grid ───────────────────────────────────────────────────── */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
             {[
-              { val: 'Oculta', label: 'Perfilería' },
-              { val: 'Premium', label: 'Acabado', highlight: true },
-              { val: 'Diferenciada', label: 'Construcción' },
-              { val: 'Minimalista', label: 'Estética' },
+              { val: 'Invisible', label: 'Estructura' },
+              { val: 'Premium', label: 'Estética', highlight: true },
+              { val: 'Grapas en Z', label: 'Sistema' },
+              { val: 'Superior', label: 'Gama' },
             ].map(({ val, label, highlight }) => (
               <div key={label} className={`rounded-xl p-4 text-center border ${highlight ? 'bg-crema border-rojo' : 'bg-crema border-gris-claro'}`}>
                 <p className="font-montserrat text-xl font-extrabold text-carbon">{val}</p>
@@ -375,7 +374,7 @@ export default function UR902Page() {
 
         {/* ── Sidebar ──────────────────────────────────────────────────────── */}
         <div className="lg:sticky lg:top-20 h-fit space-y-4">
-          <div className="bg-crema rounded-xl p-6 border border-gris-claro">
+          <div className="bg-crema rounded-xl p-6 border border-gris-claro shadow-sm">
             <h3 className="font-montserrat text-base font-bold text-carbon mb-2">
               ¿Es el UR-902 para tu proyecto?
             </h3>
@@ -384,7 +383,7 @@ export default function UR902Page() {
             </p>
             <PresupuestoButton size="lg" className="w-full justify-center" />
             <div className="mt-4 pt-4 border-t border-gris-claro text-sm text-gris-medio font-montserrat space-y-1.5">
-              {['Proyecto a medida', 'Instalación propia en Vizcaya', 'Garantía 10 años'].map(item => (
+              {['Asesoramiento técnico', 'Instalación propia', 'Garantía 10 años'].map(item => (
                 <p key={item} className="flex items-center gap-1.5">
                   <CheckCircle2 size={12} className="text-rojo flex-shrink-0" aria-hidden="true" />
                   {item}
@@ -400,9 +399,9 @@ export default function UR902Page() {
             {[
               { label: 'UR-802', sub: 'Alta prestación', href: '/mamparas-oficina/ur-802' },
               { label: 'UR-803', sub: 'El más demandado', href: '/mamparas-oficina/ur-803' },
-              { label: 'Cristal Visión I+II', sub: 'Máxima luminosidad', href: '/mamparas-oficina/cristal-vision' },
-              { label: 'SLIM', sub: 'Minimalista', href: '/mamparas-oficina/slim' },
-              { label: 'Tabique Armario', sub: 'Solución integrada', href: '/mamparas-oficina/tabique-armario' },
+              { label: 'Cristal Visión I+II', sub: 'Transparencia total', href: '/mamparas-oficina/cristal-vision' },
+              { label: 'SLIM', sub: 'Mínimo perfil', href: '/mamparas-oficina/slim' },
+              { label: 'Tabique Armario', sub: 'Mueble divisorio', href: '/mamparas-oficina/tabique-armario' },
               { label: 'Volver al catálogo', sub: 'Mamparas de Oficina', href: '/mamparas-oficina' },
             ].map(item => (
               <Link
