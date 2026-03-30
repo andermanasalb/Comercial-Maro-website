@@ -16,7 +16,7 @@ const products = [
   { name: 'Puertas y Ventanas Aluminio', href: '/ventanas-aluminio' },
   { name: 'Cerramientos', href: '/cerramientos' },
   { name: 'Barandillas y Celosías', href: '/barandillas' },
-  { name: 'Cortinas', href: '/cortinas' },
+  { name: 'Cortinas interiores y estores', href: '/cortinas-estores' },
   { name: 'Cerramientos Fenólicos', href: '/cerramientos-fenolicos' },
   { name: 'Mamparas de Oficina', href: '/mamparas-oficina' },
   { name: 'Mamparas de Ducha', href: '/mamparas-ducha' },
