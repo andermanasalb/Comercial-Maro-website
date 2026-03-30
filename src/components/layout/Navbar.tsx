@@ -211,15 +211,6 @@ export function Navbar() {
           </div>
 
           <div className="flex items-center gap-3 justify-self-end">
-          {!isProductPage && (
-            <Link
-              href="/contacto"
-              className="hidden lg:inline-flex items-center font-montserrat text-sm font-semibold bg-rojo text-white px-4 py-2 rounded-md hover:bg-rojo-oscuro transition-colors min-h-[36px] flex-shrink-0 whitespace-nowrap"
-            >
-              Háblanos de tu proyecto
-            </Link>
-          )}
-
           <Sheet>
             <SheetTrigger className="lg:hidden p-2" aria-label="Abrir menú">
               <Menu size={24} className="text-carbon" />
@@ -238,11 +229,7 @@ export function Navbar() {
                     {link.name}
                   </Link>
                 ))}
-                <div className="mt-4">
-                  <Link href="/contacto" className="flex items-center justify-center font-montserrat text-sm font-semibold bg-rojo text-white px-4 py-3 rounded-md hover:bg-rojo-oscuro transition-colors min-h-[48px]">
-                    Háblanos de tu proyecto
-                  </Link>
-                </div>
+
               </nav>
             </SheetContent>
           </Sheet>
