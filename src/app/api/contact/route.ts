@@ -8,6 +8,7 @@ import { company } from '@/lib/company'
 import { wrapEmail } from '@/emails/base'
 import { buildNotificationBody } from '@/emails/contact-notification'
 import { buildConfirmationBody } from '@/emails/contact-confirmation'
+import { checkRateLimit } from '@/lib/rate-limit'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
@@ -26,11 +27,11 @@ async function getLogoDataUri(): Promise<string> {
 }
 
 const contactSchema = z.object({
-  nombre:   z.string().min(2),
-  email:    z.string().email(),
-  telefono: z.string().min(9),
+  nombre:   z.string().min(2).max(100),
+  email:    z.string().email().max(254),
+  telefono: z.string().min(9).max(20),
   tipo:     z.enum(['reforma', 'obra-nueva', 'oficina', 'colegio', 'otro']),
-  mensaje:  z.string().min(20),
+  mensaje:  z.string().min(20).max(2000),
 })
 
 export const TIPO_LABELS: Record<string, string> = {
@@ -50,7 +51,19 @@ function escapeHtml(s: string): string {
     .replace(/'/g, '&#39;')
 }
 
+const ALLOWED_ORIGIN = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://comercialmaro.es'
+
 export async function POST(req: NextRequest) {
+  const origin = req.headers.get('origin')
+  if (origin && origin !== ALLOWED_ORIGIN) {
+    return NextResponse.json({ success: false }, { status: 403 })
+  }
+
+  const ip = req.headers.get('x-forwarded-for')?.split(',')[0].trim() ?? req.headers.get('x-real-ip') ?? 'unknown'
+  if (!checkRateLimit(`contact:${ip}`, 3, 10 * 60 * 1000)) {
+    return NextResponse.json({ success: false }, { status: 429 })
+  }
+
   try {
     const TO_EMAIL = process.env.RESEND_TO_EMAIL
     if (!TO_EMAIL) {
@@ -63,15 +76,17 @@ export async function POST(req: NextRequest) {
     const tipoLabel = TIPO_LABELS[data.tipo]
     const logoDataUri = await getLogoDataUri()
 
+    const FROM_EMAIL = process.env.RESEND_FROM_EMAIL ?? 'onboarding@resend.dev'
+
     await Promise.all([
       resend.emails.send({
-        from: `${company.name} Web <onboarding@resend.dev>`,
+        from: `${company.name} Web <${FROM_EMAIL}>`,
         to: [TO_EMAIL],
         subject: `Nueva consulta — ${data.nombre} (${tipoLabel})`,
         html: wrapEmail(buildNotificationBody({ ...data, tipoLabel }, escapeHtml), logoDataUri),
       }),
       resend.emails.send({
-        from: `${company.name} <onboarding@resend.dev>`,
+        from: `${company.name} <${FROM_EMAIL}>`,
         to: [data.email],
         subject: `Hemos recibido tu consulta — ${company.name}`,
         html: wrapEmail(buildConfirmationBody({ nombre: data.nombre, tipoLabel }, escapeHtml), logoDataUri),

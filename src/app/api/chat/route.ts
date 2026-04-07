@@ -2,17 +2,31 @@
 import { NextRequest } from 'next/server'
 import { GoogleGenAI } from '@google/genai'
 import { extractWebsiteContent } from '@/lib/extract-content'
+import { checkRateLimit } from '@/lib/rate-limit'
 
 export const runtime = 'nodejs'
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY! })
+const ALLOWED_ORIGIN = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://comercialmaro.es'
 
 const OFF_TOPIC =
   'Para ese tipo de consultas, te recomendamos contactarnos directamente: ' +
   'puedes usar nuestro [formulario de contacto](/contacto) ' +
   'o llamarnos al +34 944 100 462 — estaremos encantados de ayudarte.'
 
+const VALID_ROLES = new Set(['user', 'model'])
+
 export async function POST(req: NextRequest) {
+  const origin = req.headers.get('origin')
+  if (origin && origin !== ALLOWED_ORIGIN) {
+    return new Response('Forbidden', { status: 403 })
+  }
+
+  const ip = req.headers.get('x-forwarded-for')?.split(',')[0].trim() ?? req.headers.get('x-real-ip') ?? 'unknown'
+  if (!checkRateLimit(`chat:${ip}`, 15, 60 * 1000)) {
+    return new Response('Too Many Requests', { status: 429 })
+  }
+
   try {
     const { messages } = await req.json() as {
       messages: { role: 'user' | 'model'; content: string }[]
@@ -28,6 +42,14 @@ export async function POST(req: NextRequest) {
 
     const MAX_MESSAGE_LENGTH = 2000
     if (messages.some((m: { role: string; content: string }) => typeof m.content !== 'string' || m.content.length > MAX_MESSAGE_LENGTH)) {
+      return new Response('Bad request', { status: 400 })
+    }
+
+    // Runtime role validation — TypeScript cast does not guard at runtime
+    if (messages.some((m: { role: unknown }) => !VALID_ROLES.has(m.role as string))) {
+      return new Response('Bad request', { status: 400 })
+    }
+    if (messages[messages.length - 1].role !== 'user') {
       return new Response('Bad request', { status: 400 })
     }
 

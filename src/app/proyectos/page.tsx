@@ -1,5 +1,5 @@
-'use client'
-import { useState } from 'react'
+﻿'use client'
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { SectionHeader } from '@/components/shared/SectionHeader'
@@ -21,6 +21,16 @@ export default function ProyectosPage() {
   const [filter, setFilter] = useState<Sector>('todos')
   const [selected, setSelected] = useState<typeof projects[0] | null>(null)
   const filtered = filter === 'todos' ? projects : projects.filter(p => p.sector === filter)
+  const modalRef = useRef<HTMLDivElement>(null)
+  const closeButtonRef = useRef<HTMLButtonElement>(null)
+
+  useEffect(() => {
+    if (!selected) return
+    closeButtonRef.current?.focus()
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setSelected(null) }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [selected])
 
   return (
     <div className="min-h-screen bg-crema">
@@ -30,10 +40,10 @@ export default function ProyectosPage() {
         <p className="text-white/60 mt-2 text-[14px]">Obras en Bilbao, Vizcaya y el norte de España</p>
       </div>
       <div className="bg-white border-b border-gris-claro px-6 py-3">
-        <nav className="max-w-site mx-auto font-montserrat text-[12px] text-gris-medio flex items-center gap-1.5">
+        <nav aria-label="Ruta de navegación" className="max-w-site mx-auto font-montserrat text-[12px] text-gris-medio flex items-center gap-1.5">
           <Link href="/" className="hover:text-rojo transition-colors">Inicio</Link>
           <span className="text-gris-medio/40">/</span>
-          <span className="text-carbon font-semibold">Proyectos</span>
+          <span className="text-carbon font-semibold" aria-current="page">Proyectos</span>
         </nav>
       </div>
 
@@ -60,16 +70,34 @@ export default function ProyectosPage() {
       </div>
 
       {selected && (
-        <div className="fixed inset-0 bg-carbon/80 z-50 flex items-center justify-center p-4" onClick={() => setSelected(null)}>
-          <div className="bg-white rounded-xl max-w-lg w-full overflow-hidden" onClick={e => e.stopPropagation()}>
+        <div
+          className="fixed inset-0 bg-carbon/80 z-50 flex items-center justify-center p-4"
+          onClick={() => setSelected(null)}
+          aria-hidden="true"
+        >
+          <div
+            ref={modalRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-project-title"
+            className="bg-white rounded-xl max-w-lg w-full overflow-hidden"
+            onClick={e => e.stopPropagation()}
+          >
             <div className="relative h-56">
               <Image src={selected.image} alt={selected.title} fill sizes="(max-width: 1280px) 100vw, 1280px" className="object-cover" />
             </div>
             <div className="p-6">
-              <h3 className="font-montserrat text-lg font-extrabold text-carbon mb-1">{selected.title}</h3>
+              <h3 id="modal-project-title" className="font-montserrat text-lg font-extrabold text-carbon mb-1">{selected.title}</h3>
               <p className="text-[12px] text-arena font-montserrat font-semibold mb-3">{selected.city}</p>
               <p className="text-[13px] text-gris-medio leading-relaxed">{selected.desc}</p>
-              <button onClick={() => setSelected(null)} className="mt-5 font-montserrat text-[12px] font-bold text-gris-medio hover:text-rojo transition-colors">Cerrar ×</button>
+              <button
+                ref={closeButtonRef}
+                type="button"
+                onClick={() => setSelected(null)}
+                className="mt-5 font-montserrat text-[12px] font-bold text-gris-medio hover:text-rojo transition-colors"
+              >
+                Cerrar ×
+              </button>
             </div>
           </div>
         </div>

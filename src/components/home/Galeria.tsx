@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { SectionHeader } from '@/components/shared/SectionHeader'
+import { ArrowRight } from 'lucide-react'
 
 const projects = [
   { title: 'Residencial Las Encinas', city: 'Bilbao, Bizkaia',      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500' },
@@ -18,7 +19,7 @@ export function Galeria() {
         <SectionHeader tag="Galería" title="Proyectos realizados" subtitle="Obras en Bilbao, Vizcaya y el norte de España" />
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
           {projects.map(p => (
-            <div key={p.title} className="group relative h-36 rounded-xl overflow-hidden cursor-pointer">
+            <Link key={p.title} href="/proyectos" className="group relative h-36 rounded-xl overflow-hidden block">
               <Image
                 src={p.image}
                 alt={p.title}
@@ -28,9 +29,9 @@ export function Galeria() {
               />
               <div className="absolute inset-0 bg-carbon/75 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-center p-3">
                 <h4 className="font-montserrat text-[12px] font-bold mb-0.5">{p.title}</h4>
-                <p className="text-[10px] text-white/80">{p.city}</p>
+                <p className="text-[10px] text-white/80 flex items-center gap-1">{p.city} <ArrowRight size={9} aria-hidden="true" /></p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         <div className="text-center mt-5">

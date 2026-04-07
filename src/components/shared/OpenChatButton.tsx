@@ -8,6 +8,7 @@ interface OpenChatButtonProps {
 export function OpenChatButton({ className, children }: OpenChatButtonProps) {
   return (
     <button
+      type="button"
       onClick={() => window.dispatchEvent(new CustomEvent('chat:open'))}
       className={className}
     >

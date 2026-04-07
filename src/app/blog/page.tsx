@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { blogPosts } from '@/content/blog-posts'
@@ -19,10 +19,10 @@ export default function BlogPage() {
         <h1 className="font-montserrat text-3xl font-extrabold text-white">Todo sobre carpintería metálica</h1>
       </div>
       <div className="bg-white border-b border-gris-claro px-6 py-3">
-        <nav className="max-w-site mx-auto font-montserrat text-[12px] text-gris-medio flex items-center gap-1.5">
+        <nav aria-label="Ruta de navegación" className="max-w-site mx-auto font-montserrat text-[12px] text-gris-medio flex items-center gap-1.5">
           <Link href="/" className="hover:text-rojo transition-colors">Inicio</Link>
           <span className="text-gris-medio/40">/</span>
-          <span className="text-carbon font-semibold">Blog</span>
+          <span className="text-carbon font-semibold" aria-current="page">Blog</span>
         </nav>
       </div>
       <div className="max-w-site mx-auto px-6 py-14 grid sm:grid-cols-2 gap-6">
@@ -33,7 +33,7 @@ export default function BlogPage() {
               <span className="absolute top-3 left-3 bg-rojo text-white font-montserrat text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-wide">{post.category}</span>
             </div>
             <div className="p-5">
-              <p className="text-[11px] text-[#aaa] font-montserrat mb-2">{post.date} · {post.readingTime} lectura</p>
+              <p className="text-[11px] text-[#aaa] font-montserrat mb-2">{new Date(post.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })} · {post.readingTime} lectura</p>
               <h2 className="font-montserrat text-[15px] font-extrabold text-carbon leading-snug mb-2 group-hover:text-rojo transition-colors">{post.title}</h2>
               <p className="text-[12px] text-gris-medio line-clamp-2">{post.excerpt}</p>
             </div>

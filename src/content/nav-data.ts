@@ -1,12 +1,12 @@
 export const navProducts = [
-  { name: 'Puertas y Ventanas PVC',       href: '/ventanas-pvc'           },
-  { name: 'Puertas y Ventanas Aluminio',   href: '/ventanas-aluminio'      },
-  { name: 'Cerramientos',                  href: '/cerramientos'           },
-  { name: 'Barandillas y Celosías',        href: '/barandillas'            },
-  { name: 'Cortinas interiores y estores', href: '/cortinas-estores'       },
-  { name: 'Cerramientos Fenólicos',        href: '/cerramientos-fenolicos' },
-  { name: 'Mamparas de Oficina',           href: '/mamparas-oficina'       },
-  { name: 'Mamparas de Ducha',             href: '/mamparas-ducha'         },
+  { name: 'Puertas y Ventanas PVC',          href: '/ventanas-pvc'           },
+  { name: 'Ventanas y Puertas Aluminio',     href: '/ventanas-aluminio'      },
+  { name: 'Cerramientos de Terraza',         href: '/cerramientos'           },
+  { name: 'Barandillas y Celosías',          href: '/barandillas'            },
+  { name: 'Mamparas de Ducha y Bañera',      href: '/mamparas-ducha'         },
+  { name: 'Cortinas interiores y estores',   href: '/cortinas-estores'       },
+  { name: 'Cerramientos Fenólicos',          href: '/cerramientos-fenolicos' },
+  { name: 'Mamparas de Oficina',             href: '/mamparas-oficina'       },
 ]
 
 export const navLinks = [

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { CheckCircle2, ArrowRight } from 'lucide-react'
@@ -85,7 +85,7 @@ export default function ControlSolarPage() {
         />
         <div className="absolute inset-0 bg-carbon/70" />
         <div className="relative z-10 px-6 pb-8 max-w-site mx-auto w-full">
-          <nav className="text-white/60 text-[12px] font-montserrat mb-2">
+          <nav aria-label="Ruta de navegación" className="text-white/60 text-[12px] font-montserrat mb-2">
             <Link href="/" className="hover:text-white transition-colors">Inicio</Link>
             {' / '}
             <Link href="/ventanas-pvc" className="hover:text-white transition-colors">Puertas y Ventanas PVC Ecoven Plus</Link>

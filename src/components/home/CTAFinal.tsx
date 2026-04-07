@@ -21,7 +21,7 @@ export function CTAFinal() {
         </p>
         <Link
           href="/contacto"
-          className="inline-flex items-center justify-center font-montserrat text-[13px] font-bold bg-white text-rojo px-6 py-2.5 rounded-md hover:bg-crema transition-colors min-h-[40px] mb-4"
+          className="inline-flex items-center justify-center font-montserrat text-[13px] font-bold bg-white text-rojo px-6 py-2.5 rounded-md hover:bg-crema transition-colors min-h-[48px] mb-4"
         >
           Háblanos de tu proyecto
         </Link>

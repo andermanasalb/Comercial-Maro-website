@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { buildMetadata } from '@/lib/metadata'
@@ -19,9 +19,9 @@ const timeline = [
 ]
 
 const team = [
-  { name: 'Responsable Comercial', role: 'Atención al cliente y presupuestos', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300' },
-  { name: 'Jefe de Taller', role: 'Fabricación y control de calidad', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300' },
-  { name: 'Técnico Instalador', role: 'Instalación y servicio técnico', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300' },
+  { name: 'Joseba Fernández', role: 'Responsable Comercial', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300' },
+  { name: 'Mikel Urrutia', role: 'Jefe de Taller', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300' },
+  { name: 'Ander García', role: 'Técnico Instalador', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300' },
 ]
 
 export default function SobreNosotrosPage() {
@@ -32,10 +32,10 @@ export default function SobreNosotrosPage() {
         <h1 className="font-montserrat text-3xl font-extrabold text-white">25 años transformando espacios en Bilbao</h1>
       </div>
       <div className="bg-white border-b border-gris-claro px-6 py-3">
-        <nav className="max-w-site mx-auto font-montserrat text-[12px] text-gris-medio flex items-center gap-1.5">
+        <nav aria-label="Ruta de navegación" className="max-w-site mx-auto font-montserrat text-[12px] text-gris-medio flex items-center gap-1.5">
           <Link href="/" className="hover:text-rojo transition-colors">Inicio</Link>
           <span className="text-gris-medio/40">/</span>
-          <span className="text-carbon font-semibold">Sobre nosotros</span>
+          <span className="text-carbon font-semibold" aria-current="page">Sobre nosotros</span>
         </nav>
       </div>
 

@@ -130,12 +130,19 @@ export function SectionScroller() {
               onClick={() => scrollToSection(i)}
               aria-label={`Ir a ${label}`}
               className={[
-                'rounded-full cursor-pointer transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rojo',
-                i === activeIdx
-                  ? 'w-2 h-2 bg-rojo shadow-[0_0_0_2px_rgba(212,43,43,0.25)]'
-                  : 'w-1.5 h-1.5 bg-carbon/25',
+                'relative flex items-center justify-center w-7 h-7 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rojo rounded-full',
               ].join(' ')}
-            />
+            >
+              <span
+                aria-hidden="true"
+                className={[
+                  'rounded-full transition-all duration-300 block',
+                  i === activeIdx
+                    ? 'w-2 h-2 bg-rojo shadow-[0_0_0_2px_rgba(212,43,43,0.25)]'
+                    : 'w-1.5 h-1.5 bg-carbon/25',
+                ].join(' ')}
+              />
+            </button>
           ))}
         </nav>
       </div>

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { CheckCircle2, ArrowRight, Grid2X2, Minus } from 'lucide-react'
@@ -33,14 +33,14 @@ export default function MamparasOficinaPage() {
         />
         <div className="absolute inset-0 bg-carbon/72" />
         <div className="relative z-10 px-6 pb-8 max-w-site mx-auto w-full">
-          <nav className="text-white/60 text-[12px] font-montserrat mb-2">
+          <nav aria-label="Ruta de navegación" className="text-white/60 text-[12px] font-montserrat mb-2">
             <Link href="/" className="hover:text-white transition-colors">Inicio</Link>
             {' / '}
             <span className="text-white" aria-current="page">Mamparas de Oficina</span>
           </nav>
           <div className="flex items-center gap-2 mb-2">
             <span className="bg-arena/20 border border-arena/40 text-arena text-[10px] font-montserrat font-bold tracking-[3px] uppercase px-3 py-1 rounded-full">
-             
+              Alta gama
             </span>
           </div>
           <h1 className="font-montserrat text-3xl font-extrabold text-white leading-tight">

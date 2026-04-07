@@ -33,14 +33,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <Image src={post.image} alt={post.title} fill sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-carbon/70" />
         <div className="relative z-10 h-full flex flex-col justify-end px-6 pb-8 max-w-3xl mx-auto w-full">
-          <nav className="text-white/60 text-[12px] font-montserrat mb-2">
+          <nav aria-label="Ruta de navegación" className="text-white/60 text-[12px] font-montserrat mb-2">
             <Link href="/" className="hover:text-white">Inicio</Link>{' / '}
             <Link href="/blog" className="hover:text-white">Blog</Link>{' / '}
-            <span className="text-white line-clamp-1">{post.title}</span>
+            <span className="text-white line-clamp-1" aria-current="page">{post.title}</span>
           </nav>
           <span className="inline-block bg-rojo text-white font-montserrat text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-3 w-fit">{post.category}</span>
           <h1 className="font-montserrat text-2xl md:text-3xl font-extrabold text-white leading-tight">{post.title}</h1>
-          <p className="text-white/60 text-[12px] font-montserrat mt-2">{post.date} · {post.readingTime} lectura</p>
+          <p className="text-white/60 text-[12px] font-montserrat mt-2">{new Date(post.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })} · {post.readingTime} lectura</p>
         </div>
       </div>
 

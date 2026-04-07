@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { CheckCircle2, ArrowLeftRight, Layers, Maximize2, ArrowRight } from 'lucide-react'
@@ -34,7 +34,7 @@ export default function VentanasPvcPage() {
         />
         <div className="absolute inset-0 bg-carbon/72" />
         <div className="relative z-10 px-6 pb-8 max-w-site mx-auto w-full">
-          <nav className="text-white/60 text-[12px] font-montserrat mb-2">
+          <nav aria-label="Ruta de navegación" className="text-white/60 text-[12px] font-montserrat mb-2">
             <Link href="/" className="hover:text-white transition-colors">Inicio</Link>
             {' / '}
             <span className="text-white" aria-current="page">Puertas y Ventanas PVC Ecoven Plus</span>
