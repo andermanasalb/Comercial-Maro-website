@@ -32,14 +32,14 @@ export default function SobreNosotrosPage() {
         <h1 className="font-montserrat text-3xl font-extrabold text-white">25 años transformando espacios en Bilbao</h1>
       </div>
       <div className="bg-white border-b border-gris-claro px-6 py-3">
-        <nav className="max-w-[1280px] mx-auto font-montserrat text-[12px] text-gris-medio flex items-center gap-1.5">
+        <nav className="max-w-site mx-auto font-montserrat text-[12px] text-gris-medio flex items-center gap-1.5">
           <Link href="/" className="hover:text-rojo transition-colors">Inicio</Link>
           <span className="text-gris-medio/40">/</span>
           <span className="text-carbon font-semibold">Sobre nosotros</span>
         </nav>
       </div>
 
-      <div className="max-w-[1280px] mx-auto px-6 py-14">
+      <div className="max-w-site mx-auto px-6 py-14">
         <p className="text-gris-medio text-base leading-relaxed text-center max-w-2xl mx-auto mb-16">
           Comercial MAR&apos;O nació en Bilbao en 1999 con un objetivo claro: ofrecer carpintería metálica de calidad con el trato cercano de una empresa familiar. Hoy, más de 5.000 instalaciones después, seguimos con el mismo compromiso.
         </p>

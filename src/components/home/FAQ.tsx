@@ -13,12 +13,12 @@ const faqs = [
 export function FAQ() {
   return (
     <section id="faq" className="h-[calc(100dvh-4rem)] snap-start snap-always overflow-hidden bg-carbon flex flex-col justify-center px-6">
-      <div className="max-w-[1280px] mx-auto w-full">
+      <div className="max-w-site mx-auto w-full">
         <SectionHeader tag="FAQ" title="Preguntas frecuentes" dark />
         <div className="max-w-2xl mx-auto">
           <Accordion className="flex flex-col gap-2">
-            {faqs.map((faq, i) => (
-              <AccordionItem key={i} value={i} className="bg-white/[0.06] border border-white/10 rounded-lg px-5">
+            {faqs.map((faq) => (
+              <AccordionItem key={faq.q} value={faq.q} className="bg-white/[0.06] border border-white/10 rounded-lg px-5">
                 <AccordionTrigger className="font-montserrat text-[13px] font-semibold text-white hover:no-underline">
                   {faq.q}
                 </AccordionTrigger>

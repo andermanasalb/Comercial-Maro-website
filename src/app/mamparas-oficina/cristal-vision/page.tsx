@@ -43,34 +43,6 @@ const quickNav = [
 export default function CristalVisionPage() {
   return (
     <div className="min-h-screen">
-      <style>{`
-        @keyframes fadeUp {
-          from { opacity: 0; transform: translateY(14px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes growBar {
-          from { transform: scaleX(0); }
-          to   { transform: scaleX(1); }
-        }
-        .img-reveal {
-          animation: fadeUp 0.65s ease both;
-        }
-        .bar-grow {
-          transform-origin: left center;
-          animation: growBar 0.9s cubic-bezier(0.25,1,0.5,1) both;
-        }
-        .img-zoom {
-          transition: transform 0.45s ease;
-        }
-        .img-zoom-wrap {
-          overflow: hidden;
-          border-radius: 0.75rem;
-        }
-        .img-zoom-wrap:hover .img-zoom {
-          transform: scale(1.04);
-        }
-      `}</style>
-
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <div className="relative h-[40vh] min-h-48 flex items-end">
         <Image
@@ -82,7 +54,7 @@ export default function CristalVisionPage() {
           priority
         />
         <div className="absolute inset-0 bg-carbon/70" />
-        <div className="relative z-10 px-6 pb-8 max-w-[1280px] mx-auto w-full">
+        <div className="relative z-10 px-6 pb-8 max-w-site mx-auto w-full">
           <nav className="text-white/60 text-[12px] font-montserrat mb-2">
             <Link href="/" className="hover:text-white transition-colors">Inicio</Link>
             {' / '}
@@ -99,7 +71,7 @@ export default function CristalVisionPage() {
         </div>
       </div>
 
-      <div className="max-w-[1280px] mx-auto px-6 py-14 grid lg:grid-cols-[1fr_320px] gap-12">
+      <div className="max-w-site mx-auto px-6 py-14 grid lg:grid-cols-[1fr_320px] gap-12">
         <div>
 
           {/* ── Intro + photo + Stats ───────────────────────────────────────── */}

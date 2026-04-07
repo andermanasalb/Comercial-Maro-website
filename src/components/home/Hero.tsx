@@ -6,6 +6,10 @@ import Link from 'next/link'
 const fadeUp = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }
 const container = { hidden: {}, show: { transition: { staggerChildren: 0.15 } } }
 
+type StatItem =
+  | { label: string; animated: true;  end: number; suffix?: string }
+  | { label: string; animated?: false; static: string }
+
 function AnimatedCounter({ end, suffix = '' }: { end: number; suffix?: string }) {
   const [count, setCount] = useState(0)
   const ref = useRef<HTMLSpanElement>(null)
@@ -60,15 +64,15 @@ export function Hero() {
           </Link>
         </motion.div>
         <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-8 border-t border-white/15 pt-8 w-full">
-          {[
-            { label: 'Años de experiencia', animated: true, end: 25, suffix: '+' },
-            { label: 'Instalaciones realizadas', animated: true, end: 5000, suffix: '+' },
-            { label: 'Garantía total', static: '10 años' },
-            { label: 'Atención personalizada', static: '100%' },
-          ].map((s, i) => (
-            <div key={i} className="text-center">
+          {([
+            { label: 'Años de experiencia',    animated: true,  end: 25,   suffix: '+' },
+            { label: 'Instalaciones realizadas', animated: true,  end: 5000, suffix: '+' },
+            { label: 'Garantía total',          static: '10 años' },
+            { label: 'Atención personalizada',  static: '100%' },
+          ] as StatItem[]).map(s => (
+            <div key={s.label} className="text-center">
               <span className="block font-montserrat text-xl font-extrabold text-arena">
-                {s.animated ? <AnimatedCounter end={s.end!} suffix={s.suffix} /> : s.static}
+                {s.animated ? <AnimatedCounter end={s.end} suffix={s.suffix} /> : s.static}
               </span>
               <span className="block text-[11px] text-white/60 font-montserrat">{s.label}</span>
             </div>

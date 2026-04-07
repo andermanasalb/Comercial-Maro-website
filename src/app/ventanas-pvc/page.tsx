@@ -33,7 +33,7 @@ export default function VentanasPvcPage() {
           priority
         />
         <div className="absolute inset-0 bg-carbon/72" />
-        <div className="relative z-10 px-6 pb-8 max-w-[1280px] mx-auto w-full">
+        <div className="relative z-10 px-6 pb-8 max-w-site mx-auto w-full">
           <nav className="text-white/60 text-[12px] font-montserrat mb-2">
             <Link href="/" className="hover:text-white transition-colors">Inicio</Link>
             {' / '}
@@ -50,7 +50,7 @@ export default function VentanasPvcPage() {
         </div>
       </div>
 
-      <div className="max-w-[1280px] mx-auto px-6 py-14 grid lg:grid-cols-[1fr_300px] gap-12">
+      <div className="max-w-site mx-auto px-6 py-14 grid lg:grid-cols-[1fr_300px] gap-12">
         <div>
           {/* ── Intro ──────────────────────────────────────────────────────── */}
           <p className="text-gris-medio text-base leading-relaxed mb-12">
@@ -200,27 +200,6 @@ export default function VentanasPvcPage() {
             </div>
 
             {/* ── Comparativa técnica ─────────────────────────────────────── */}
-            <style>{`
-              @keyframes growBar {
-                from { transform: scaleX(0); }
-                to   { transform: scaleX(1); }
-              }
-              .bar-grow {
-                transform-origin: left center;
-                animation: growBar 0.9s cubic-bezier(0.25,1,0.5,1) both;
-              }
-              @keyframes shimmerText {
-                0% { background-position: -200% center; }
-                100% { background-position: 200% center; }
-              }
-              .shimmer-text {
-                background: linear-gradient(110deg, #D42B2B 40%, #ffffff 50%, #D42B2B 60%);
-                background-size: 200% auto;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                animation: shimmerText 5s linear infinite;
-              }
-            `}</style>
             <div className="mt-6 bg-crema rounded-xl border border-gris-claro p-5">
               <p className="font-montserrat text-[11px] font-bold tracking-wider uppercase text-gris-medio mb-5">
                 Comparativa técnica

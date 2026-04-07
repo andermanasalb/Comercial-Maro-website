@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { blogPosts } from '@/lib/blog-posts'
+import { blogPosts } from '@/content/blog-posts'
 import { buildMetadata } from '@/lib/metadata'
 
 export function generateStaticParams() {

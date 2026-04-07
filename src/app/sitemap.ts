@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { blogPosts } from '@/lib/blog-posts'
+import { blogPosts } from '@/content/blog-posts'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://comercialmaro.es'
 

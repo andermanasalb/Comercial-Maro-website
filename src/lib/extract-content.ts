@@ -5,14 +5,13 @@ import { readFile } from 'fs/promises'
 import { join } from 'path'
 
 const CONTENT_FILES = [
-  'src/lib/blog-posts.ts',
+  'src/content/blog-posts.ts',
   'src/app/sobre-nosotros/page.tsx',
   'src/app/contacto/page.tsx',
-  'src/app/ventanas/page.tsx',
-  'src/app/puertas/page.tsx',
-  'src/app/cerramientos/page.tsx',
-  'src/app/pergolas/page.tsx',
-  'src/app/persianas/page.tsx',
+  'src/app/ventanas-pvc/page.tsx',
+  'src/app/cortinas-estores/page.tsx',
+  'src/app/mamparas-oficina/page.tsx',
+  'src/app/cerramientos-fenolicos/page.tsx',
   'src/app/proyectos/page.tsx',
   'src/components/home/FAQ.tsx',
   'src/components/home/Hero.tsx',

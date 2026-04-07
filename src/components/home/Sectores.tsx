@@ -21,7 +21,7 @@ const card = {
 export function Sectores() {
   return (
     <section id="sectores" className="h-[calc(100dvh-4rem)] snap-start snap-always overflow-hidden bg-carbon flex flex-col justify-center px-6">
-      <div className="max-w-[1280px] mx-auto w-full">
+      <div className="max-w-site mx-auto w-full">
         <SectionHeader tag="Sectores" title="Soluciones para cada espacio" subtitle="Adaptamos cada proyecto a las necesidades del cliente en todo el norte de España" dark />
         <motion.div
           variants={container}

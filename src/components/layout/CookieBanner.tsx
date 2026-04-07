@@ -42,7 +42,7 @@ export function CookieBanner() {
     <>
       {/* ── Barra inferior ─────────────────────────────────────────── */}
       <div className="fixed bottom-0 left-0 right-0 z-[150] bg-white border-t border-gris-claro shadow-[0_-4px_24px_rgba(0,0,0,0.08)]">
-        <div className="max-w-[1280px] mx-auto px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <div className="max-w-site mx-auto px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <div className="flex items-start gap-3 flex-1">
             <Cookie size={18} className="text-rojo flex-shrink-0 mt-0.5" />
             <p className="text-[13px] text-gris-medio leading-snug">

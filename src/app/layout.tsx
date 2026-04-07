@@ -3,9 +3,10 @@ import Script from 'next/script'
 import { Montserrat, Inter } from 'next/font/google'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
-import { CookieBanner } from '@/components/shared/CookieBanner'
-import { ChatWidget } from '@/components/shared/ChatWidget'
-import { ScrollRestoration } from '@/components/shared/ScrollRestoration'
+import { CookieBanner } from '@/components/layout/CookieBanner'
+import { ChatWidget } from '@/components/layout/ChatWidget'
+import { ScrollRestoration } from '@/components/layout/ScrollRestoration'
+import { company } from '@/lib/company'
 import './globals.css'
 
 const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat', display: 'swap' })
@@ -22,38 +23,31 @@ export const metadata: Metadata = {
   icons: { icon: '/logo.png', shortcut: '/logo.png' },
 }
 
+const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
 const localBusinessSchema = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  name: "Comercial MAR'O",
+  name: company.name,
   description: 'Fabricantes e instaladores de carpintería metálica en Bilbao y Vizcaya',
-  url: 'https://comercialmaro.es',
-  telephone: '+34944100462',
-  email: 'bilbao@comercialmaro.biz',
+  url: company.url,
+  telephone: company.phone,
+  email: company.email,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Avenida Lehendakari Aguirre, 161',
-    addressLocality: 'Bilbao',
-    addressRegion: 'Vizcaya',
-    postalCode: '48015',
-    addressCountry: 'ES',
+    streetAddress: company.address.streetFull,
+    addressLocality: company.address.city,
+    addressRegion: company.address.region,
+    postalCode: company.address.postalCode,
+    addressCountry: company.address.countryCode,
   },
-  geo: { '@type': 'GeoCoordinates', latitude: '43.2630', longitude: '-2.9350' },
-  openingHoursSpecification: [
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '09:30',
-      closes: '13:30',
-    },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '16:00',
-      closes: '20:00',
-    },
-  ],
-  areaServed: ['Bilbao', 'Vizcaya', 'País Vasco', 'España'],
+  geo: { '@type': 'GeoCoordinates', latitude: company.geo.lat, longitude: company.geo.lng },
+  openingHoursSpecification: company.hoursSchema.map(h => ({
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: weekdays,
+    opens: h.opens,
+    closes: h.closes,
+  })),
+  areaServed: company.areaServed,
 })
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

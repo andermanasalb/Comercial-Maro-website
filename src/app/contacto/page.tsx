@@ -42,14 +42,14 @@ export default function ContactoPage() {
         <p className="font-montserrat text-white/65 text-sm mt-2">Cuéntanos qué necesitas. Te respondemos en menos de 24 horas.</p>
       </div>
       <div className="bg-white border-b border-gris-claro px-6 py-3">
-        <nav className="max-w-[1280px] mx-auto font-montserrat text-[12px] text-gris-medio flex items-center gap-1.5">
+        <nav className="max-w-site mx-auto font-montserrat text-[12px] text-gris-medio flex items-center gap-1.5">
           <Link href="/" className="hover:text-rojo transition-colors">Inicio</Link>
           <span className="text-gris-medio/40">/</span>
           <span className="text-carbon font-semibold">Contacto</span>
         </nav>
       </div>
 
-      <div className="max-w-[1280px] mx-auto px-6 py-14 grid lg:grid-cols-[1.4fr_1fr] gap-12">
+      <div className="max-w-site mx-auto px-6 py-14 grid lg:grid-cols-[1.4fr_1fr] gap-12">
         <div className="bg-white rounded-xl p-8 shadow-sm">
           <h2 className="font-montserrat text-xl font-bold text-carbon mb-6">Cuéntanos tu proyecto</h2>
           <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5">

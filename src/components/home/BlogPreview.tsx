@@ -1,13 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { blogPosts } from '@/lib/blog-posts'
+import { blogPosts } from '@/content/blog-posts'
 import { SectionHeader } from '@/components/shared/SectionHeader'
 
 export function BlogPreview() {
   const [featured, ...rest] = blogPosts
   return (
     <section id="blog" className="h-[calc(100dvh-4rem)] snap-start snap-always overflow-hidden bg-white flex flex-col justify-center px-6">
-      <div className="max-w-[1280px] mx-auto w-full">
+      <div className="max-w-site mx-auto w-full">
         <SectionHeader tag="Blog & Consejos" title="Todo sobre carpintería metálica" subtitle="Guías, consejos y novedades para mejorar tu hogar o negocio en el País Vasco" />
         <div className="grid lg:grid-cols-[1.6fr_1fr] gap-6 mb-8">
           <Link href={`/blog/${featured.slug}`} className="group block rounded-xl overflow-hidden border border-gris-claro hover:shadow-lg hover:-translate-y-1 transition-all duration-200">

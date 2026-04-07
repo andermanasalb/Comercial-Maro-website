@@ -22,7 +22,7 @@ export default function AvisoLegalPage() {
         <h1 className="font-montserrat text-3xl font-extrabold text-white">Aviso Legal</h1>
       </div>
       <div className="bg-white border-b border-gris-claro px-6 py-3">
-        <nav className="max-w-[1280px] mx-auto font-montserrat text-[12px] text-gris-medio flex items-center gap-1.5">
+        <nav className="max-w-site mx-auto font-montserrat text-[12px] text-gris-medio flex items-center gap-1.5">
           <Link href="/" className="hover:text-rojo transition-colors">Inicio</Link>
           <span className="text-gris-medio/40">/</span>
           <span className="text-carbon font-semibold">Aviso legal</span>

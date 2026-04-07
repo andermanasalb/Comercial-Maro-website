@@ -44,17 +44,6 @@ const specs: [string, string][] = [
 export default function Vekamotion82Page() {
   return (
     <div className="min-h-screen">
-      <style>{`
-        @keyframes fadeUp {
-          from { opacity: 0; transform: translateY(14px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-        .img-reveal { animation: fadeUp 0.65s ease both; }
-        .img-zoom-wrap { overflow: hidden; border-radius: 0.75rem; }
-        .img-zoom-wrap:hover .img-zoom { transform: scale(1.04); }
-        .img-zoom { transition: transform 0.45s ease; }
-      `}</style>
-
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <div className="relative h-[40vh] min-h-48 flex items-end">
         <Image
@@ -66,7 +55,7 @@ export default function Vekamotion82Page() {
           priority
         />
         <div className="absolute inset-0 bg-carbon/72" />
-        <div className="relative z-10 px-6 pb-8 max-w-[1280px] mx-auto w-full">
+        <div className="relative z-10 px-6 pb-8 max-w-site mx-auto w-full">
           <nav className="text-white/60 text-[12px] font-montserrat mb-2">
             <Link href="/" className="hover:text-white transition-colors">Inicio</Link>
             {' / '}
@@ -83,7 +72,7 @@ export default function Vekamotion82Page() {
         </div>
       </div>
 
-      <div className="max-w-[1280px] mx-auto px-6 py-14 grid lg:grid-cols-[1fr_320px] gap-12">
+      <div className="max-w-site mx-auto px-6 py-14 grid lg:grid-cols-[1fr_320px] gap-12">
         <div>
           {/* ── Intro + foto ─────────────────────────────────────────────────── */}
           <div className="grid md:grid-cols-2 gap-8 items-center mb-10">

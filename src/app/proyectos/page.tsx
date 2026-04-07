@@ -30,14 +30,14 @@ export default function ProyectosPage() {
         <p className="text-white/60 mt-2 text-[14px]">Obras en Bilbao, Vizcaya y el norte de España</p>
       </div>
       <div className="bg-white border-b border-gris-claro px-6 py-3">
-        <nav className="max-w-[1280px] mx-auto font-montserrat text-[12px] text-gris-medio flex items-center gap-1.5">
+        <nav className="max-w-site mx-auto font-montserrat text-[12px] text-gris-medio flex items-center gap-1.5">
           <Link href="/" className="hover:text-rojo transition-colors">Inicio</Link>
           <span className="text-gris-medio/40">/</span>
           <span className="text-carbon font-semibold">Proyectos</span>
         </nav>
       </div>
 
-      <div className="max-w-[1280px] mx-auto px-6 py-10">
+      <div className="max-w-site mx-auto px-6 py-10">
         <div className="flex gap-3 mb-8 flex-wrap">
           {(['todos', 'vivienda', 'oficina', 'colegio'] as Sector[]).map(s => (
             <button key={s} onClick={() => setFilter(s)} className={`font-montserrat text-[12px] font-bold px-4 py-2 rounded-full border transition-colors ${filter === s ? 'bg-rojo text-white border-rojo' : 'border-gris-claro text-gris-medio hover:border-rojo hover:text-rojo'}`}>
