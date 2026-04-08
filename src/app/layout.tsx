@@ -52,7 +52,7 @@ const localBusinessSchema = JSON.stringify({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={`${montserrat.variable} ${inter.variable}`}>
+    <html lang="es" className={`${montserrat.variable} ${inter.variable}`} data-scroll-behavior="smooth">
       <body>
         <Script
           id="local-business-jsonld"
